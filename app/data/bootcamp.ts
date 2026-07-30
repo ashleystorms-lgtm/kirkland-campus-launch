@@ -32,6 +32,8 @@ export type DayTheme = {
   soft: string;
   glow: string;
   image?: string;
+  imagePosition?: string;
+  imageHeight?: string;
 };
 
 export type Day = {
@@ -122,6 +124,7 @@ export const days: Day[] = [
       accent: "#f3d7a3",
       soft: "rgba(243,215,163,0.28)",
       glow: "rgba(243,215,163,0.10)",
+      image: "/images/days/monday.jpg",
     },
     blocks: [
       {
@@ -345,6 +348,7 @@ export const days: Day[] = [
       accent: "#9fbccf",
       soft: "rgba(159,188,207,0.28)",
       glow: "rgba(159,188,207,0.10)",
+      image: "/images/days/wednesday.jpg",
     },
     blocks: [
       {
@@ -433,6 +437,7 @@ export const days: Day[] = [
       accent: "#cbcb96",
       soft: "rgba(203,203,150,0.28)",
       glow: "rgba(203,203,150,0.10)",
+      image: "/images/days/thursday.jpg",
     },
     blocks: [
       {
@@ -457,6 +462,9 @@ export const days: Day[] = [
       accent: "#e8a58f",
       soft: "rgba(232,165,143,0.28)",
       glow: "rgba(232,165,143,0.10)",
+      image: "/images/days/friday.jpg",
+      imagePosition: "50% 22%",
+      imageHeight: "72vh",
     },
     blocks: [
       {

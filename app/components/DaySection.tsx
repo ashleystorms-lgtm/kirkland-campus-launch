@@ -144,13 +144,17 @@ export default function DaySection({ day }: { day: Day }) {
         className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[linear-gradient(180deg,var(--day-glow),transparent)]"
       />
       {day.theme.image && (
-        <div className="relative -mx-6 -mt-20 mb-8 h-[42vh] min-h-[280px] sm:-mx-10 sm:-mt-28">
+        <div
+          className="relative -mx-6 -mt-20 mb-8 min-h-[280px] sm:-mx-10 sm:-mt-28"
+          style={{ height: day.theme.imageHeight ?? "42vh" }}
+        >
           <Image
             src={day.theme.image}
             alt=""
             fill
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover"
+            style={{ objectPosition: day.theme.imagePosition ?? "center" }}
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,16,0.5)_0%,rgba(11,18,16,0.3)_45%,#0b1210_100%)]" />
         </div>

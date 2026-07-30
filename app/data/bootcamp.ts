@@ -62,16 +62,14 @@ export type Build = {
 // ── Hero ─────────────────────────────────────────────────────────────────────
 
 export const hero = {
-  eyebrow: "Alpha School · Kirkland · SY 26–27",
   titleLines: ["ALPHA", "KIRKLAND"],
   subtitle: "Campus Launch",
   statement: ["A new campus.", "A new team.", "A shared beginning."],
-  date: "August 2026",
+  date: "Aug 31 - Sep 4, 2026",
   stats: [
     { label: "Mon–Wed", value: "8:30–5:00" },
     { label: "Thu", value: "8:30–5:00" },
     { label: "Fri", value: "8:30–3:30" },
-    { label: "Guides", value: "TBD · PreK–TBD" },
     { label: "Seven builds", value: "plus the Sprint" },
   ],
 };
@@ -113,7 +111,7 @@ export const days: Day[] = [
     id: "monday",
     label: "Monday",
     dayName: "Monday",
-    date: "TBD August 2026",
+    date: "Monday, August 31, 2026",
     hours: "8:30a–5:00p · Whole Team Dinner 6:30p",
     title: "Discover",
     thesis: "Discover the guide you want to be.",
@@ -231,7 +229,7 @@ export const days: Day[] = [
     id: "tuesday",
     label: "Tuesday",
     dayName: "Tuesday",
-    date: "TBD August 2026",
+    date: "Tuesday, September 1, 2026",
     hours: "8:30a–5:00p · Level Team Dinners 6:30p",
     title: "Build",
     thesis: "Design the experience your students deserve.",
@@ -337,7 +335,7 @@ export const days: Day[] = [
     id: "wednesday",
     label: "Wednesday",
     dayName: "Wednesday",
-    date: "TBD August 2026",
+    date: "Wednesday, September 2, 2026",
     hours: "8:30a–5:00p",
     title: "Ship It",
     thesis: "Build the systems that make it possible.",
@@ -427,7 +425,7 @@ export const days: Day[] = [
     id: "thursday",
     label: "Thursday",
     dayName: "Thursday",
-    date: "TBD August 2026",
+    date: "Thursday, September 3, 2026",
     hours: "8:30a–5:00p",
     title: "TBD",
     thesis: "TBD — one line, same shape as the other days.",
@@ -452,7 +450,7 @@ export const days: Day[] = [
     id: "friday",
     label: "Friday",
     dayName: "Friday",
-    date: "TBD August 2026",
+    date: "Friday, September 4, 2026",
     hours: "8:30a–3:30p",
     title: "TBD",
     thesis: "TBD",
@@ -823,4 +821,4 @@ export const rules = {
 };
 
 export const footer =
-  "Alpha School Kirkland · Campus Launch Run-of-Show · August 2026. Click any block to open the detail.";
+  "Alpha School Kirkland · Campus Launch Run-of-Show · Aug 31 - Sep 4, 2026. Click any block to open the detail.";

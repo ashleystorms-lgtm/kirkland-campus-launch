@@ -37,10 +37,6 @@ export default function Hero() {
             </svg>
           </div>
 
-          <p className="mb-8 animate-[fade-in_0.9s_ease-out_both] text-[9px] font-medium uppercase tracking-[0.35em] text-white/50 sm:text-[10px]">
-            {hero.eyebrow}
-          </p>
-
           <h1 className="animate-[fade-in_1s_ease-out_both] text-[2.2rem] font-semibold leading-[1.02] tracking-[0.34em] text-[#f8f2eb] sm:text-[3rem] lg:text-[3.6rem]">
             {hero.titleLines.map((line, i) => (
               <span

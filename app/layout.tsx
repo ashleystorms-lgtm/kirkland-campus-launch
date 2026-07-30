@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alpha School | Kirkland Campus Launch",
-  description: "A premium landing page for Alpha School's Kirkland Campus Launch.",
+  title: "Alpha Kirkland - Campus Launch",
+  description: "Campus launch run-of-show, Aug 31 - Sep 4, 2026.",
+  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({

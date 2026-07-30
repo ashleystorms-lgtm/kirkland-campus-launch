@@ -26,6 +26,14 @@ export type Block = {
   buildNumber?: number; // links a block to a numbered build
 };
 
+export type DayTheme = {
+  name: string;
+  accent: string;
+  soft: string;
+  glow: string;
+  image?: string;
+};
+
 export type Day = {
   id: string; // becomes the anchor: #monday
   label: string; // nav label
@@ -35,6 +43,7 @@ export type Day = {
   title: string; // "Discover"
   thesis: string; // one line
   point: string; // "The point of today:"
+  theme: DayTheme;
   blocks: Block[];
 };
 
@@ -108,6 +117,12 @@ export const days: Day[] = [
     thesis: "Discover the guide you want to be.",
     point:
       "Level placements land in the first hour, so by mid-afternoon every guide is building their first day of school with the level team they'll run the year with. Ikigai in the morning. The TimeBack block splits — half this room already knows the platform, so they get a head start on workshop seeding instead of sitting through a demo they don't need.",
+    theme: {
+      name: "Sunrise",
+      accent: "#f3d7a3",
+      soft: "rgba(243,215,163,0.28)",
+      glow: "rgba(243,215,163,0.10)",
+    },
     blocks: [
       {
         id: "mon-coffee",
@@ -219,6 +234,13 @@ export const days: Day[] = [
     thesis: "Design the experience your students deserve.",
     point:
       "The heaviest day. The Build Sprint runs as one uninterrupted 2.5-hour block — your problem, your BrainLift, your build, start to finish, no coming back to it later. Then workshops, a Townhall the guides own, and the motivational model as the last thing we do together before dinner with your level team.",
+    theme: {
+      name: "Douglas fir",
+      accent: "#a7c1a1",
+      soft: "rgba(167,193,161,0.28)",
+      glow: "rgba(167,193,161,0.10)",
+      image: "/images/days/tuesday.jpg",
+    },
     blocks: [
       {
         id: "tue-coffee",
@@ -318,6 +340,12 @@ export const days: Day[] = [
     thesis: "Build the systems that make it possible.",
     point:
       "Culture first thing, because it's the build everybody has an opinion about and nobody ever schedules. Then the check chart, then the workshop bank closes.",
+    theme: {
+      name: "Puget Sound",
+      accent: "#9fbccf",
+      soft: "rgba(159,188,207,0.28)",
+      glow: "rgba(159,188,207,0.10)",
+    },
     blocks: [
       {
         id: "wed-coffee",
@@ -400,6 +428,12 @@ export const days: Day[] = [
     title: "TBD",
     thesis: "TBD — one line, same shape as the other days.",
     point: "TBD",
+    theme: {
+      name: "Lichen",
+      accent: "#cbcb96",
+      soft: "rgba(203,203,150,0.28)",
+      glow: "rgba(203,203,150,0.10)",
+    },
     blocks: [
       {
         id: "thu-placeholder",
@@ -418,6 +452,12 @@ export const days: Day[] = [
     title: "TBD",
     thesis: "TBD",
     point: "TBD",
+    theme: {
+      name: "Alpenglow",
+      accent: "#e8a58f",
+      soft: "rgba(232,165,143,0.28)",
+      glow: "rgba(232,165,143,0.10)",
+    },
     blocks: [
       {
         id: "fri-build7",

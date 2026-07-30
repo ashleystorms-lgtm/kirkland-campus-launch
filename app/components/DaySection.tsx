@@ -1,14 +1,16 @@
 "use client";
 
+import Image from "next/image";
+import type { CSSProperties } from "react";
 import type { Block, BlockKind, Day } from "../data/bootcamp";
 import { useSchedule } from "./schedule-state";
 
 // The marker on the rail encodes what kind of block it is, so you can read the
 // build density of a day without reading a single word.
 const marker: Record<BlockKind, { dot: string; label?: string }> = {
-  build: { dot: "h-2.5 w-2.5 bg-[#f3d7a3]", label: "Build" },
+  build: { dot: "h-2.5 w-2.5 bg-[var(--day-accent)]", label: "Build" },
   sprint: {
-    dot: "h-2.5 w-2.5 bg-[#e0946a] ring-4 ring-[#e0946a]/20",
+    dot: "h-2.5 w-2.5 bg-[var(--day-accent)] ring-4 ring-[var(--day-soft)]",
     label: "Sprint",
   },
   workUnit: { dot: "h-2 w-2 border border-[#f7efe8]/70", label: "Work unit" },
@@ -54,7 +56,7 @@ function ScheduleRow({ block }: { block: Block }) {
 
       {/* The rail */}
       <div className="relative flex justify-center">
-        <div className="rail-line h-full w-px bg-[#f7efe8]/10" />
+        <div className="rail-line h-full w-px bg-[var(--day-soft)]" />
         <span
           aria-hidden="true"
           className={`absolute top-[0.4rem] rounded-full ${m.dot}`}
@@ -87,7 +89,7 @@ function ScheduleRow({ block }: { block: Block }) {
             <div
               id={`${block.id}-detail`}
               hidden={!open}
-              className="mt-3 space-y-3 border-l border-[#f7efe8]/10 pl-4 text-[0.88rem] font-light leading-relaxed text-[#f7efe8]/65"
+              className="mt-3 space-y-3 border-l border-[var(--day-soft)] pl-4 text-[0.88rem] font-light leading-relaxed text-[#f7efe8]/65"
             >
               {block.owner && (
                 <p className="text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
@@ -96,7 +98,7 @@ function ScheduleRow({ block }: { block: Block }) {
               )}
               {block.detail?.map((p) => <p key={p}>{p}</p>)}
               {block.output && (
-                <p className="text-[#f3d7a3]/80">
+                <p className="text-[var(--day-accent)]">
                   <span className="text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
                     On the wall ·{" "}
                   </span>
@@ -125,22 +127,49 @@ export default function DaySection({ day }: { day: Day }) {
     (b) => b.kind === "build" || b.kind === "sprint",
   ).length;
 
+  const themeStyle = {
+    "--day-accent": day.theme.accent,
+    "--day-soft": day.theme.soft,
+    "--day-glow": day.theme.glow,
+  } as CSSProperties;
+
   return (
     <section
       id={day.id}
-      className="scroll-mt-24 border-t border-[#f7efe8]/10 px-6 py-20 sm:px-10 sm:py-28"
+      style={themeStyle}
+      className="relative overflow-hidden scroll-mt-24 border-t border-[var(--day-soft)] px-6 py-20 sm:px-10 sm:py-28"
     >
-      <div className="mx-auto max-w-3xl">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[linear-gradient(180deg,var(--day-glow),transparent)]"
+      />
+      {day.theme.image && (
+        <div className="relative -mx-6 -mt-20 mb-8 h-[42vh] min-h-[280px] sm:-mx-10 sm:-mt-28">
+          <Image
+            src={day.theme.image}
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,16,0.5)_0%,rgba(11,18,16,0.3)_45%,#0b1210_100%)]" />
+        </div>
+      )}
+      <div className="relative mx-auto max-w-3xl">
         <header className="mb-14">
-          <p className="text-[9px] font-medium uppercase tracking-[0.35em] text-[#8ba39d]">
+          <p className="flex items-center gap-3 text-[9px] font-medium uppercase tracking-[0.35em] text-[#8ba39d]">
             {day.dayName}
+            <span aria-hidden="true" className="h-px w-6 bg-[var(--day-soft)]" />
+            <span className="text-[var(--day-accent)] tracking-[0.28em]">
+              {day.theme.name}
+            </span>
           </p>
 
           <h2 className="mt-4 text-[1.9rem] font-light uppercase leading-tight tracking-[0.18em] text-[#f8f2eb] sm:text-[2.4rem]">
             {day.title}
           </h2>
 
-          <p className="mt-4 text-[1.05rem] font-light leading-relaxed text-[#f3d7a3]/90 sm:text-[1.15rem]">
+          <p className="mt-4 text-[1.05rem] font-light leading-relaxed text-[var(--day-accent)] sm:text-[1.15rem]">
             {day.thesis}
           </p>
 
@@ -148,7 +177,7 @@ export default function DaySection({ day }: { day: Day }) {
             {day.date} · {day.hours}
           </p>
 
-          <div className="mt-8 border-l-2 border-[#f3d7a3]/40 pl-5">
+          <div className="mt-8 border-l-2 border-[var(--day-accent)] pl-5">
             <p className="text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
               <span className="text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
                 The point of today ·{" "}

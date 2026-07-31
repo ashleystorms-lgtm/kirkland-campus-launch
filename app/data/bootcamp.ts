@@ -85,6 +85,7 @@ export const navItems = [
   { label: "Thu / Fri", href: "#thursday" },
   { label: "The Builds", href: "#builds" },
   { label: "Sprint + BrainLift", href: "#sprint" },
+  { label: "Evaluation", href: "#evaluation" },
   { label: "Prep", href: "#prep" },
   { label: "House Rules", href: "#rules" },
 ];
@@ -818,6 +819,90 @@ export const rules = {
     "No “we'll figure that out in Week 1.” Week 1 is for kids.",
     "No day that ends without a build and without shout-outs.",
   ],
+};
+
+// ── Evaluation & Growth ──────────────────────────────────────────────────────
+
+export const evaluation = {
+  eyebrow: "Evaluation & Growth",
+  heading: "How you're measured, how it's calibrated, and how you move up.",
+  intro:
+    "Covered Monday 9:10a, inside the State of Alpha Kirkland. New guides saw this in onboarding — the block is where you get to ask the questions you didn't ask then. This page is the reference to come back to in January when the mid-year one-pager lands.",
+  workUnit: {
+    what: "The expectation for the quantity and quality of your daily work. Launch, Limitless Meetings, Townhall, Closing, lunches, check charts — each one has a defined bar.",
+    points: [
+      "They give clear, objective performance metrics",
+      "They make the subjective parts of guiding objective",
+      "They're publicly available, so the whole org learns from each other's",
+    ],
+    checked:
+      "Your Lead Guide quality-checks your work units and gives you feedback to improve. AI QC runs on transcripts continuously and costs you nothing to submit.",
+    theory:
+      "Work units are the inputs that lead to successfully delivering the 3 Commitments. Deliver the units well and the Commitments follow.",
+    linkLabel: "Session 4 (24-25) Work Unit Data Structures",
+    linkUrl: "https://drive.google.com/drive/folders/1bcf5Fu0inQkTUMY-RBcFwPnArVNc7qtc",
+    tieIn:
+      "Monday 1:10p ties directly to this. Work Unit Discussion + Alignment is where the whole team agrees, out loud, on the bar for the four units a kid feels every day. That sentence on the wall is what your Lead Guide is quality-checking you against.",
+  },
+  formal: [
+    {
+      step: "1 · The one-pager",
+      what: "Your Lead Guide writes a detailed one-pager on your performance: proposed rating, High Potential designation if it applies, concrete examples justifying the rating, and growth plans and opportunities.",
+    },
+    {
+      step: "2 · Calibration",
+      what: "Every guide is discussed for roughly five minutes. Lead Guides present concrete performance examples. Ratings are calibrated across the organization so they mean the same thing everywhere. Promotion opportunities and special projects are discussed in the same meeting.",
+    },
+    {
+      step: "3 · Your 1:1",
+      what: "You sit down with your Lead Guide to review your rating and its justification, then discuss growth opportunities and next steps.",
+    },
+  ],
+  ratings: [
+    {
+      name: "Exceeds Expectations",
+      body: "Above the bar on the work units and on the outcomes they drive.",
+    },
+    {
+      name: "Meets Expectations",
+      body: "Delivering the work units at standard. Calibration exists so a Meets here means a Meets network-wide.",
+    },
+    {
+      name: "Below Expectations",
+      body: "Named specifically, with concrete examples, a growth plan and a timeline. Never a surprise.",
+    },
+    {
+      name: "High Potential",
+      body: "A separate designation, not a rating. It means innovating beyond the framework and demonstrating next-level behaviours — before you're in the next-level role. It is not a streak of Exceeds, the most hours worked, or the most seniority.",
+    },
+  ],
+  promotionNote:
+    "Advancement is merit-based. Alpha prioritises internal promotion — 60% of Heads of School and Lead Guides were promoted internally in SY24-25.",
+  promotion: [
+    { n: "1", what: "An open role becomes available, based on organizational need." },
+    { n: "2", what: "You register intent for promotion with your Lead Guide and the Head of K-8. You don't wait to be noticed." },
+    { n: "3", what: "You demonstrate readiness: excelling in your current role, showing the traits and capabilities needed at the next level, and consistent interest in learning and doing more." },
+    { n: "4", what: "Management gives you opportunities to demonstrate skills for higher responsibilities." },
+    { n: "5", what: "You successfully perform tasks at the next level — that's what earns the promotion." },
+  ],
+  paths: [
+    { name: "Traditional path", body: "Guide → Lead Guide → Campus Director." },
+    { name: "Special projects", body: "Leading interim roles, coaching other guides, building AI tools." },
+    { name: "Y-school path", body: "Becoming an expert, creating content, building an audience." },
+    { name: "Geographic", body: "Alpha's expansion — 25 microschools in 2025 — opens roles beyond this campus." },
+  ],
+  compensation: {
+    heading: "Say this out loud in September, not March",
+    body: "Alpha uses large salary bands rather than incremental annual increases. That's deliberately different from traditional teaching and from standard market jobs. Promotion is the primary path to a significant compensation increase — it reflects the focus on rewarding increased responsibility and capability rather than time served. People deserve to know that on day one so they can aim at the right thing.",
+  },
+  owed: [
+    "You always know how you're doing, where you stand, and what levels you up",
+    "Feedback to your face, not behind your back — brutally honest without being brutal",
+    "Weekly 1:1 coaching with your Lead Guide, so the mid-year one-pager contains zero new information",
+    "Every input visible to you: work unit QC, student survey data, MAP, 3Cs, Peer 360",
+  ],
+  standard:
+    "The guide standard is changing a kid's life — a higher bar than teaching well. The 3 Commitments have to be delivered to every single kid, not on average. Which is why student survey data is the most valuable data we have. If a kid doesn't see you as the adult changing their life, that's below standard — and it's coachable, but only if we name it early.",
 };
 
 export const footer =

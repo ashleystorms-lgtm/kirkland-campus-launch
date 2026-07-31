@@ -3,6 +3,7 @@ import {
   builds,
   buildsIntro,
   compounds,
+  evaluation,
   footer,
   prep,
   rules,
@@ -236,6 +237,163 @@ export function SprintSection() {
         head={["Question", "What a 5 looks like"]}
         rows={sprint.judging.map((j) => [j.q, j.a])}
       />
+    </Section>
+  );
+}
+
+// ── Evaluation & Growth ──────────────────────────────────────────────────────
+
+export function EvaluationSection() {
+  return (
+    <Section
+      id="evaluation"
+      eyebrow={evaluation.eyebrow}
+      heading={evaluation.heading}
+      wide
+    >
+      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+        {evaluation.intro}
+      </p>
+
+      <h3 className="mt-16 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+        Work units — the inputs
+      </h3>
+      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+        {evaluation.workUnit.what}
+      </p>
+      <ul className="mt-6 space-y-2.5">
+        {evaluation.workUnit.points.map((point) => (
+          <li
+            key={point}
+            className="flex gap-3 text-[0.88rem] font-light leading-relaxed text-[#f7efe8]/65"
+          >
+            <span
+              aria-hidden="true"
+              className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
+            />
+            {point}
+          </li>
+        ))}
+      </ul>
+      <p className="mt-6 max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+        {evaluation.workUnit.checked}
+      </p>
+
+      <div className="mt-8 border-l-2 border-[#f3d7a3]/40 pl-5">
+        <p className="text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
+          {evaluation.workUnit.theory}
+        </p>
+      </div>
+
+      <a
+        href={evaluation.workUnit.linkUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-6 inline-block text-[0.9rem] font-light text-[#f3d7a3] hover:underline"
+      >
+        {evaluation.workUnit.linkLabel}
+      </a>
+
+      <div className="mt-6 border-l-2 border-[#f3d7a3]/40 pl-5">
+        <p className="text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
+          {evaluation.workUnit.tieIn}
+        </p>
+      </div>
+
+      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+        The formal evaluation — twice a year
+      </h3>
+      <Table
+        head={["Step", "What happens"]}
+        rows={evaluation.formal.map((f) => [f.step, f.what])}
+      />
+
+      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+        Ratings
+      </h3>
+      <div className="grid gap-x-10 gap-y-10 sm:grid-cols-2">
+        {evaluation.ratings.map((r) => (
+          <div key={r.name}>
+            <h3 className="text-[0.98rem] font-normal text-[#f8f2eb]">
+              {r.name}
+            </h3>
+            <p className="mt-3 text-[0.89rem] font-light leading-relaxed text-[#f7efe8]/65">
+              {r.body}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+        Promotion
+      </h3>
+      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+        {evaluation.promotionNote}
+      </p>
+      <div className="mt-8">
+        <Table
+          head={["Step", "What it takes"]}
+          rows={evaluation.promotion.map((p) => [p.n, p.what])}
+        />
+      </div>
+
+      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+        Growth paths
+      </h3>
+      <div className="grid gap-x-10 gap-y-10 sm:grid-cols-2">
+        {evaluation.paths.map((p) => (
+          <div key={p.name}>
+            <h3 className="text-[0.98rem] font-normal text-[#f8f2eb]">
+              {p.name}
+            </h3>
+            <p className="mt-3 text-[0.89rem] font-light leading-relaxed text-[#f7efe8]/65">
+              {p.body}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-20 border-l-2 border-[#f3d7a3]/40 pl-6">
+        <p className="text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
+          {evaluation.compensation.heading}
+        </p>
+        <p className="mt-3 max-w-2xl text-[0.95rem] font-light leading-relaxed text-[#f7efe8]/75">
+          {evaluation.compensation.body}
+        </p>
+      </div>
+
+      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+        The no-surprises contract
+      </h3>
+      <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2">
+        <div>
+          <h4 className="mb-4 text-[0.95rem] font-normal text-[#f3d7a3]/90">
+            What you&rsquo;re owed
+          </h4>
+          <ul className="space-y-2.5">
+            {evaluation.owed.map((item) => (
+              <li
+                key={item}
+                className="flex gap-3 text-[0.88rem] font-light leading-relaxed text-[#f7efe8]/65"
+              >
+                <span
+                  aria-hidden="true"
+                  className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 className="mb-4 text-[0.95rem] font-normal text-[#f3d7a3]/90">
+            The standard behind the rating
+          </h4>
+          <p className="text-[0.89rem] font-light leading-relaxed text-[#f7efe8]/65">
+            {evaluation.standard}
+          </p>
+        </div>
+      </div>
     </Section>
   );
 }

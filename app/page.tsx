@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import DaySection from "./components/DaySection";
 import {
   BuildsSection,
+  EvaluationSection,
   PrepSection,
   RulesSection,
   SiteFooter,
@@ -34,6 +35,7 @@ export default function Home() {
 
         <BuildsSection />
         <SprintSection />
+        <EvaluationSection />
         <PrepSection />
         <RulesSection />
         <SiteFooter />

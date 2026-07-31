@@ -6,6 +6,7 @@ import {
   evaluation,
   footer,
   prep,
+  resources,
   rules,
   sprint,
   story,
@@ -508,6 +509,45 @@ export function RulesSection() {
           </li>
         ))}
       </ul>
+    </Section>
+  );
+}
+
+// ── Resources ────────────────────────────────────────────────────────────────
+
+export function ResourcesSection() {
+  return (
+    <Section id="resources" eyebrow={resources.eyebrow} heading={resources.heading}>
+      <p className="max-w-2xl text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
+        {resources.note}
+      </p>
+
+      <div className="mt-10">
+        {resources.items.map((item) => (
+          <a
+            key={item.title}
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-between gap-6 border-t border-[#f7efe8]/10 py-6"
+          >
+            <div>
+              <h3 className="text-[0.98rem] font-normal text-[#f8f2eb] transition-colors duration-300 group-hover:text-[#f3d7a3]">
+                {item.title}
+              </h3>
+              <p className="mt-2 max-w-xl text-[0.88rem] font-light leading-relaxed text-[#f7efe8]/60">
+                {item.description}
+              </p>
+            </div>
+            <span
+              aria-hidden="true"
+              className="shrink-0 font-mono text-[0.9rem] text-[#8ba39d] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:text-[#f3d7a3]"
+            >
+              ↗
+            </span>
+          </a>
+        ))}
+      </div>
     </Section>
   );
 }

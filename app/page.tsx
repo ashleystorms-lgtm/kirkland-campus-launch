@@ -7,6 +7,7 @@ import {
   BuildsSection,
   EvaluationSection,
   PrepSection,
+  ResourcesSection,
   RulesSection,
   SiteFooter,
   SprintSection,
@@ -38,6 +39,7 @@ export default function Home() {
         <EvaluationSection />
         <PrepSection />
         <RulesSection />
+        <ResourcesSection />
         <SiteFooter />
       </main>
     </ScheduleProvider>

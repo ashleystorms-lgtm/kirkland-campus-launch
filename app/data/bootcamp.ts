@@ -88,6 +88,7 @@ export const navItems = [
   { label: "Evaluation", href: "#evaluation" },
   { label: "Prep", href: "#prep" },
   { label: "House Rules", href: "#rules" },
+  { label: "Resources", href: "#resources" },
 ];
 
 // ── Our Story ────────────────────────────────────────────────────────────────
@@ -903,6 +904,36 @@ export const evaluation = {
   ],
   standard:
     "The guide standard is changing a kid's life — a higher bar than teaching well. The 3 Commitments have to be delivered to every single kid, not on average. Which is why student survey data is the most valuable data we have. If a kid doesn't see you as the adult changing their life, that's below standard — and it's coachable, but only if we name it early.",
+};
+
+// ── Resources ────────────────────────────────────────────────────────────────
+
+export const resources = {
+  eyebrow: "Resources",
+  heading: "Everything you'll need open in a tab.",
+  note: "These live in Google Drive and are shared across Alpha campuses. Sign in with your Alpha account.",
+  items: [
+    {
+      title: "Life Skills Roadmap",
+      description: "The roadmap workshops get built from. Start here before Build 2.",
+      url: "PASTE_YOUR_GOOGLE_DOC_URL_HERE",
+    },
+    {
+      title: "Life Skills Knowledge Tree",
+      description: "The skills themselves, browsable. Use it to see where a workshop sits in the wider tree.",
+      url: "https://life-skills-knowledge-tree.lovable.app/",
+    },
+    {
+      title: "Tree Skills · PDF breakdown",
+      description: "Each branch of the tree broken down in detail. Requires your Alpha Google account.",
+      url: "https://drive.google.com/drive/folders/1ZyUyUCF--wPTZw1fiYGMYYk0CZRZ7vgf",
+    },
+    {
+      title: "Work Unit Data Structures",
+      description: "Session 4 (24-25). The bar your work units get quality-checked against.",
+      url: "https://drive.google.com/drive/folders/1bcf5Fu0inQkTUMY-RBcFwPnArVNc7qtc",
+    },
+  ],
 };
 
 export const footer =

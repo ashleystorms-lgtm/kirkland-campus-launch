@@ -916,7 +916,7 @@ export const resources = {
     {
       title: "Life Skills Roadmap",
       description: "The roadmap workshops get built from. Start here before Build 2.",
-      url: "PASTE_YOUR_GOOGLE_DOC_URL_HERE",
+      url: "https://docs.google.com/document/d/1qFV9eqhQ_blv7oijJnYAAtApJIDR6GLEvQ4ZX1HXjx4/edit",
     },
     {
       title: "Life Skills Knowledge Tree",

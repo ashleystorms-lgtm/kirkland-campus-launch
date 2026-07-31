@@ -161,12 +161,8 @@ export default function DaySection({ day }: { day: Day }) {
       )}
       <div className="relative mx-auto max-w-3xl">
         <header className="mb-14">
-          <p className="flex items-center gap-3 text-[9px] font-medium uppercase tracking-[0.35em] text-[#8ba39d]">
+          <p className="text-[9px] font-medium uppercase tracking-[0.35em] text-[#8ba39d]">
             {day.dayName}
-            <span aria-hidden="true" className="h-px w-6 bg-[var(--day-soft)]" />
-            <span className="text-[var(--day-accent)] tracking-[0.28em]">
-              {day.theme.name}
-            </span>
           </p>
 
           <h2 className="mt-4 text-[1.9rem] font-light uppercase leading-tight tracking-[0.18em] text-[#f8f2eb] sm:text-[2.4rem]">

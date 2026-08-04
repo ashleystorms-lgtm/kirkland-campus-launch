@@ -68,7 +68,7 @@ export const hero = {
   date: "Aug 31 - Sep 4, 2026",
   stats: [
     { label: "Daily", value: "8:00-5:00" },
-    { label: "Seven builds", value: "plus the Sprint" },
+    { label: "Five builds", value: "one week" },
   ],
 };
 

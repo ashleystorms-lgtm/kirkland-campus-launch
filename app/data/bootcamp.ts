@@ -81,8 +81,8 @@ export const navItems = [
   { label: "Tue", href: "#tuesday" },
   { label: "Wed", href: "#wednesday" },
   { label: "Thu / Fri", href: "#thursday" },
-  { label: "The Builds", href: "#builds" },
-  { label: "Sprint + BrainLift", href: "#sprint" },
+  { label: "The Five Builds", href: "#builds" },
+  { label: "Build Sprint", href: "#sprint" },
   { label: "Evaluation", href: "#evaluation" },
   { label: "Prep", href: "#prep" },
   { label: "House Rules", href: "#rules" },
@@ -603,121 +603,96 @@ export const days: Day[] = [
 // ── The Seven Builds ─────────────────────────────────────────────────────────
 
 export const buildsIntro = {
-  eyebrow: "The Seven Builds",
-  heading: "Numbered so nothing gets lost",
-  body: "Builds 1–7 are team work, mostly level teams, and they compound in order: Build 1 writes the day, Build 2 fills the afternoons, Build 3 wires the motivation, Build 4 names the culture, Build 5 builds the instrument that runs it, Build 6 closes the workshop bank, Build 7 makes all of it physical. The Build Sprint is separate and independent — your problem, your build, your name on it.",
+  eyebrow: "The Five Builds",
+  heading: "What we make this week",
+  body: "Most of what runs this campus was built by the wider org over the summer — the behavioral model, the bootcamp, the check charts, the motivational model. We weren't in the room for that, so a lot of this week is transfer: learning instruments other people designed well, and adapting them to our four levels. But five things get genuinely built here, by us, and they're the five a kid actually walks into on day one. They compound in order.",
 };
 
 export const builds: Build[] = [
   {
     n: 1,
-    title: "The Best First Day of School",
-    when: "Mon 3:05–4:35",
-    duration: "90 min",
-    who: "Level teams",
+    title: "Workshops",
+    when: "Mon 1:45 · Tue 1:00 · Wed 9:00",
+    duration: "Across three days",
+    who: "Level pairs, CeCe facilitating",
     summary:
-      "The arrival window, the school day, and the Back to School Night plan. Start from the sentence you want the kid to say in the car and build backwards.",
+      "Four minimum per level this session. Independence, Giving and Receiving Feedback, and Upholding Community Standards all covered, doubling up on whichever your level needs most to start the year. The one thing this week we build from scratch — which is why CeCe is on site and why it gets three separate blocks.",
     output:
-      "Poster-size run-of-shows per level, plus a Back to School Night plan. They stay on the wall until Friday, when we walk them in the rooms.",
+      "The workshop bank closes Wednesday at noon. Vendored, costed, sequenced into sessions. Nothing gets ordered until it closes.",
   },
   {
     n: 2,
-    title: "Banger Workshops",
-    when: "Tue 12:45–2:45",
-    duration: "2 hours",
-    who: "Level teams",
+    title: "The Motivational Model",
+    when: "Tue 3:00",
+    duration: "75 min",
+    who: "Ashley, then level pairs",
     summary:
-      "Life skill, AlphaTest, and everything you need to run it. Seeded Monday by the guides who skipped the TimeBack demo, and closed out in Build 6.",
-    output: "Three minimum per level, each stress-tested by a different level team.",
+      "The org's model, adapted to your level. XP, Alpha Bucks, badges, the economy, the ceremonies — what a kid earns, sees, spends and feels, and the ladder from standard-school mode to two-hour learner.",
+    output:
+      "A reward ladder per level. Build 3 wires every check chart unlock into a rung on this ladder.",
   },
   {
     n: 3,
-    title: "The World's Best Motivational Model",
-    when: "Tue 3:25–4:50",
-    duration: "85 min",
-    who: "Whole team, then levels",
+    title: "Bootcamp Check Chart",
+    when: "Wed 3:00",
+    duration: "75 min",
+    who: "Ashley, then level pairs",
     summary:
-      "XP, TimeBack, Alpha Bucks, badges, the economy, the ceremonies. What a kid earns, sees, spends and feels — plus the unlock ladder from standard-school mode to two-hour learner.",
+      "The entry ramp a brand-new kid earns their way through in their first days, wired rung for rung to the reward ladder from Build 2. Plus the plan for the kid it takes three times as long.",
     output:
-      "One campus-wide spec and a reward ladder per level. Build 5 wires the check charts straight into it.",
+      "A bootcamp check chart per level, vertical handoffs checked between levels. It goes on the wall Friday.",
   },
   {
     n: 4,
-    title: "Traditions + Culture",
-    when: "Wed 9:10–10:40",
-    duration: "90 min",
-    who: "Mixed, then whole team",
+    title: "The Best First Day of School",
+    when: "Wed 4:15",
+    duration: "45 min",
+    who: "Level pairs",
     summary:
-      "The chant. The Friday ritual. The wall. The award nobody can buy. The thing a sixth grader tells their cousin about. Plus staff traditions.",
-    output: "Five named traditions, each with a human owner and a first run date on the calendar.",
+      "Start from the sentence you want a kid to say in the car on the way home, and build backwards. The arrival window, the first Launch they ever see, the first Townhall, the shape of the whole day. Six of us have never run one — this is where we decide what it looks like rather than finding out on the morning.",
+    output:
+      "A first-day run-of-show per level, plus the bootcamp Launches and Townhall plan inside it. Friday's walkthrough tests it standing in the rooms.",
   },
   {
     n: 5,
-    title: "Student Bootcamp Check Chart",
-    when: "Wed 10:50–12:05",
-    duration: "75 min",
-    who: "Level teams",
-    summary:
-      "The chart a brand-new kid earns their way through, wired rung for rung to the reward ladder from Build 3. Plus the plan for the kid it takes three times as long.",
-    output: "Poster-size check charts, vertical handoffs checked between levels. They go on the wall in Build 7.",
-  },
-  {
-    n: 6,
-    title: "Workshops, Finished",
-    when: "Wed 12:50–1:35",
-    duration: "45 min",
-    who: "Level teams",
-    summary:
-      "Close out Build 2. Everything submitted with a real vendor and a real cost, then sequenced into sessions.",
-    output: "The workshop bank shuts today. Vendored, costed, on the calendar.",
-  },
-  {
-    n: 7,
     title: "Set the Space",
-    when: "Fri 1:35–2:45",
-    duration: "70 min",
-    who: "In your rooms",
+    when: "Fri 9:00 and 1:00",
+    duration: "Most of Friday",
+    who: "Level pairs, in your rooms",
     summary:
-      "Stop designing, go build the room. Check charts and reward ladders on the walls, unlocks visible from the starting desk, the first-day clock walked physically.",
-    output: "Finished, kid-tested rooms and a gap list per level with owners and order-by dates.",
+      "Stop planning, go build the room. Labeling first — every space named before anything goes into it. Then check charts and reward ladders on the walls, materials out, standard-school mode set, unlocks visible from the starting desk.",
+    output:
+      "Finished, kid-ready rooms and a gap list per level with owners and order-by dates.",
   },
 ];
 
 export const compounds: { build: string; input: string; feeds: string }[] = [
   {
-    build: "1 · First Day",
-    input: "Level placements, TimeBack demo, the work unit alignment sentences",
-    feeds: "Build 7 — you walk this clock physically while setting the room.",
+    build: "1 · Workshops",
+    input: "The life skills roadmap, the workshop builder, the knowledge tree, CeCe",
+    feeds:
+      "Wednesday's materials order — nothing can be bought until this closes. Then every afternoon of Session 1.",
   },
   {
-    build: "2 · Workshops",
-    input: "Monday's workshop seeds, the vendor list, the Workshop Repository, AlphaTest examples",
-    feeds: "Build 6, where the bank actually closes.",
+    build: "2 · Motivational Model",
+    input: "The org's published model, plus what your level actually responds to",
+    feeds: "Build 3 — every check chart unlock points at a rung on this ladder.",
   },
   {
-    build: "3 · Motivational Model",
-    input: "TimeBack demo, Alpha Bucks data, XP explainer",
-    feeds: "Build 5 — every check chart unlock points at a rung on this ladder. Build 7 puts it on the wall.",
+    build: "3 · Bootcamp Check Chart",
+    input: "Build 2's reward ladder, and Wednesday's bootcamp walkthrough",
+    feeds: "Build 4 — it's the instrument a kid's first days actually run on.",
   },
   {
-    build: "4 · Traditions + Culture",
-    input: "Everything from earlier in the week. You can't name a culture before you've built something together.",
-    feeds: "Build 7 — the chant, the wall and the award all need a physical home.",
+    build: "4 · Best First Day",
+    input: "Builds 2 and 3, the six work units, and Thursday's reps",
+    feeds:
+      "Build 5 — you walk this clock physically while setting the room, and it's the last check before a kid arrives.",
   },
   {
-    build: "5 · Check Chart",
-    input: "Build 3's reward ladder",
-    feeds: "Build 7 — it goes on your wall the same afternoon. Then it runs every day from Week 1.",
-  },
-  {
-    build: "6 · Workshops, Finished",
-    input: "Build 2, the vendor list, the session calendar",
-    feeds: "Afternoon programming for every session. Vendor calls with names and dates.",
-  },
-  {
-    build: "7 · Set the Space",
-    input: "Builds 1, 3, 4 and 5 — all of them become physical here",
-    feeds: "The first day of school. The last thing between the plan and a kid walking through the door.",
+    build: "5 · Set the Space",
+    input: "Builds 2, 3 and 4 — all of them become physical here",
+    feeds: "The first day of school.",
   },
 ];
 
@@ -725,18 +700,18 @@ export const compounds: { build: string; input: string; feeds: string }[] = [
 
 export const sprint = {
   eyebrow: "The Alpha Build Sprint",
-  heading: "See a problem. Build something better. Ship it. On your own.",
+  heading: "See a problem. Build something better. Ship it.",
   prompt:
     "Build something that makes Alpha Kirkland 10x better this year. What's a problem you feel like you can solve that you're excited about?",
   independence:
-    "The prompt says you, so it's you. Not a committee, not a team you got assigned to. One guide, one problem you actually care about, one thing you build and put your name on. Everything else this week is team work — this is the block that's yours.",
+    "This isn't on the launch week schedule, and that's deliberate. In week one you don't yet know what this campus's problems are — ask a guide who's never run a school year to name the biggest thing to fix and you'll get a guess. Ask the same guide in October and you'll get something real. So this page is here from day one for a different reason: so that when you do hit something broken, you know there's a method, and you know you're allowed to use it.",
   runsIn:
-    "Tuesday 9:15a to 11:45a. Two and a half hours, straight through, with a stretch in the middle. No kickoff-now-come-back-later — you sit down with a blank page and you stand up with something real.",
+    "Bring it up in a Townhall or to your Lead Guide and we'll find you the time. A Sprint needs about two and a half hours in one sitting — a session break, a Friday afternoon, a staff day. The point is that it's yours: one guide, one problem you actually care about, one thing you build and put your name on.",
   phases: [
     {
       phase: "Pick it",
       time: "15 min",
-      what: "Write your problem as one sentence on a card and put it on the wall. Read the wall — if three people wrote the same problem, that tells you something, but you still build your own.",
+      what: "Write your problem as one sentence. If you can't get it into a sentence, it's more than one problem.",
     },
     {
       phase: "BrainLift",
@@ -754,25 +729,29 @@ export const sprint = {
     {
       node: "1 · Purpose",
       time: "8 min",
-      minimum: "One sentence. “This BrainLift is about ___. I want to understand ___ so I can ___.”",
+      minimum:
+        "One sentence. “This BrainLift is about ___. I want to understand ___ so I can ___.”",
       ai: "AI OK — use it to sharpen the sentence",
     },
     {
       node: "2 · Experts",
       time: "15 min",
-      minimum: "10 people, orgs or feeds. Who they are, what they focus on, why follow, where to find them.",
+      minimum:
+        "10 people, orgs or feeds. Who they are, what they focus on, why follow, where to find them.",
       ai: "AI OK for finding them",
     },
     {
       node: "3 · Knowledge Tree",
       time: "30 min",
-      minimum: "6 sources you actually read or watched. Summary of each in your own words. 3 insights connecting across sources.",
+      minimum:
+        "6 sources you actually read or watched. Summary of each in your own words. 3 insights connecting across sources.",
       ai: "AI OK to find sources. NO AI for summaries or insights.",
     },
     {
       node: "4 · Spiky POVs",
       time: "17 min",
-      minimum: "2 minimum. Truths that are true but surprising, or myths people assume are true and aren't.",
+      minimum:
+        "2 minimum. Truths that are true but surprising, or myths people assume are true and aren't.",
       ai: "NO AI for writing them. AI OK for the disagreement test.",
     },
   ],
@@ -785,13 +764,22 @@ export const sprint = {
     },
     {
       heading: "And the kids are going to build these.",
-      body: "BrainLifts are the backbone of self-driven learning. If a guide has never built one, they can't coach a kid through one — and they definitely can't push a kid past DOK 3 into original thinking. Seventy minutes on Tuesday means every guide has done it with their hands before they ask a student to.",
+      body: "BrainLifts are the backbone of self-driven learning. If a guide has never built one, they can't coach a kid through one — and they definitely can't push a kid past DOK 3 into original thinking. Doing one yourself, with your hands, is the prerequisite for asking a student to.",
     },
   ],
   judging: [
-    { q: "Does it raise the bar?", a: "A parent touring in October would notice this and ask about it." },
-    { q: "Would kids feel it in Week 1?", a: "A student could describe it at dinner on the first Friday." },
-    { q: "Can we ship it by Week 3?", a: "Owner named, cost known, first step happens Monday." },
+    {
+      q: "Does it raise the bar?",
+      a: "A parent touring the campus would notice this and ask about it.",
+    },
+    {
+      q: "Would kids feel it?",
+      a: "A student could describe it at dinner within a week of it landing.",
+    },
+    {
+      q: "Can we actually ship it?",
+      a: "Owner named, cost known, first step happens next Monday.",
+    },
   ],
 };
 

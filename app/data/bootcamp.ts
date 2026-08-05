@@ -1114,6 +1114,11 @@ export const resources = {
   note: "These live in Google Drive and are shared across Alpha campuses. Sign in with your Alpha account.",
   items: [
     {
+      title: "Academic Calendar · SY 26-27",
+      description: "Every session start and end, breaks, MAP testing windows and days off. Session 1 runs Sept 8 to Oct 16.",
+      url: "/docs/kirkland-calendar-26-27.pdf",
+    },
+    {
       title: "Life Skills Roadmap",
       description: "The roadmap workshops get built from. Start here before Build 2.",
       url: "https://docs.google.com/document/d/1qFV9eqhQ_blv7oijJnYAAtApJIDR6GLEvQ4ZX1HXjx4/edit",

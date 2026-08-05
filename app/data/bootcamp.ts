@@ -787,72 +787,185 @@ export const sprint = {
 
 export const prep = {
   eyebrow: "Prep & Who Runs What",
-  heading: "Leadership sets the table. The team runs the room.",
+  heading: "Who's on the floor, and what has to be true before Monday.",
   distributionRule:
-    "Across the week, leadership has the floor for about forty minutes total — the State of Alpha Kirkland and Level Placements. Everything else is delivered by a guide.",
-  openItems: [
+    "Two of eight guides have run a school year. That changes who delivers what: most of this week is Ashley and CeCe at the front, which is unusual for an Alpha bootcamp and deliberate here. Sanura and Kris take the two work units guides run most, and by Thursday every guide is delivering rather than listening. The goal by Friday isn't that the room has been told things — it's that eight people have run the units, built the workshops, and set their own rooms.",
+
+  floor: [
     {
-      title: "TimeBack Demo owner",
-      body: "Needs someone who has watched a kid stall out mid-Pomodoro and knows what to do about it, not someone reading the explainer.",
+      block: "Mon 8:30a · Welcome + State of Alpha Kirkland",
+      who: "Ashley",
+      notes: "Where this campus sits in the foundational year. House Rules read at the end.",
     },
     {
-      title: "The TimeBack split list",
-      body: "Who's in the demo and who goes to workshop seeding. Split by fluency, not tenure. Ask people, don't assume.",
+      block: "Mon 9:30a · The shape of an Alpha day",
+      who: "Ashley",
+      notes: "Six work units named, daily rhythm walked. The map, not the mechanics.",
     },
     {
-      title: "The Townhall ticket",
-      body: "It has to be a real decision this campus will honor whichever way the vote goes.",
+      block: "Mon 10:15a · The behavioral model",
+      who: "CeCe",
+      notes: "5% policy, 95% curriculum. Weighted toward middle school scenarios.",
+    },
+    {
+      block: "Mon 1:00p · Workshop kickoff, then the build",
+      who: "CeCe, level pairs building",
+      notes: "The longest thread of the week. Runs again Tuesday and closes Wednesday.",
+    },
+    {
+      block: "Mon 3:30p · Supply audit",
+      who: "Level pairs, in your own rooms",
+      notes: "Two lists — room basics order today, workshop materials wait for Wednesday.",
+    },
+    {
+      block: "Tue 9:00a · Limitless Launch",
+      who: "Sanura",
+      notes: "The unit every kid feels first, every day.",
+    },
+    {
+      block: "Tue 9:40a · Limitless Meetings",
+      who: "Kris",
+      notes: "The 3Cs framework, and how a meeting differs from a check-in.",
+    },
+    {
+      block: "Tue 10:20a · The other four units + the weekly load",
+      who: "Ashley",
+      notes: "Both lunches are work units, not breaks. Then the honest conversation about volume.",
+    },
+    {
+      block: "Wed 1:45p · Bootcamp + check chart",
+      who: "Ashley",
+      notes: "Built by the wider org. This is where it transfers to a campus that wasn't in the room.",
+    },
+    {
+      block: "Thu 8:30a · Ongoing check charts",
+      who: "Ashley",
+      notes: "And how they differ from the bootcamp chart. Different instruments, different jobs.",
+    },
+    {
+      block: "Thu 10:00a · Work unit reps",
+      who: "Every guide. MS first, then L2, L1, LL",
+      notes: "Coached out loud in front of the room. Sanura and Kris coach rather than perform.",
+    },
+    {
+      block: "Thu 3:00p · CPR + First Aid",
+      who: "External trainer",
+      notes: "Booked before the week starts.",
+    },
+    {
+      block: "Daily 8:30a · Launch rep",
+      who: "A different guide each day",
+      notes: "Tue, Wed, Fri. Everyone runs one before the week ends.",
+    },
+    {
+      block: "Fri 9:00a and 1:00p · Set the space",
+      who: "Level pairs, in your rooms",
+      notes: "Ashley floats with the gap lists and a card.",
     },
   ],
+
+  commitments: {
+    heading: "What leadership owes you this week",
+    intro:
+      "Six of you have never run a school year. That puts a set of obligations on this side of the room, and they're written down here so you can hold us to them.",
+    groups: [
+      {
+        heading: "Before Monday",
+        items: [
+          "CeCe confirmed in writing for Monday morning — the whole day is built around it",
+          "CPR booked for Thursday 3:00",
+          "Sanura and Kris told which units they're taking, with a week to prepare and not a weekend",
+          "Every account live and tested, not assumed",
+          "Four rooms unlocked and cleared, whatever state they're in",
+          "The workshop spec and gap-list sheets printed and waiting on your station",
+        ],
+      },
+      {
+        heading: "During the week",
+        items: [
+          "Nothing you're asked to build this week gets invented on the spot by us either — if a block is on the schedule, it has a spec",
+          "Gap-list lines answered out loud, in the room, the same day. A list nobody responds to is a list nobody writes again.",
+          "Ordering happens live in the block, not added to somebody's evening",
+          "If something isn't working by Wednesday, say so. Changing the schedule mid-week is allowed and is not a failure.",
+        ],
+      },
+      {
+        heading: "Friday",
+        items: [
+          "Someone floating the rooms with the gap lists and a card, so what you find missing at 2pm can still be fixed before Monday",
+          "The deliverables check done with you, not to you",
+          "A named date for anything still unfinished — no “we'll sort it out”",
+          "You leave when your room is ready. Scheduled to 5:00, aiming for 3:30, and finishing early is the reward for finishing well.",
+        ],
+      },
+    ],
+  },
+
+  openItems: [
+    {
+      title: "The space",
+      body: "Still unresolved. Friday's content and the depth of setup both depend on it. Confirmed the week prior — the block shape holds either way, but the scope inside it doesn't.",
+    },
+    {
+      title: "Meet and Greet",
+      body: "TBD whether Kirkland runs one and when. If it falls inside Aug 31 – Sep 4, it needs its own prep block and Friday changes.",
+    },
+    {
+      title: "Food",
+      body: "Depends on the space. Lunch breaks at noon every day regardless — whether that's catered in, off campus, or on your own gets decided once we know where we are.",
+    },
+    {
+      title: "A guide Townhall",
+      body: "Not currently in the week. Wednesday produces the Bootcamp Townhall plan for kids, but the team never runs the format themselves. Worth adding if Thursday's reps finish early.",
+    },
+  ],
+
   nameTags:
-    "Your name on top. Underneath: the name of the teacher who changed your life. That's the tag. It's the first thing anyone asks you about and it sets the bar for the whole week without a single slide.",
+    "Your name on top. Underneath: the name of the teacher who changed your life. That's the tag. It's the first thing anyone asks you about, and with six people who've never met each other it does more work than any icebreaker.",
+
   staging: [
     {
       heading: "Paper",
       items: [
-        "Level placement roster, printed big for the wall",
-        "Work unit one-pagers — Launch, Limitless Meeting, Townhall, Closing",
-        "Limitless Launch QC rubric",
-        "First-day run-of-show template, poster size, one per level team",
-        "Blank student check chart template per level, poster size",
-        "Big cards for the Sprint problem wall",
+        "The workshop spec, one per level pair — four minimum, three life skills, double up where you need it",
+        "Gap-list sheets, one per room — what, who orders it, by when",
+        "Work unit one-pagers for all six units",
+        "Blank check chart template per level, poster size",
+        "First-day run-of-show template, poster size, one per level pair",
+        "The org's S1 deliverables list, printed and on the wall all week",
       ],
     },
     {
       heading: "Room",
       items: [
-        "Chairs that move — Ikigai and Townhall both need a real circle",
-        "One labeled station per level team",
-        "A problem wall for the Sprint — one card per guide, up all week",
-        "A build wall — first-day run-of-shows go up Monday and stay all week",
-        "Two rooms for the TimeBack split",
-        "All classrooms unlocked and cleared before Build 7",
-        "A speaker that actually gets loud, two visible timers",
+        "Chairs that move — Thursday's reps need a real circle",
+        "Four level stations, labeled",
+        "A build wall — first-day run-of-shows and check charts go up and stay up",
+        "A deliverables wall — the seven org artifacts, ticked off as they land",
+        "A speaker that gets loud, two visible timers",
         "Post-its, Sharpies, painter's tape, a second marker colour per level",
       ],
     },
     {
-      heading: "Staged in each room before Build 7",
+      heading: "Staged in each room before Friday",
       items: [
         "Painter's tape, mounting putty, push pins, command hooks",
         "A step ladder per room",
         "Cubby and locker tags with every kid's name pre-printed",
-        "Student photos printed, if you have them from enrollment",
+        "Student photos printed, if enrollment has them",
         "Scissors, box cutters, string, clips",
         "Blank chart paper for the shout-out wall",
-        "Printed gap-list sheet per level — what, who orders it, by when",
         "A cart for moving furniture, and enough hands",
       ],
     },
     {
-      heading: "Food",
+      heading: "Working before Monday",
       items: [
-        "Every morning: Team Coffee and Bagels at the door",
-        "Monday lunch: off campus, in pairs, 90 minutes, no agenda",
-        "Monday 6:30p: Whole Team Dinner — one long table, everybody",
-        "Tuesday lunch: catered in, vendor planning on the table",
-        "Tuesday 6:30p: Level Team Dinners — level leads book them",
-        "Afternoon snack on the long days — 2:00 is where energy dies",
+        "Every guide's accounts confirmed live — not assumed",
+        "The workshop builder open and tested",
+        "A vendor list with contacts, for Monday and Wednesday ordering",
+        "All four rooms unlocked and cleared, whatever state they're in",
+        "The Meet the Guides deck template, so Monday 4:30 is filling it in rather than designing it",
       ],
     },
   ],

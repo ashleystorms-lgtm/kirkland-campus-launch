@@ -409,7 +409,45 @@ export function PrepSection() {
       </p>
 
       <h3 className="mt-16 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
-        Settle before Monday
+        Who&rsquo;s on the floor
+      </h3>
+      <Table
+        head={["Block", "Who runs it", "Notes"]}
+        rows={prep.floor.map((f) => [f.block, f.who, f.notes])}
+      />
+
+      <h3 className="mt-20 mb-3 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+        {prep.commitments.heading}
+      </h3>
+      <p className="mb-8 max-w-3xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/65">
+        {prep.commitments.intro}
+      </p>
+      <div className="grid gap-x-10 gap-y-12 sm:grid-cols-3">
+        {prep.commitments.groups.map((group) => (
+          <div key={group.heading}>
+            <h4 className="mb-4 text-[0.95rem] font-normal text-[#f3d7a3]/90">
+              {group.heading}
+            </h4>
+            <ul className="space-y-2.5">
+              {group.items.map((item) => (
+                <li
+                  key={item}
+                  className="flex gap-3 text-[0.88rem] font-light leading-relaxed text-[#f7efe8]/65"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+        Still open
       </h3>
       <ol className="space-y-px">
         {prep.openItems.map((item, i) => (

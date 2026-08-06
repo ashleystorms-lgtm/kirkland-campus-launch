@@ -1114,6 +1114,11 @@ export const resources = {
   note: "These live in Google Drive and are shared across Alpha campuses. Sign in with your Alpha account.",
   items: [
     {
+      title: "Week 1, Session 1 · Student Onboarding",
+      description: "The dashboard you run your first three days from. Calendar B is ours — Sept 8-10. Mornings run as normal; afternoons are onboarding and Workshop Sprints, one life skill per day, ending with an off-campus community standards sprint.",
+      url: "https://week1-session1.netlify.app/",
+    },
+    {
       title: "Academic Calendar · SY 26-27",
       description: "Every session start and end, breaks, MAP testing windows and days off. Session 1 runs Sept 8 to Oct 16.",
       url: "/docs/kirkland-calendar-26-27.pdf",

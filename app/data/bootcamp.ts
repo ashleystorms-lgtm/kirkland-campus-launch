@@ -1252,6 +1252,16 @@ export const prework = {
       summary:
         "What changed after the room pushed back — including smartwatches becoming phones. Then Pirate Ship, behavior support plans and the strike appeal template: what happens for the kid the standard structure isn't working for.",
     },
+    {
+      n: 10,
+      day: "Week 2",
+      date: "Aug 2026",
+      title: "What The Network Built: Level by Level",
+      mins: 10,
+      file: "https://docs.google.com/document/d/1rcT0Mhr1OnK8sGtFLxOLRPHxT7mzM5xfk2cCY5PKUuw/edit",
+      summary:
+        "A level-by-level walkthrough of what came out of staff days across the whole network — what changed, and what it means depending on which level you guide.",
+    },
   ],
   book: {
     title: "The Fearless Organization",

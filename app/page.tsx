@@ -7,6 +7,7 @@ import {
   BuildsSection,
   EvaluationSection,
   PrepSection,
+  PreworkSection,
   ResourcesSection,
   RulesSection,
   SiteFooter,
@@ -29,6 +30,7 @@ export default function Home() {
       <main className="bg-[#0b1210] text-[#f7efe8]">
         <Hero />
         <StorySection />
+        <PreworkSection />
 
         {days.map((day) => (
           <DaySection key={day.id} day={day} />

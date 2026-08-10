@@ -6,6 +6,7 @@ import {
   evaluation,
   footer,
   prep,
+  prework,
   resources,
   rules,
   sprint,
@@ -87,6 +88,87 @@ function Table({
         </tbody>
       </table>
     </div>
+  );
+}
+
+// ── Before we start ──────────────────────────────────────────────────────────
+
+export function PreworkSection() {
+  return (
+    <Section id="prework" eyebrow={prework.eyebrow} heading={prework.heading} wide>
+      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+        {prework.intro}
+      </p>
+      <div className="mt-6 border-l-2 border-[#f3d7a3]/40 pl-5">
+        <p className="text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
+          {prework.why}
+        </p>
+      </div>
+
+      <p className="mt-6 max-w-2xl text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
+        {prework.totalNote}
+      </p>
+
+      <ol className="mt-10 space-y-px">
+        {prework.docs.map((doc) => (
+          <li key={doc.n} className="border-t border-[#f7efe8]/10">
+            <a
+              href={doc.file}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group grid gap-x-6 gap-y-2 py-8 sm:grid-cols-[3.5rem_1fr]"
+            >
+              <div className="font-mono text-[1.6rem] font-light leading-none text-[#f3d7a3]/60">
+                {String(doc.n).padStart(2, "0")}
+              </div>
+
+              <div>
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
+                  <h3 className="text-[1.1rem] font-normal text-[#f8f2eb] transition-colors duration-300 group-hover:text-[#f3d7a3]">
+                    {doc.title}
+                  </h3>
+                  <p className="font-mono text-[0.7rem] text-[#8ba39d]">
+                    {doc.day} · {doc.date}
+                  </p>
+                  <p className="font-mono text-[0.7rem] text-[#f3d7a3]">
+                    ~{doc.mins} min
+                  </p>
+                </div>
+
+                <p className="mt-4 max-w-2xl text-[0.9rem] font-light leading-relaxed text-[#f7efe8]/65">
+                  {doc.summary}
+                </p>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ol>
+
+      <div className="mt-20 border-t border-[#f7efe8]/10" />
+
+      <div className="mt-12">
+        <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
+          <h3 className="text-[1.1rem] font-normal text-[#f8f2eb]">
+            {prework.book.title}
+            <span className="font-light text-[#f7efe8]/60">
+              {" "}
+              — {prework.book.author}
+            </span>
+          </h3>
+          <p className="font-mono text-[0.7rem] text-[#8ba39d]">
+            {prework.book.scope} · ~{prework.book.mins} min
+          </p>
+        </div>
+
+        <p className="mt-4 max-w-2xl text-[0.9rem] font-light leading-relaxed text-[#f7efe8]/65">
+          {prework.book.why}
+        </p>
+
+        <p className="mt-4 text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
+          {prework.book.note}
+        </p>
+      </div>
+    </Section>
   );
 }
 

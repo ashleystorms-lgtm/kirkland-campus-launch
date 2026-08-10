@@ -77,6 +77,7 @@ export const hero = {
 // nav item the way the NYC site groups nothing — your week is longer.
 
 export const navItems = [
+  { label: "Before we start", href: "#prework" },
   { label: "Mon", href: "#monday" },
   { label: "Tue", href: "#tuesday" },
   { label: "Wed", href: "#wednesday" },
@@ -1144,6 +1145,117 @@ export const resources = {
       url: "https://drive.google.com/drive/folders/1bcf5Fu0inQkTUMY-RBcFwPnArVNc7qtc",
     },
   ],
+};
+
+export const prework = {
+  eyebrow: "Before we start",
+  heading: "Read all of this before Monday morning.",
+  intro:
+    "Alpha ran two weeks of staff days in July and early August — Austin, then campus-based — where the org built the Canon, AlphaCore, the behavior policy, the boot camp check charts and the life skills stack for the whole network. We weren't in the room for any of it, because we were running Alpha Summer here in Kirkland.",
+  why:
+    "So this is how we catch up. Everything we build during launch week sits on top of decisions made in these nine days, and you can't adapt a system you've never seen. This isn't background reading — it's the foundation. All of it is required.",
+  totalNote:
+    "Nine summaries, about 90 minutes total. Do it across two weeks rather than the night before — some of it is worth arguing with, and you'll want time to.",
+  docs: [
+    {
+      n: 1,
+      day: "Week 1 · Day 1",
+      date: "Mon Jul 27",
+      title: "Alpha Canon and the three tiers",
+      mins: 5,
+      file: "/docs/staff-days-day-1.pdf",
+      summary:
+        "Why Alpha builds a canon at all, and the three-tier structure every work unit is written in: Tier 1 standard, Tier 2 level flavor, Tier 3 guide magic. Read this first — the tiers come up in everything after it.",
+    },
+    {
+      n: 2,
+      day: "Week 1 · Day 2",
+      date: "Tue Jul 28",
+      title: "BrainLifts, AI and learning science",
+      mins: 5,
+      file: "/docs/staff-days-day-2.pdf",
+      summary:
+        "What a BrainLift is and why it has to be typed by a human. Depth of Knowledge 1 through 4, where AI is strong and where it collapses, and the Me / We / Key framing behind the five signature life skills.",
+    },
+    {
+      n: 3,
+      day: "Week 1 · Day 3",
+      date: "Wed Jul 29",
+      title: "The apps, and the behavioral model introduced",
+      mins: 10,
+      file: "/docs/staff-days-day-3.pdf",
+      summary:
+        "TimeBack, AlphaTalk, StudyFilm and initial mastery. Then the first pass at the behavior curriculum — the five principles, including 95% coaching and 5% enforcement, and why the system is the bad guy rather than any individual adult.",
+    },
+    {
+      n: 4,
+      day: "Week 1 · Day 4",
+      date: "Thu Jul 30",
+      title: "How we talk to parents, and the banger arc",
+      mins: 10,
+      file: "/docs/staff-days-day-4.pdf",
+      summary:
+        "The media rules are the part you're accountable for: never post children on your personal accounts, route any press contact, and no rogue filming. Then the escalation arc that carries a kid from Session 1 to a banger, and the difference between a banger and a booster.",
+    },
+    {
+      n: 5,
+      day: "Week 1 · Day 5",
+      date: "Fri Jul 31",
+      title: "Find Your Feathers, and the boot camp check chart",
+      mins: 10,
+      file: "/docs/staff-days-day-5.pdf",
+      summary:
+        "The root-cause exercise we'll run five times this year, and why averages hide every problem worth finding. Then the boot camp check chart — the instrument a brand-new kid earns their way through, which we adapt during launch week.",
+    },
+    {
+      n: 6,
+      day: "Week 2 · Day 6",
+      date: "Mon Aug 3",
+      title: "What the network fixed, and Guide Platform",
+      mins: 10,
+      file: "/docs/staff-days-day-6.pdf",
+      summary:
+        "The fixes that came out of Feathers across every campus — early flagging, mid-year joiners, buddy systems, workshop skill progression. Plus Guide Platform, which is where your work units, check charts and behavior data all land this year.",
+    },
+    {
+      n: 7,
+      day: "Week 2 · Day 7",
+      date: "Tue Aug 4",
+      title: "The behavior policy, line by line",
+      mins: 10,
+      file: "/docs/staff-days-day-7.pdf",
+      summary:
+        "The most important one on this list. Warnings, yellow cards, red cards, strikes — the first org-wide behavior standard in Alpha's history, argued through line by line. Read it twice if you read anything twice.",
+    },
+    {
+      n: 8,
+      day: "Week 2 · Day 8",
+      date: "Wed Aug 5",
+      title: "The academic model, gate by gate",
+      mins: 15,
+      file: "/docs/staff-days-day-8.pdf",
+      summary:
+        "The densest of the nine. Mastery as the thing that actually makes the model work, why MAP is not a mastery test, where the doom loops come from, and what 2X really means at each level. This is the one to read when you're fresh.",
+    },
+    {
+      n: 9,
+      day: "Week 2 · Day 9",
+      date: "Thu Aug 6",
+      title: "Behavior policy final, and the intervention tiers",
+      mins: 15,
+      file: "/docs/staff-days-day-9.pdf",
+      summary:
+        "What changed after the room pushed back — including smartwatches becoming phones. Then Pirate Ship, behavior support plans and the strike appeal template: what happens for the kid the standard structure isn't working for.",
+    },
+  ],
+  book: {
+    title: "The Fearless Organization",
+    author: "Amy Edmondson",
+    scope: "First 27 pages — through Chapter 1",
+    mins: 45,
+    why: "Six of the eight of us have never run a school year. That only works if this is a room where you can say “I don't understand this” out loud on day two, in front of everyone, without it costing you anything. Edmondson's research is on exactly that — why teams that report more mistakes are usually the better teams, not the worse ones. Thursday's rehearsal day depends on it being true here.",
+    note: "The link comes separately.",
+  },
 };
 
 export const footer =

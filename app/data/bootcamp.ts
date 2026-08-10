@@ -1125,6 +1125,11 @@ export const resources = {
       url: "/docs/kirkland-calendar-26-27.pdf",
     },
     {
+      title: "Y26-27 Workshop Roadmap - Kirkland",
+      description: "The full workshop roadmap for the year, organized by session.",
+      url: "https://docs.google.com/spreadsheets/d/1hvXBrmY8J2AYkOxzi0A3sk5ivVYob_ovzCeSKmGjcSc/edit",
+    },
+    {
       title: "Life Skills Roadmap",
       description: "The roadmap workshops get built from. Start here before Build 2.",
       url: "https://docs.google.com/document/d/1qFV9eqhQ_blv7oijJnYAAtApJIDR6GLEvQ4ZX1HXjx4/edit",

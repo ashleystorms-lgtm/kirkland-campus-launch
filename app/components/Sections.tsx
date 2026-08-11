@@ -96,7 +96,41 @@ function Table({
 export function PreworkSection() {
   return (
     <Section id="prework" eyebrow={prework.eyebrow} heading={prework.heading} wide>
-      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+      <div className="rounded-sm border border-[#e0946a]/30 border-l-4 border-l-[#e0946a] bg-[#f7efe8]/[0.03] px-6 py-8 sm:px-8 sm:py-10">
+        <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-[#e0946a]">
+          {prework.safety.label}
+        </p>
+        <h3 className="mt-3 text-[1.15rem] font-normal text-[#f8f2eb] sm:text-[1.3rem]">
+          {prework.safety.heading}
+        </h3>
+        <p className="mt-4 max-w-3xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
+          {prework.safety.body}
+        </p>
+        <p className="mt-4 max-w-3xl text-[0.92rem] font-normal leading-relaxed text-[#f7efe8]/90">
+          {prework.safety.contact}
+        </p>
+        <ul className="mt-6 grid gap-x-8 gap-y-4 sm:grid-cols-2">
+          {prework.safety.items.map((item) => (
+            <li key={item.title}>
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+              >
+                <span className="text-[0.92rem] font-normal text-[#f8f2eb] transition-colors duration-300 group-hover:text-[#e0946a]">
+                  {item.title}
+                </span>
+                <p className="mt-1 text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/55">
+                  {item.note}
+                </p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <p className="mt-14 max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
         {prework.intro}
       </p>
       <div className="mt-6 border-l-2 border-[#f3d7a3]/40 pl-5">
@@ -143,6 +177,101 @@ export function PreworkSection() {
           </li>
         ))}
       </ol>
+
+      <h3 className="mt-20 mb-3 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+        {prework.levelWork.heading}
+      </h3>
+      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+        {prework.levelWork.intro}
+      </p>
+
+      <div className="mt-6 border-l-2 border-[#f3d7a3]/40 pl-5">
+        <p className="text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
+          {prework.levelWork.warning}
+        </p>
+      </div>
+
+      <p className="mt-4 max-w-2xl text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
+        {prework.levelWork.slackNote}
+      </p>
+
+      <h4 className="mt-10 mb-4 text-[0.95rem] font-normal text-[#f3d7a3]/90">
+        {prework.levelWork.shared.heading}
+      </h4>
+      <ul className="space-y-2.5">
+        {prework.levelWork.shared.items.map((item) => (
+          <li key={item.title}>
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex gap-3 text-[0.88rem] font-light leading-relaxed text-[#f7efe8]/65"
+            >
+              <span
+                aria-hidden="true"
+                className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
+              />
+              <span>
+                <span className="text-[#f7efe8] transition-colors duration-300 group-hover:text-[#f3d7a3]">
+                  {item.title}
+                </span>
+                {" — "}
+                <span className="text-[#f7efe8]/55">{item.note}</span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div className="mt-16 space-y-16">
+        {prework.levelWork.levels.map((level) => (
+          <div key={level.id}>
+            <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 border-t border-[#f7efe8]/10 pt-8">
+              <h3 className="text-[1.1rem] font-normal text-[#f8f2eb]">
+                {level.name}
+              </h3>
+              <p className="font-mono text-[0.7rem] text-[#8ba39d]">
+                {level.channel}
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-x-10 gap-y-10 sm:grid-cols-2">
+              {level.groups.map((group) => (
+                <div key={group.heading}>
+                  <h4 className="mb-4 text-[0.9rem] font-normal text-[#f3d7a3]/90">
+                    {group.heading}
+                  </h4>
+                  <ul className="space-y-3">
+                    {group.items.map((item) => (
+                      <li key={item.title}>
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group block"
+                        >
+                          <span className="text-[0.88rem] font-normal text-[#f7efe8] transition-colors duration-300 group-hover:text-[#f3d7a3]">
+                            {item.title}
+                          </span>
+                          <p className="mt-1 text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/55">
+                            {item.note}
+                          </p>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-16 border-l-2 border-[#f3d7a3]/40 pl-6">
+        <p className="max-w-2xl text-[0.95rem] font-light leading-relaxed text-[#f7efe8]/75">
+          {prework.levelWork.giveBack}
+        </p>
+      </div>
 
       <div className="mt-20 border-t border-[#f7efe8]/10" />
 

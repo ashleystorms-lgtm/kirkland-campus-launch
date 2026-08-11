@@ -117,7 +117,7 @@ export const days: Day[] = [
     title: "Foundation",
     thesis: "Understand what we're building before we build it.",
     point:
-      "Six of you have never run a school year. Today isn't about mastering anything — it's about seeing the whole shape of the thing once, so the rest of the week has somewhere to land. CeCe is here to start workshops, the one piece built from scratch this week and the one with the longest tail.",
+      "Most of us are walking into our first Alpha school year. Today isn't about mastering anything — it's about seeing the whole shape of the thing once, so the rest of the week has somewhere to land. CeCe is here to start workshops, the one piece built from scratch this week and the one with the longest tail.",
     theme: {
       name: "Sunrise",
       accent: "#f3d7a3",
@@ -449,7 +449,7 @@ export const days: Day[] = [
     title: "Rehearse",
     thesis: "Run it badly here, not Monday in front of children.",
     point:
-      "Everything so far has been explained. Today it gets performed. Every guide runs a real work unit in front of the room and gets coached on it, out loud, in front of people. Middle school goes first — Aidan and Erin have the hardest room in the building and no returner in their pair.",
+      "Everything so far has been explained. Today it gets performed. Every guide runs a real work unit in front of the room and gets coached on it, out loud, in front of people. Middle school goes first, because it's the room where the first ten minutes set the tone for the year.",
     theme: {
       name: "Lichen",
       accent: "#cbcb96",
@@ -476,7 +476,7 @@ export const days: Day[] = [
         end: "12:00p",
         title: "Work unit reps · round 1",
         kind: "workUnit",
-        owner: "MS first, then L2, L1, LL",
+        owner: "MS first, then L2, L1, LL — everyone runs one",
         detail: [
           "Real delivery, full spec, coached out loud in front of the room.",
           "Say it to the face. Brutally honest without being brutal — practise it on each other before you practise it on a kid.",
@@ -790,7 +790,7 @@ export const prep = {
   eyebrow: "Prep & Who Runs What",
   heading: "Who's on the floor, and what has to be true before Monday.",
   distributionRule:
-    "Two of eight guides have run a school year. That changes who delivers what: most of this week is Ashley and CeCe at the front, which is unusual for an Alpha bootcamp and deliberate here. Sanura and Kris take the two work units guides run most, and by Thursday every guide is delivering rather than listening. The goal by Friday isn't that the room has been told things — it's that eight people have run the units, built the workshops, and set their own rooms.",
+    "Two guides on this team have run an Alpha school year before. That changes who delivers what: most of this week is Ashley and CeCe at the front. Sanura and Kris take the two work units guides run most, and by Thursday every guide is delivering rather than listening. The goal by Friday isn't that the room has been told things — it's that eight people have run the units, built the workshops, and set their own rooms.",
 
   floor: [
     {
@@ -1155,6 +1155,36 @@ export const resources = {
 export const prework = {
   eyebrow: "Before we start",
   heading: "Read all of this before Monday morning.",
+  safety: {
+    label: "Required · deadline set by the org",
+    heading: "Reporting suicidal ideation and self-harm",
+    body:
+      "Every guide reviews this before the end of week 2. It came from Matt Shenker to all leads, and it is the one item on this page with a deadline set outside this campus.",
+    contact:
+      "At Kirkland: tell Ashley immediately, then follow the workflow. David Cooney is Alpha's school psychologist and the referral point. You are never expected to handle one of these conversations alone, and you never need to be certain before you say something — reporting a concern that turns out to be nothing is always the right call.",
+    items: [
+      {
+        title: "Video overview",
+        note: "How guides must respond to any suicide-related statement or self-harm concern. Start here.",
+        url: "https://www.loom.com/share/f4a76eb6d6be4d35a40de3c2c0aab230",
+      },
+      {
+        title: "Suicidal Ideation Reporting Workflow",
+        note: "The steps, in order.",
+        url: "https://docs.google.com/document/d/17nxH641gFAhEfLlBPG20NPldCyJuVHvKs0DftvNFNIo/edit",
+      },
+      {
+        title: "Suicidal Ideation and Self-Harm Scenarios",
+        note: "Worked examples. Read these — they're what make the workflow usable under pressure.",
+        url: "https://docs.google.com/document/d/1MYrAduTacqSqC75ScU1w15d-flYWKlY89CjKtPWcymY/edit",
+      },
+      {
+        title: "Student Safety Quick Reference",
+        note: "The one to keep somewhere you can reach in seconds. Print it.",
+        url: "https://docs.google.com/document/d/1EII9fX7vkQ_J_FpDBP8Pq4cCaz3GOMy-nx_HE2VHf3Q/edit",
+      },
+    ],
+  },
   intro:
     "Alpha ran two weeks of staff days in July and early August — Austin, then campus-based — where the org built the Canon, AlphaCore, the behavior policy, the boot camp check charts and the life skills stack for the whole network. We weren't in the room for any of it, because we were running Alpha Summer here in Kirkland.",
   why:
@@ -1263,12 +1293,364 @@ export const prework = {
         "A level-by-level walkthrough of what came out of staff days across the whole network — what changed, and what it means depending on which level you guide.",
     },
   ],
+  levelWork: {
+    heading: "What the rest of the network already built",
+    intro:
+      "Every other campus was in the room for staff days, and they shared almost everything they made. Take what's useful — nobody expects you to build from scratch what someone else already built well. Read your own level's list before Monday. You don't need the other three.",
+    warning:
+      "The bootcamp time budget is roughly 15 hours per level. L2 already reported coming in at double that. Check your total before you commit to adapting anything.",
+    slackNote:
+      "Slack file links only open if you're signed in to Alpha Slack. If one won't load, search the file name in the channel.",
+
+    shared: {
+      heading: "Everyone reads these",
+      items: [
+        {
+          title: "Bootcamp Check Chart · All Levels · SY26-27",
+          note: "The master build doc. Every level's checks in one sheet. This is the thing we adapt on Wednesday.",
+          url: "https://docs.google.com/spreadsheets/d/1Wj9mYrneOnVVtNbXXOpRdy6A9c6Rqpjgxawesd_f46Y/edit",
+        },
+        {
+          title: "Behavior Curriculum",
+          note: "The 95% — the teaching half of the behavioral model, before any consequence exists.",
+          url: "https://docs.google.com/spreadsheets/d/1DOnw2lRleTBBkfOsVra_vZQktNf9U9YzwUMWf6V5F38/edit",
+        },
+        {
+          title: "Banger pitches from staff days",
+          note: "Every campus's pitches in one place. Worth twenty minutes before you build a single workshop.",
+          url: "https://banger-pitches-staff-days.pplx.app/#/",
+        },
+        {
+          title: "Find Your Feathers",
+          note: "The root-cause tool. We run it every session, kid by kid — never grouped.",
+          url: "https://alpha-feathers.vercel.app/#/",
+        },
+      ],
+    },
+
+    levels: [
+      {
+        id: "LL",
+        name: "LL · Learning Lab",
+        channel: "#k-1-guides",
+        groups: [
+          {
+            heading: "Bootcamp check charts",
+            items: [
+              {
+                title: "Hannah Burkhauser's two-week bingo structure",
+                note: "The best thinking in the channel. One double-sided sheet — kid's bingo card on the front, guide's evidence log on the back. Two cards: week 1 is the on-ramp of routines and quick wins, week 2 is the real AlphaChecks once the room already runs itself.",
+                url: "https://canva.link/f7rc3chare1co8r",
+              },
+              {
+                title: "Grade K Bootcamp BINGO",
+                note: "Caitlin Calzadilla. Finished and printable. The blank circles show how many times a guide must observe the behaviour before the check is earned.",
+                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BNUAM4DND/grade_k_bootcamp_bingo.png.pdf",
+              },
+              {
+                title: "Grade 1 Bootcamp BINGO",
+                note: "Caitlin Calzadilla.",
+                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BNW3EMULU/grade_1_bootcamp_bingo.png.pdf",
+              },
+              {
+                title: "Mood Meter AlphaCheck (LLKIN05)",
+                note: "Bryce Derry. A worked example of what a finished check doc looks like.",
+                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BNAFLR5RP/llkin05_-_alphacheck_-_mood_meter",
+              },
+            ],
+          },
+          {
+            heading: "Day one launches",
+            items: [
+              {
+                title: "Friendship Islands",
+                note: "Vanessa Watson. A socialization launch built for the first day when nobody knows anybody. Hula hoops as islands. Directly usable Sept 8.",
+                url: "https://canva.link/odzupcjtouy2fzp",
+              },
+              {
+                title: "This or That · Friendship Edition",
+                note: "Vanessa Watson. The other day-one socialization launch.",
+                url: "https://canva.link/dcsni706ca8jw4f",
+              },
+            ],
+          },
+          {
+            heading: "Posters",
+            items: [
+              {
+                title: "Learning Lab Behavior Poster",
+                note: "Raya Belton, iterated on channel feedback.",
+                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BN41GM7RD/learning_lab_behavior_poster.png",
+              },
+              {
+                title: "LL Giving & Receiving Feedback",
+                note: "Vanessa Watson.",
+                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BP1T52ZDJ/ll_giving___receiving_feedback",
+              },
+            ],
+          },
+          {
+            heading: "Workshops",
+            items: [
+              {
+                title: "LL Workshop Ideas",
+                note: "The shared brainstorm sheet, colour-coded to show connections between workshops.",
+                url: "https://docs.google.com/spreadsheets/d/1BHMkZ_GW8S-YIkK4eznO7Ou0bdHr-mUXY6HF9W2dQmE/edit",
+              },
+              {
+                title: "Road Map Ideas",
+                note: "Lauren Sprouse's notes from the roadmap session.",
+                url: "https://docs.google.com/document/d/1L317ut3_3kWbVetISKDnd2oSOltyY7ccvpffAGd5LJo/edit",
+              },
+              {
+                title: "Articulate Artist · Guide's Guide",
+                note: "Darby Knox. Read it as a format example as much as a workshop.",
+                url: "https://docs.google.com/document/d/12Kz5bBBLaM8XtQsZgpc6uKcGBrnI4Vs2yuym2V_Zu2I/edit",
+              },
+              {
+                title: "Ground Control · Guide's Guide",
+                note: "Patty Kelley.",
+                url: "https://docs.google.com/document/d/1s6XRKGA4yFfvLf0cehPVXpV1wjWlCfFtkzcwmbP5tg8/edit",
+              },
+              {
+                title: "WL Grit · The Wipeout Club",
+                note: "Cassie Blessing's banger pitch.",
+                url: "https://guides-guide-app.vercel.app/pitches/8a7ad439-19ee-4848-a841-aedbae415c71",
+              },
+            ],
+          },
+        ],
+      },
+
+      {
+        id: "L1",
+        name: "L1",
+        channel: "#2-3-guides",
+        groups: [
+          {
+            heading: "Bootcamp check charts",
+            items: [
+              {
+                title: "Bootcamp check chart tracking app",
+                note: "Scott Dangerfield built it to take the tracking lift off guides. Two Loom tutorials in the channel.",
+                url: "https://bootcampcheckchart.lovable.app",
+              },
+              {
+                title: "L1 Bootcamp BINGO · Grade 2",
+                note: "England Reddy. No guide check-off column — Guide Platform handles that.",
+                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BNK7V92GM/l1_bootcamp_bingo_grade2.pdf",
+              },
+              {
+                title: "L1 Bootcamp BINGO · Grade 3",
+                note: "England Reddy.",
+                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BNSCM6JJ0/l1_bootcamp_bingo_grade3.pdf",
+              },
+            ],
+          },
+          {
+            heading: "Ready-made check worksheets",
+            items: [
+              {
+                title: "Independence",
+                note: "Tamara Friend. All of these are Canva and editable — make a copy first.",
+                url: "https://canva.link/c5srbvbnf177hqu",
+              },
+              {
+                title: "Upholding community standards · cleaning up messes",
+                note: "Tamara Friend.",
+                url: "https://canva.link/p9pus0lafkv45au",
+              },
+              {
+                title: "TimeBack readiness",
+                note: "Tamara Friend.",
+                url: "https://canva.link/rf6xhksaansuxte",
+              },
+              {
+                title: "SMART goals",
+                note: "Tamara Friend.",
+                url: "https://canva.link/dkw47wtmtjqj43d",
+              },
+              {
+                title: "Student launch planning worksheet",
+                note: "Tamara Friend. For when kids start running their own launches.",
+                url: "https://canva.link/5w7uxpaxghflk2i",
+              },
+              {
+                title: "Puzzle activity as a launch",
+                note: "Tamara Friend.",
+                url: "https://canva.link/rsopg0p198kndvl",
+              },
+              {
+                title: "Tech Troubleshooting Menu",
+                note: "Faith Crenshaw, Grade 2.",
+                url: "https://canva.link/wgduf9sqrra0dk9",
+              },
+              {
+                title: "Steps to TimeBack Learning",
+                note: "Faith Crenshaw.",
+                url: "https://canva.link/bn5ztmb3pbb430i",
+              },
+              {
+                title: "Hello Passport Pal",
+                note: "An app for the “hello in ten languages” check. 25 countries, no login, and a practice mode before the test.",
+                url: "https://hello-passport-pal.lovable.app/",
+              },
+            ],
+          },
+          {
+            heading: "Motivation and behaviour",
+            items: [
+              {
+                title: "L1/L2 Session 1 Rewards Map",
+                note: "England Reddy. Some parts deliberately don't start until after week 4.",
+                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BNNFQ6F6F/l1_l2_session1_rewards_map.pdf",
+              },
+              {
+                title: "Behavior Chart",
+                note: "Christi Gordon, Scottsdale. Printed and laminated, used as a visual so the student names which bucket their behaviour fell into. Includes the setting, discussion prompt and next steps.",
+                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BNRJZ4L2H/behavior_chart.pdf",
+              },
+            ],
+          },
+          {
+            heading: "Workshops",
+            items: [
+              {
+                title: "Grit Games",
+                note: "Mia Schaubhut and Jacob Frisch. A Survivor-style teamwork competition run at L1 Austin last year, written up as a memo. She's explicitly asked another campus to take it and make it better.",
+                url: "https://docs.google.com/document/d/1kk2XkpJeJ1un-OXHmcSUCbZObDOdwFDAmOV7ocFXyLw/edit",
+              },
+            ],
+          },
+        ],
+      },
+
+      {
+        id: "L2",
+        name: "L2",
+        channel: "#4-5-guides",
+        groups: [
+          {
+            heading: "Start here",
+            items: [
+              {
+                title: "Launches Forever 26-27",
+                note: "Grant Cain's full set of proven launches for this age band, each with the growth-mindset principle and the questions kids should be asking at the end. The best single artifact in any of the four channels. Most need 5–15 minutes of setup — not a last-minute resource. Make a copy before editing.",
+                url: "https://docs.google.com/presentation/d/1hqKMgFhpwGyGTo1RDYsoAJfo_msEb6fTv5HxnyGOJ1Y/edit",
+              },
+            ],
+          },
+          {
+            heading: "Bootcamp check charts",
+            items: [
+              {
+                title: "L2 Bootcamp BINGO · Grade 4",
+                note: "England Reddy.",
+                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BNQRBLNG5/l2_bootcamp_bingo_grade4_1.pdf",
+              },
+              {
+                title: "L2 Bootcamp BINGO · Grade 5",
+                note: "England Reddy.",
+                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BNW854881/l2_bootcamp_bingo_grade5.pdf",
+              },
+              {
+                title: "5th Grade Independence Scavenger Hunt",
+                note: "Erin Colucci built it in GooseChase. Ten missions — five on campus, five at a local mall — and each completed mission unlocks the next.",
+                url: "https://join.goosechase.com/6dd61b18-bb5d-4e72-9c6c-5a495644f036",
+              },
+              {
+                title: "5th TED Talk GPT Prompt",
+                note: "Sunny Lulla, for the public speaking check.",
+                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BN0GM7EKC/5th_ted_talk_gpt_prompt.pdf",
+              },
+            ],
+          },
+          {
+            heading: "Posters",
+            items: [
+              {
+                title: "Tier 1 XP / Alphas poster",
+                note: "Jen Greenham.",
+                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BNWB36CCD/image.png",
+              },
+              {
+                title: "Behavior poster · L2 version",
+                note: "Jen Greenham, adapted from the LL one.",
+                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BNW09FWV7/chatgpt_image_aug_7__2026__01_40_46_pm.png",
+              },
+              {
+                title: "L1/L2 Session 1 Rewards Map",
+                note: "England Reddy.",
+                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BNUMMCKDY/l1_l2_session1_rewards_map.pdf",
+              },
+            ],
+          },
+        ],
+      },
+
+      {
+        id: "MS",
+        name: "MS · Middle School",
+        channel: "#6-8-guides",
+        groups: [
+          {
+            heading: "The tooling",
+            items: [
+              {
+                title: "Alpha Project Hub",
+                note: "Drew Casebier's student-facing bootcamp check chart — one place for students to submit everything. Sign in as a student to look around. The guide-facing side is still coming.",
+                url: "https://alpha-project-hub.vercel.app/",
+              },
+              {
+                title: "Bootcamp check chart, tied to Guide Platform",
+                note: "Version one, posted Aug 10 by Drew with Alec Ngai. Feedback wanted.",
+                url: "https://bootcamp-checkchart-testing-ground-alecs-projects-fa314c7a.vercel.app/",
+              },
+              {
+                title: "MAX · MVP",
+                note: "Includes the updated MS check chart and what MAX looks like inside it.",
+                url: "https://max-mvp.vercel.app/",
+              },
+              {
+                title: "MS Bootcamp Check Chart · SY26-27",
+                note: "Santi Orozco's sheet.",
+                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BLT556W4F/ms_bootcamp_check_chart____sy26-27",
+              },
+            ],
+          },
+          {
+            heading: "Read the argument before you meet your kids",
+            items: [
+              {
+                title: "Derek Kim vs. Drew Casebier on MAX · in #6-8-guides, Aug 7",
+                note: "Derek pushed back that the Connect and Deploy checks imply a single project focus, when the intent was broad exploration across domains — so kids reach AlphaX with a portfolio and a sense of what they actually like, rather than having picked one thing early. Unresolved, and it's the only MAX messaging kids get in Session 1.",
+                url: "https://go-alpha.slack.com/archives/C098R4ETVLK",
+              },
+            ],
+          },
+          {
+            heading: "Posters",
+            items: [
+              {
+                title: "MS behavior model posters",
+                note: "Caitlin deMello, four variants in the channel.",
+                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BNRV38MM3/chatgpt_image_aug_7__2026__01_44_28_pm__1_.png",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+
+    giveBack:
+      "Two questions in those channels are still unanswered — a Guide's Guide for a middle school camping independence workshop, and behaviour posters with worked yellow, red and strike examples. We've been quiet in these channels all summer because we were running camp. Answering one is a cheap way to start showing up in these channels as a campus that contributes.",
+  },
   book: {
     title: "The Fearless Organization",
     author: "Amy Edmondson",
     scope: "First 27 pages — through Chapter 1",
     mins: 45,
-    why: "Six of the eight of us have never run a school year. That only works if this is a room where you can say “I don't understand this” out loud on day two, in front of everyone, without it costing you anything. Edmondson's research is on exactly that — why teams that report more mistakes are usually the better teams, not the worse ones. Thursday's rehearsal day depends on it being true here.",
+    why: "Most of this team is starting their first school year at Alpha together. That only works if this is a room where you can say “I don't understand this” out loud on day two, in front of everyone, without it costing you anything. Edmondson's research is on exactly that — why teams that report more mistakes are usually the better teams, not the worse ones. Thursday's rehearsal day depends on it being true here.",
     note: "The link comes separately.",
   },
 };

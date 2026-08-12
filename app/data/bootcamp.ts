@@ -330,12 +330,27 @@ export const days: Day[] = [
         owner: "Ashley, then level pairs",
         detail: [
           "The org's model, adapted to your level. XP, Alpha Bucks, badges, the economy, the ceremonies — what a kid earns, sees, spends and feels.",
+          "Build against this year's rules, not last year's. Alphas are now paid for XP only — not check charts, not campus jobs — and only on days a student hits 120 XP, except LL. No debit cards for middle school.",
+          "MAP is separate and level-dependent. For the fall round, only grades 4-8 get an achievement-based model; every other level simply sets a baseline. Growth-based models for everyone start in winter. Payout amounts sit in the MAP work unit under Tier 2. Our MAP runs Sept 15-18, so the model gets built here and used in week two.",
         ],
-        output: "A reward ladder per level. Org deliverable.",
+        output: "A reward ladder per level, plus a fall MAP approach for the levels that need one. Org deliverable.",
+      },
+      {
+        id: "tue-roadmap",
+        start: "4:15p",
+        end: "4:45p",
+        title: "26-27 Workshop Roadmap",
+        kind: "build",
+        owner: "Level pairs",
+        detail: [
+          "Copy the org's roadmap sheet, fill it in for your level, and link it on Kirkland's row of the S1 Guide Deliverables sheet, column J. The link is in Resources.",
+          "This does not lock you in. The point is showing the life skills threads and arcs taking shape across the year — workshop names can be generic if you don't have one yet. The AlphaTest cell is the one that matters: one sentence naming the specific, measurable bar a student has to clear.",
+        ],
+        output: "A workshop roadmap per level, linked on the deliverables tab. Org deliverable.",
       },
       {
         id: "tue-schedules",
-        start: "4:15p",
+        start: "4:45p",
         end: "5:00p",
         title: "S1 Daily + Weekly Schedule",
         kind: "build",
@@ -379,14 +394,15 @@ export const days: Day[] = [
         id: "wed-workshops-final",
         start: "9:00a",
         end: "12:00p",
-        title: "Workshops finalized",
+        title: "Workshops committed",
         kind: "build",
         owner: "Level pairs, CeCe",
         detail: [
           "Four per level minimum. Independence, Giving and Receiving Feedback, and Upholding Community Standards all covered, with the double-up where your level needs it.",
           "Everything submitted with a real vendor, a real cost, and a place in the session calendar.",
+          "Committed, not drafted. Across the network there are hundreds of workshop pitches saved in the Guide's Guide builder and only a fraction actually committed — and committing is what sends the data to Guide Platform. A drafted workshop does not exist as far as the system is concerned. Hit commit before you leave this block.",
         ],
-        output: "The workshop bank closes at noon. Vendored, costed, sequenced.",
+        output: "The workshop bank closes at noon. Vendored, costed, sequenced, and committed in the builder.",
       },
       { id: "wed-lunch", start: "12:00p", title: "Lunch", kind: "meal" },
       {
@@ -584,7 +600,8 @@ export const days: Day[] = [
         kind: "session",
         owner: "Ashley + level leads",
         detail: [
-          "Every org deliverable submitted: S1 daily and weekly schedules, bootcamp launches, motivational model, workshops, bootcamp Townhall plan, Meet the Guides deck.",
+          "Every org deliverable submitted: S1 daily and weekly schedules, bootcamp launches, motivational model, workshops committed in the builder, the 26-27 workshop roadmap linked on the deliverables tab, bootcamp Townhall plan, Meet the Guides deck.",
+          "Submitted means linked on Kirkland's row of the S1 Guide Deliverables sheet. A finished artifact sitting in someone's Drive is not submitted.",
         ],
         output: "A gap list with owners and order-by dates for anything still outstanding.",
       },
@@ -619,7 +636,7 @@ export const builds: Build[] = [
     summary:
       "Four minimum per level this session. Independence, Giving and Receiving Feedback, and Upholding Community Standards all covered, doubling up on whichever your level needs most to start the year. The one thing this week we build from scratch — which is why CeCe is on site and why it gets three separate blocks.",
     output:
-      "The workshop bank closes Wednesday at noon. Vendored, costed, sequenced into sessions. Nothing gets ordered until it closes.",
+      "The workshop bank closes Wednesday at noon. Vendored, costed, sequenced into sessions, and committed in the Guide's Guide builder — drafted isn't committed, and only committed workshops reach Guide Platform. Nothing gets ordered until it closes.",
   },
   {
     n: 2,
@@ -1114,6 +1131,11 @@ export const resources = {
   heading: "Everything you'll need open in a tab.",
   note: "These live in Google Drive and are shared across Alpha campuses. Sign in with your Alpha account.",
   items: [
+    {
+      title: "S1 Guide Deliverables · where everything gets submitted",
+      description: "The org's tracking sheet. Every deliverable we build this week gets linked on Kirkland's row here — that's what submitted means. The 26-27 workshop roadmap goes in column J. Nothing counts until it's on this sheet.",
+      url: "https://docs.google.com/spreadsheets/d/10J5Uwd6jmgzEEwI2fVeFigQBDXCixtA8ToC07ZUYVE8/edit",
+    },
     {
       title: "Week 1, Session 1 · Student Onboarding",
       description: "The dashboard you run your first three days from. Calendar B is ours — Sept 8-10. Mornings run as normal; afternoons are onboarding and Workshop Sprints, one life skill per day, ending with an off-campus community standards sprint.",

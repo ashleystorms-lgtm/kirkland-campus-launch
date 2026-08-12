@@ -185,13 +185,134 @@ export function PreworkSection() {
         {prework.levelWork.intro}
       </p>
 
-      <div className="mt-6 border-l-2 border-[#f3d7a3]/40 pl-5">
+      <div className="mt-10 border-l-2 border-[#f3d7a3] pl-6">
+        <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-[#f3d7a3]">
+          {prework.levelWork.whatsNew.date}
+        </p>
+        <h3 className="mt-3 text-[1.05rem] font-normal text-[#f8f2eb]">
+          {prework.levelWork.whatsNew.heading}
+        </h3>
+        <p className="mt-3 max-w-2xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
+          {prework.levelWork.whatsNew.body}
+        </p>
+
+        <h4 className="mt-8 mb-4 text-[0.95rem] font-normal text-[#f3d7a3]/90">
+          {prework.levelWork.whatsNew.doFirst.heading}
+        </h4>
+        <div className="grid gap-x-8 gap-y-8 sm:grid-cols-3">
+          <div>
+            <h5 className="mb-3 text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
+              Before Aug 31
+            </h5>
+            <ul className="space-y-2.5">
+              {prework.levelWork.whatsNew.doFirst.before.map((item) => (
+                <li
+                  key={item}
+                  className="flex gap-3 text-[0.85rem] font-light leading-relaxed text-[#f7efe8]/65"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h5 className="mb-3 text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
+              During the week
+            </h5>
+            <ul className="space-y-2.5">
+              {prework.levelWork.whatsNew.doFirst.during.map((item) => (
+                <li
+                  key={item}
+                  className="flex gap-3 text-[0.85rem] font-light leading-relaxed text-[#f7efe8]/65"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h5 className="mb-3 text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
+              Between now and Sept 8
+            </h5>
+            <ul className="space-y-2.5">
+              {prework.levelWork.whatsNew.doFirst.after.map((item) => (
+                <li
+                  key={item}
+                  className="flex gap-3 text-[0.85rem] font-light leading-relaxed text-[#f7efe8]/65"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <ul className="mt-8 space-y-4">
+          {prework.levelWork.whatsNew.items.map((item) => (
+            <li key={item.title}>
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+              >
+                <span className="text-[0.92rem] font-normal text-[#f8f2eb] transition-colors duration-300 group-hover:text-[#f3d7a3]">
+                  {item.title}
+                </span>
+                <p className="mt-1 max-w-2xl text-[0.85rem] font-light leading-relaxed text-[#f7efe8]/55">
+                  {item.note}
+                </p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="mt-14 border-l-2 border-[#f3d7a3]/40 pl-5">
         <p className="text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
           {prework.levelWork.warning}
         </p>
       </div>
 
-      <p className="mt-4 max-w-2xl text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
+      <h3 className="mt-14 mb-3 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+        {prework.levelWork.channels.heading}
+      </h3>
+      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+        {prework.levelWork.channels.body}
+      </p>
+      <ul className="mt-6 space-y-3">
+        {prework.levelWork.channels.items.map((item) => (
+          <li key={item.title}>
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-wrap items-baseline gap-x-3 gap-y-1"
+            >
+              <span className="font-mono text-[0.85rem] text-[#f7efe8] transition-colors duration-300 group-hover:text-[#f3d7a3]">
+                {item.title}
+              </span>
+              <span className="text-[0.82rem] font-light text-[#f7efe8]/55">
+                {item.note}
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <p className="mt-8 max-w-2xl text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
         {prework.levelWork.slackNote}
       </p>
 

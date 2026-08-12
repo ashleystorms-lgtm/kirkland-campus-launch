@@ -1302,6 +1302,116 @@ export const prework = {
     slackNote:
       "Slack file links only open if you're signed in to Alpha Slack. If one won't load, search the file name in the channel.",
 
+    channels: {
+      heading: "Go to the source",
+      body:
+        "This page is a snapshot, and it goes stale fast. The network posts to these channels every day — and Calendar A campuses started school on August 12, four weeks ahead of us, which means they are hitting every first-week problem right now and writing it down. That is four weeks of other people's mistakes, free, and it expires on September 8. Check your channel before you build anything.",
+      items: [
+        { title: "#prek-12-guides", note: "Everyone. Announcements, academic updates, cross-level resources.", url: "https://go-alpha.slack.com/archives/C08EYUB0WP8" },
+        { title: "#k-1-guides", note: "LL", url: "https://go-alpha.slack.com/archives/C0990STD53J" },
+        { title: "#2-3-guides", note: "L1", url: "https://go-alpha.slack.com/archives/C098988MAQK" },
+        { title: "#4-5-guides", note: "L2", url: "https://go-alpha.slack.com/archives/C098TGTK6DB" },
+        { title: "#6-8-guides", note: "MS", url: "https://go-alpha.slack.com/archives/C098R4ETVLK" },
+        { title: "Day one, as Calendar A ran it", note: "Aug 12 in #prek-12-guides: new students had no tests or apps in TimeBack on day one except Fast Math, because MAP came first — so the Core Skills block needed filling. The advice was to get every kid logged into their device and TimeBack to surface problems early, then onto Fast Math. Worth reading the whole day-one thread before Sept 8.", url: "https://go-alpha.slack.com/archives/C08EYUB0WP8" },
+        { title: "#guide-platform-support", note: "Anything broken in Guide Platform. Post here rather than DMing Alec — he watches this channel, and a fix helps everyone.", url: "https://go-alpha.slack.com/archives/C0B8EPYBVB6" },
+      ],
+    },
+
+    whatsNew: {
+      date: "Updated August 12",
+      heading: "What changed this week",
+      body:
+        "Several of these change decisions we make during launch week. Read this section even if you read the rest already.",
+      doFirst: {
+        heading: "In priority order",
+        before: [
+          "Watch Alec's eight-minute Guide Platform video. It's the shortest path to understanding where all of your work lands.",
+          "Read the academic updates doc — placement, MAP and the new apps.",
+          "Note the Alpha payout change. It affects the motivational model we build on Tuesday, and building against last year's rules means rebuilding it.",
+          "MS: read the Playbook site and join one of Drew's office hours.",
+        ],
+        during: [
+          "Carson's print folder and the print-formatted check charts feed Friday's Set the Space directly. Take what fits rather than designing from scratch.",
+          "Katie Boye's four intro decks map onto our first three days almost exactly. Adapt them.",
+        ],
+        after: [
+          "Keep watching the channels between now and September 8. Calendar A is four weeks ahead of us and is finding every problem in the first-days plan right now. That is four weeks of other people's mistakes, free, and it expires the day our kids arrive.",
+        ],
+      },
+      items: [
+        {
+          title: "Watch this first · Guide Platform in 8 minutes",
+          note: "Alec Ngai's walkthrough of the system every piece of your work lands in — notes and shout-outs, the behavior ladder, voice memos that sort themselves to the right kid, student profiles, bootcamp check charts, workshops and 3Cs. Watch it before August 31.",
+          url: "https://www.loom.com/share/73cb8690df234d23a7e5ae6bd54eeb39",
+        },
+        {
+          title: "Guide Platform · guide sign-in",
+          note: "Your side of it. Sign in with your school Google account.",
+          url: "https://alpha-guide-platform.vercel.app",
+        },
+        {
+          title: "Guide Platform · student sign-in",
+          note: "Where kids go to reach their own check chart — same school Google account they use for TimeBack, no new password. Star each kid's top 3 checks before they log in so they see their focus straight away. Alec suggests one 10-minute moment where everyone signs in together. PreK–2 is guide-run: littles don't log in, you tick the steps and add photo or video proof yourself.",
+          url: "https://alpha-guide-platform.vercel.app/student/login",
+        },
+        {
+          title: "Academic updates · placement, MAP and the new apps",
+          note: "MAP is now the first step in placement (ours runs Sept 15–18). Placement no longer drops a student to the bottom — below 90% steps down one grade at a time until they hit a grade they've mastered. New apps: AlphaScience, AlphaMath, Math Raiders. XP and the two-hour block are unchanged.",
+          url: "https://docs.google.com/document/d/1lZjWanACDOHquLoRqbPfQdk9I_kGbkGv04Ky-Aezvlc/edit",
+        },
+        {
+          title: "Alpha payout has changed — this affects Tuesday's build",
+          note: "Alphas are now paid for XP only, not for check charts and not for campus jobs, and only on days a student hits 120 XP (except LL). No debit cards for middle school. Build the motivational model against these rules, not last year's.",
+          url: "https://go-alpha.slack.com/archives/C08EYUB0WP8",
+        },
+        {
+          title: "Check chart and leveling-up policy",
+          note: "A student who didn't finish last year's chart stays in their level until the remaining relevant checks are done. A student who is behind does the bootcamp chart for the level they're currently in, not the next one. Unfinished regular check chart work is homework, not bootcamp time. Catching up before week 4 of Session 1 can move them up, but they complete the new level's full bootcamp.",
+          url: "https://go-alpha.slack.com/archives/C08EYUB0WP8",
+        },
+        {
+          title: "First three days · Alpha Bootcamp",
+          note: "Katie Boye's Canva slides, built for exactly these three days. Geared to older kids — copy and adapt. Scott Dangerfield has an L1 version in #2-3-guides.",
+          url: "https://canva.link/434kw1329j0jc09",
+        },
+        {
+          title: "First three days · Core Life Skills intro",
+          note: "Katie Boye.",
+          url: "https://canva.link/mi0esy94ldf40ov",
+        },
+        {
+          title: "First three days · Behavioral Model intro",
+          note: "Katie Boye. Pairs with the behavior policy from staff days Day 7 and Day 9.",
+          url: "https://canva.link/p0r098b5c2ebi9c",
+        },
+        {
+          title: "First three days · Giving and Receiving Feedback intro",
+          note: "Katie Boye. One of the three life skills every level builds workshops for.",
+          url: "https://canva.link/uywfvsquuyxmz5l",
+        },
+        {
+          title: "Everything one campus is printing for their spaces",
+          note: "Carson Lehmann's full print folder. The most directly useful thing here for Friday's Set the Space — take what fits rather than designing it from scratch.",
+          url: "https://drive.google.com/drive/folders/1ktQAdeUf58ynJXTkN7Ar5VESGs5UUJYW",
+        },
+        {
+          title: "Check charts formatted for print",
+          note: "England Reddy posted K–5 charts sized 30x40, and Prathima Venkatesan posted 6–8 plus MAX sized 30x20. Both are file posts in #prek-12-guides — search “formatted for print” in the channel. Katie Boye also made designed MS versions with higher-quality print files.",
+          url: "https://go-alpha.slack.com/archives/C08EYUB0WP8",
+        },
+        {
+          title: "How to print a good poster from an AI image",
+          note: "Scott Dangerfield's workflow: make the image in ChatGPT or any LLM, upscale it with Krea (krea.ai/enhancer) so it doesn't print blurry, upload to Photo Prints Now, then pick up and pay at CVS. Useful for Friday.",
+          url: "https://www.krea.ai/enhancer",
+        },
+        {
+          title: "MAP practice before the real thing",
+          note: "Jen Greenham runs the tools and practice test with students the day before, so they're fighting the questions rather than the interface.",
+          url: "https://warmup.nwea.org/app/gradetwoplus/gradeTwoPlus.html",
+        },
+      ],
+    },
+
     shared: {
       heading: "Everyone reads these",
       items: [
@@ -1332,6 +1442,7 @@ export const prework = {
       {
         id: "LL",
         name: "LL · Learning Lab",
+        guides: "Esther + Olivia",
         channel: "#k-1-guides",
         groups: [
           {
@@ -1356,6 +1467,36 @@ export const prework = {
                 title: "Mood Meter AlphaCheck (LLKIN05)",
                 note: "Bryce Derry. A worked example of what a finished check doc looks like.",
                 url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BNAFLR5RP/llkin05_-_alphacheck_-_mood_meter",
+              },
+            ],
+          },
+          {
+            heading: "New · the first three days",
+            items: [
+              {
+                title: "Mini Bootcamp Bingo",
+                note: "Caitlin Calzadilla built this for the exact gap where check chart time exists but students haven't learned enough routine to earn the real checks yet. They pick a task, do it independently, clean up, add a sticker — learning how the check chart works while getting to know the room. Finishing it rings a gong and earns their first Polaroid for the Brag Wall.",
+                url: "https://go-alpha.slack.com/archives/C0990STD53J",
+              },
+              {
+                title: "Sink or Sail · independence mini-workshop",
+                note: "Caitlin Calzadilla. Build a boat that keeps four toy bears afloat for ten seconds, then level up the challenge if they finish early.",
+                url: "https://docs.google.com/document/d/1WUwScj65gqv_uMsG75vObZedCjyecKje2Yl3_ADj-RU/edit",
+              },
+              {
+                title: "Sink or Sail · slides",
+                note: "The Canva that goes with it.",
+                url: "https://canva.link/2o9956uqu2tv2uf",
+              },
+              {
+                title: "Focus card · the 3 B's",
+                note: "Raya Belton. Blink, Breathe, Back. Both LL levels have a focus check — this gives kids a way to catch and correct themselves without a guide stepping in.",
+                url: "https://go-alpha.slack.com/archives/C0990STD53J",
+              },
+              {
+                title: "The Magical Yet · launch",
+                note: "Christie Ray. Works as a launch or during read-aloud; the plan is in the notes of the first slide.",
+                url: "https://canva.link/4nc83xh3hjxeuvk",
               },
             ],
           },
@@ -1425,6 +1566,7 @@ export const prework = {
       {
         id: "L1",
         name: "L1",
+        guides: "Sanura + Tylor",
         channel: "#2-3-guides",
         groups: [
           {
@@ -1444,6 +1586,21 @@ export const prework = {
                 title: "L1 Bootcamp BINGO · Grade 3",
                 note: "England Reddy.",
                 url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BNSCM6JJ0/l1_bootcamp_bingo_grade3.pdf",
+              },
+            ],
+          },
+          {
+            heading: "New · the first three days",
+            items: [
+              {
+                title: "First three days deck, adapted for L1",
+                note: "Scott Dangerfield took Katie Boye's slides and reworked them for this age band — Alpha Bootcamp and Core Life Skills, the Behavioral Model, and Feedback.",
+                url: "https://www.canva.com/design/DAHR71lIuJQ/wkAECOrbuMNS9H4CiBFu_A/edit",
+              },
+              {
+                title: "Receiving Feedback",
+                note: "Scott Dangerfield.",
+                url: "https://www.canva.com/design/DAGv3vg7EbE/RYecLb_kq5hOpxJ0i96-Eg/edit",
               },
             ],
           },
@@ -1528,6 +1685,7 @@ export const prework = {
       {
         id: "L2",
         name: "L2",
+        guides: "Kris + Amy",
         channel: "#4-5-guides",
         groups: [
           {
@@ -1537,6 +1695,26 @@ export const prework = {
                 title: "Launches Forever 26-27",
                 note: "Grant Cain's full set of proven launches for this age band, each with the growth-mindset principle and the questions kids should be asking at the end. The best single artifact in any of the four channels. Most need 5–15 minutes of setup — not a last-minute resource. Make a copy before editing.",
                 url: "https://docs.google.com/presentation/d/1hqKMgFhpwGyGTo1RDYsoAJfo_msEb6fTv5HxnyGOJ1Y/edit",
+              },
+            ],
+          },
+          {
+            heading: "New · the first three days",
+            items: [
+              {
+                title: "Bootcamp check chart intro deck",
+                note: "Katie Boye posted this in #4-5-guides after someone asked rather than rebuilding it. Basic overview — copy and edit as needed.",
+                url: "https://canva.link/434kw1329j0jc09",
+              },
+              {
+                title: "School-year check chart · Google Sheet",
+                note: "Luke Phillips has one and offered it in the channel. Not posted as a link — ask him for it.",
+                url: "https://go-alpha.slack.com/archives/C098TGTK6DB",
+              },
+              {
+                title: "Open question we could answer",
+                note: "A guide in the channel asked for a good independence activity for Wednesday's Bootcamp Sprint #2 — the same sprint we run on Sept 9. If it's still unanswered when we build ours, post it back.",
+                url: "https://go-alpha.slack.com/archives/C098TGTK6DB",
               },
             ],
           },
@@ -1591,8 +1769,34 @@ export const prework = {
       {
         id: "MS",
         name: "MS · Middle School",
+        guides: "Aidan + Erin",
         channel: "#6-8-guides",
         groups: [
+          {
+            heading: "Start here — the plan of record",
+            items: [
+              {
+                title: "Alpha MS Playbook",
+                note: "Drew Casebier's full middle school plan of record, v4.0. Vision, socialization, MAX, the check chart and the schedule, all in one place. Drew is the source of truth for anything middle school — start here before any other MS link.",
+                url: "https://alpha-ms-playbook.vercel.app/",
+              },
+              {
+                title: "Life Skills — the accountability map",
+                note: "The page that answers what gets taught where. ME and WE run as workshops; KEY runs through MAX. Session 1 is the only session with three workshops, because bootcamp is Independence, Feedback and Uphold Community Standards — the same three life skills every level builds workshops for. Completing the bootcamp check chart is what unlocks MAX from Session 2 on.",
+                url: "https://alpha-ms-playbook.vercel.app/life-skills",
+              },
+              {
+                title: "The Check Chart — one chart per grade",
+                note: "How the MS check chart is structured by grade.",
+                url: "https://alpha-ms-playbook.vercel.app/check-chart",
+              },
+              {
+                title: "MAX",
+                note: "The four faces — Explore, Create, Connect, Deploy — and the 60-check Challenge Bank. Note the two universal minimums: every student's chart carries at least one money check and at least one stage check across 6th–8th.",
+                url: "https://alpha-ms-playbook.vercel.app/max",
+              },
+            ],
+          },
           {
             heading: "The tooling",
             items: [
@@ -1619,12 +1823,37 @@ export const prework = {
             ],
           },
           {
-            heading: "Read the argument before you meet your kids",
+            heading: "New",
             items: [
               {
-                title: "Derek Kim vs. Drew Casebier on MAX · in #6-8-guides, Aug 7",
-                note: "Derek pushed back that the Connect and Deploy checks imply a single project focus, when the intent was broad exploration across domains — so kids reach AlphaX with a portfolio and a sense of what they actually like, rather than having picked one thing early. Unresolved, and it's the only MAX messaging kids get in Session 1.",
+                title: "MAX doesn't unlock until Session 2",
+                note: "Drew Casebier, Aug 12: the MAX site is an MVP so students can see what's coming, but no work happens on MAX until Session 2 and the menu of checks isn't final. Session 1 is bootcamp — and completing the bootcamp check chart is what unlocks MAX.",
+                url: "https://max-mvp.vercel.app/",
+              },
+              {
+                title: "MS Office Hours with Drew Casebier",
+                note: "3pm EST. Drew is the source of truth for all things middle school — worth joining one before Sept 8.",
+                url: "https://meet.google.com/cfu-nxjd-drz",
+              },
+              {
+                title: "Green Jellybean challenge",
+                note: "Mia Schaubhut. A day-one independence workshop sprint from Dr. Dinin's Learning to Fail series at Duke. Groups of four, then a conversation about independence and operating in ambiguity.",
                 url: "https://go-alpha.slack.com/archives/C098R4ETVLK",
+              },
+              {
+                title: "MS Socialization One Pager",
+                note: "Session-by-session mobile squad and socialization plan. Draft.",
+                url: "https://drive.google.com/file/d/1xTFcb6hpJVbcjj_tilmksDYMdlWTgSxK/view",
+              },
+              {
+                title: "MS Testing Schedule One Pager",
+                note: "ISEE prep and PSAT 8/9.",
+                url: "https://drive.google.com/file/d/1PqTbCbOCRaRyoVqLqE3nELo6uy-QUSTF/view",
+              },
+              {
+                title: "MAX Q&A",
+                note: "Talking points and FAQs for conversations with families.",
+                url: "https://drive.google.com/file/d/1o4gfiXaR_qyN80M-pANeEHMa2vFBCzhG/view",
               },
             ],
           },

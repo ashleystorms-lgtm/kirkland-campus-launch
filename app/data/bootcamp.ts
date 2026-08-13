@@ -24,6 +24,7 @@ export type Block = {
   detail?: string[]; // paragraphs, revealed when the block is opened
   output?: string; // what's on the wall when it's over
   buildNumber?: number; // links a block to a numbered build
+  links?: { label: string; url: string }[];
 };
 
 export type DayTheme = {
@@ -166,6 +167,10 @@ export const days: Day[] = [
         detail: [
           "5% policy, 95% curriculum. The de-escalation ladder, strikes, and what actually happens before any of that.",
           "Weighted toward middle school scenarios — that's the room most likely to test a new adult in week one.",
+          "The Alpha Behavior Response Tool is the companion to this block — look up a behaviour, get the response the model calls for. Guide-facing and password-protected; the password comes separately. Bookmark it today, because the moment you need it you will not want to be searching for it.",
+        ],
+        links: [
+          { label: "Alpha Behavior Response Tool", url: "https://alphabehaviortool.netlify.app/" },
         ],
       },
       { id: "mon-lunch", start: "12:00p", title: "Lunch", kind: "meal" },
@@ -495,7 +500,11 @@ export const days: Day[] = [
         owner: "MS first, then L2, L1, LL — everyone runs one",
         detail: [
           "Real delivery, full spec, coached out loud in front of the room.",
+          "Keep the Behavior Response Tool open during reps. Somebody will hit a real behaviour question in front of the room, and looking up the right response together is a better rep than guessing at it.",
           "Say it to the face. Brutally honest without being brutal — practise it on each other before you practise it on a kid.",
+        ],
+        links: [
+          { label: "Alpha Behavior Response Tool", url: "https://alphabehaviortool.netlify.app/" },
         ],
       },
       {
@@ -1160,6 +1169,11 @@ export const resources = {
       title: "Life Skills Knowledge Tree",
       description: "The skills themselves, browsable. Use it to see where a workshop sits in the wider tree.",
       url: "https://life-skills-knowledge-tree.lovable.app/",
+    },
+    {
+      title: "Alpha Behavior Response Tool",
+      description: "Guide-facing. Look up a behaviour, get the response the model calls for — warning, yellow, red or strike — so enforcement is consistent whichever adult is standing there. Team password required; it's shared separately, not posted here.",
+      url: "https://alphabehaviortool.netlify.app/",
     },
     {
       title: "Tree Skills · PDF breakdown",

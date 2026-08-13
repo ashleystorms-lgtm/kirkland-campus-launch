@@ -97,6 +97,21 @@ function ScheduleRow({ block }: { block: Block }) {
                 </p>
               )}
               {block.detail?.map((p) => <p key={p}>{p}</p>)}
+              {block.links && block.links.length > 0 && (
+                <div className="space-y-1">
+                  {block.links.map((link) => (
+                    <a
+                      key={link.url}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-[var(--day-accent)] hover:underline"
+                    >
+                      → {link.label}
+                    </a>
+                  ))}
+                </div>
+              )}
               {block.output && (
                 <p className="text-[var(--day-accent)]">
                   <span className="text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">

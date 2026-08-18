@@ -198,8 +198,26 @@ export const days: Day[] = [
         ],
       },
       {
-        id: "mon-workshop-build",
+        id: "mon-builder",
         start: "1:45p",
+        end: "2:05p",
+        title: "The Guide's Guide Builder",
+        kind: "session",
+        owner: "CeCe + Ashley",
+        detail: [
+          "Everyone opens the Builder before anyone starts building. It is the only door — workshops reach Guide Platform through a Builder commit and nothing is built on Guide Platform directly. If you design a workshop somewhere else, you'll be re-entering every step here anyway, so start here.",
+          "The path, start to finish: build your pitch with the co-pilot inside the Builder → save the draft and send it to your lead for comments → resolve them, back and forth, until nothing is outstanding → commit, but only once your lead has approved → download the pre-filled Guide's Guide, which unlocks on commit, and review every section before you use it. It's a starting draft, not a finished document.",
+          "Commit locks the skill tracker. Descriptive edits stay open afterwards, but the tracked structure does not — so commit when it's right, not when you're tired of it.",
+          "The Builder is also our workshop library. Paste your Canva deck and lesson plan links into the pitch page. You can add those any time, including after commit.",
+          "One workshop per level, even where levels share an activity. The builder handles one at a time and gets confused otherwise, and each level needs its own baseline and AlphaTest anyway.",
+        ],
+        links: [
+          { label: "Guide's Guide Builder", url: "https://guides-guide-app.vercel.app/" },
+        ],
+      },
+      {
+        id: "mon-workshop-build",
+        start: "2:05p",
         end: "3:30p",
         title: "Workshop build · working session",
         kind: "build",
@@ -424,13 +442,20 @@ export const days: Day[] = [
         end: "12:00p",
         title: "Workshops committed",
         kind: "build",
-        owner: "Level pairs, CeCe",
+        owner: "Level pairs, CeCe · Ashley reviewing",
         detail: [
-          "Four per level minimum. Independence, Giving and Receiving Feedback, and Upholding Community Standards all covered, with the double-up where your level needs it.",
-          "Everything submitted with a real vendor, a real cost, and a place in the session calendar.",
-          "Committed, not drafted. Across the network there are hundreds of workshop pitches saved in the Guide's Guide builder and only a fraction actually committed — and committing is what sends the data to Guide Platform. A drafted workshop does not exist as far as the system is concerned. Hit commit before you leave this block.",
+          "Four per level minimum. Independence, Giving and Receiving Feedback, and Upholding Community Standards all covered, with the double-up where your level needs it. Everything with a real vendor, a real cost, and a place in the session calendar.",
+          "Committed, not drafted. Across the network there are hundreds of workshop pitches sitting saved in the Builder and only a fraction actually committed — and committing is what sends them to Guide Platform. A drafted workshop does not exist as far as the system is concerned.",
+          "Commit requires lead approval first, so this morning runs as a loop rather than a build: draft, send for comments, resolve, commit. Sixteen workshops need reviewing before noon. Send them as they're ready rather than all at once at 11:30 — the queue is the thing most likely to make us miss the deadline.",
+          "Before you send anything for review, check the AlphaTest measures the life skill and not the activity. If it measures whether a kid got better at climbing, it isn't finished.",
+          "Once committed, download the pre-filled Guide's Guide and paste your Canva and lesson plan links into the pitch page.",
         ],
-        output: "The workshop bank closes at noon. Vendored, costed, sequenced, and committed in the builder.",
+        output:
+          "The workshop bank closes at noon. Four per level, all three life skills, vendored, costed, sequenced, lead-approved and committed in the Builder.",
+        links: [
+          { label: "Guide's Guide Builder", url: "https://guides-guide-app.vercel.app/" },
+          { label: "S1 Playbook — default workshops", url: "https://s1-playbook-2627.netlify.app/" },
+        ],
       },
       { id: "wed-lunch", start: "12:00p", title: "Lunch", kind: "meal" },
       {
@@ -668,7 +693,7 @@ export const builds: Build[] = [
     summary:
       "Four minimum per level this session. Independence, Giving and Receiving Feedback, and Upholding Community Standards all covered, doubling up on whichever your level needs most to start the year. The one thing this week we build from scratch — which is why CeCe is on site and why it gets three separate blocks.",
     output:
-      "The workshop bank closes Wednesday at noon. Vendored, costed, sequenced into sessions, and committed in the Guide's Guide builder — drafted isn't committed, and only committed workshops reach Guide Platform. Nothing gets ordered until it closes.",
+      "The workshop bank closes Wednesday at noon. Four per level, all three life skills, vendored and costed — then lead-approved and committed in the Guide's Guide Builder. Drafted isn't committed, and only committed workshops reach Guide Platform. Nothing gets ordered until it closes.",
   },
   {
     n: 2,
@@ -1167,6 +1192,11 @@ export const resources = {
       title: "S1 Playbook · the default Session 1 manual",
       description: "The single most useful link on this page. The standard day hour by hour, a runbook for every block you'll run, the default workshop slate with Guide's Guides, launch plans by level, the behavioral model, check charts, and printables. Most of what we assumed we'd build from scratch already exists here. Pick Kirkland in the campus bar to see anything we've posted; everything else shows the default. Where the two differ, your Lead Guide's word wins.",
       url: "https://s1-playbook-2627.netlify.app/",
+    },
+    {
+      title: "Guide's Guide Builder",
+      description: "Where workshops get built, reviewed and committed. The only route to Guide Platform — nothing is built on the platform directly. Committing unlocks a pre-filled Guide's Guide and locks the skill tracker, so commit once your lead has approved. It doubles as the workshop library: paste your Canva and lesson plan links into the pitch page.",
+      url: "https://guides-guide-app.vercel.app/",
     },
     {
       title: "S1 Guide Deliverables · where everything gets submitted",

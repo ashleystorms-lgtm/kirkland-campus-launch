@@ -100,6 +100,7 @@ export const story = {
     "A campus is not a building. It's a set of decisions that a group of adults made together, on purpose, before the first kid walked through the door.",
     "This week is where those decisions get made. Not discussed — made, written down, put on a wall, given an owner and a date. By Friday afternoon every room in this building will have been physically built by the people who are going to run it.",
     "Nobody leaves a day without something on the wall.",
+    "Almost none of this is ours to invent. The org built the behavioral model, the bootcamp, the check charts, the standard day and a default workshop slate over two weeks of staff days we couldn't attend. Four things are genuinely ours: the weekly workshop schedule, the workshop roadmap, the motivational model, and campus jobs. Everything else this week is transfer — learning instruments other people built well, and adapting them to four levels and our kids. Knowing which is which is what stops us rebuilding something that already works.",
   ],
 };
 
@@ -154,7 +155,11 @@ export const days: Day[] = [
         owner: "Ashley",
         detail: [
           "The six work units named and the daily rhythm walked end to end: Limitless Launch, Limitless Meetings, Get to Know You Lunch, Limitless Lunch, Townhall, Closing.",
-          "The map, not the mechanics. Tuesday is where we go deep and Thursday is where you run them.",
+          "The day is standardised across every campus and every level, and it already exists in the S1 Playbook: Launch at 8:45, Core Skills from 9:00, Q-Break, Core Skills again, lunch at 11:30, two workshop blocks in the afternoon, check chart or Townhall at 2:30, Closing at 3:15. We are not designing this. We are learning to run it.",
+          "The map, not the mechanics. Tuesday is where we go deep and Thursday is where you run them. Every block has a runbook in the Playbook — read the one you're about to run.",
+        ],
+        links: [
+          { label: "S1 Playbook — the day in order, with a runbook for every block", url: "https://s1-playbook-2627.netlify.app/" },
         ],
       },
       {
@@ -182,8 +187,14 @@ export const days: Day[] = [
         kind: "session",
         owner: "CeCe",
         detail: [
-          "The life skills roadmap, the workshop builder, and what separates a banger from a filler.",
-          "The spec for this session: four workshops minimum per level, covering Independence, Giving and Receiving Feedback, and Upholding Community Standards. Double up on whichever your level needs most to start the year.",
+          "Start from what already exists. The S1 Playbook carries a default workshop slate that every level runs unless a campus posts its own — Rock Climb for Independence, 3D Print or Escape Room for Receiving Feedback, and 5 Star Experience for Upholding Community Standards. Each comes with a Guide's Guide: the overview, the AlphaTest students build toward, biweekly checkpoints and a daily plan for every block.",
+          "So this block is not four workshops from nothing. It's reading the default slate, deciding what fits our kids and what doesn't, and building the fourth — the one that's ours. Adapting something proven beats inventing something untested, especially in a first year.",
+          "The spec still stands: four minimum per level this session, all three life skills covered, doubling up on whichever your level needs most to start the year.",
+          "Measure the skill, not the activity. The network is coaching hard on this right now — too many receiving-feedback workshops end up measuring whether a kid got better at biking or tae kwon do rather than better at receiving feedback. Your baseline, midpoint and AlphaTest all have to point at the life skill itself.",
+        ],
+        links: [
+          { label: "S1 Playbook — default workshops and Guide's Guides", url: "https://s1-playbook-2627.netlify.app/" },
+          { label: "Life Skills Knowledge Tree", url: "https://life-skills-knowledge-tree.lovable.app/" },
         ],
       },
       {
@@ -334,11 +345,19 @@ export const days: Day[] = [
         kind: "build",
         owner: "Ashley, then level pairs",
         detail: [
-          "The org's model, adapted to your level. XP, Alpha Bucks, badges, the economy, the ceremonies — what a kid earns, sees, spends and feels.",
-          "Build against this year's rules, not last year's. Alphas are now paid for XP only — not check charts, not campus jobs — and only on days a student hits 120 XP, except LL. No debit cards for middle school.",
-          "MAP is separate and level-dependent. For the fall round, only grades 4-8 get an achievement-based model; every other level simply sets a baseline. Growth-based models for everyone start in winter. Payout amounts sit in the MAP work unit under Tier 2. Our MAP runs Sept 15-18, so the model gets built here and used in week two.",
+          "There is a default model in the S1 Playbook covering daily Alpha payouts, weekly Emporium and Fun Friday, and Mobile Squad each session. Read it first. The campus model is one of only four genuinely campus-specific things, so this is a real build — but it starts from the default, not from a blank page.",
+          "The formula is fixed and automated: 25 XP earns 1 Alpha, everywhere. Alphas are paid for XP only, not for check charts, and only on days a student hits 120 XP, except LL. Campus jobs do still pay Alphas, and jobs are the one thing you can still award manually. No debit cards for middle school.",
+          "Build against this year's rules and nothing else. Campuses across the network have been caught running models built from last year's resources that were approved then and aren't now. If you found it in a channel rather than in the work unit doc, check it before you use it.",
+          "MAP is separate and level-dependent. For the fall round, only grades 4–8 get an achievement-based model; every other level simply sets a baseline. Growth-based models for everyone start in winter. Our MAP runs Sept 15–18, so the model gets built here and used in week two.",
+          "Every kid at this campus is new to Alpha. The network's own guidance is that Alpha earnings, the Emporium and comfy seating carry new students a long way on their own. The risk here isn't building too little — it's building something far more elaborate than our kids need in week one.",
+          "Campus jobs are a town hall decision, not a menu we hand down. Students identify what the room needs and vote on which jobs exist. Roles that have worked elsewhere: town hall mayor, assistant to the mayor, assistant to the guide, time manager, equipment manager, board maintenance, Emporium manager. Bring examples, not a finished list.",
         ],
         output: "A reward ladder per level, plus a fall MAP approach for the levels that need one. Org deliverable.",
+        links: [
+          { label: "S1 Playbook — the default motivational model", url: "https://s1-playbook-2627.netlify.app/" },
+          { label: "Alphas work unit doc", url: "https://docs.google.com/document/d/1XYd7BSR-5D2IqeDz2FDG6_Mq3OEjkvNn6yh3fbWt14I/edit" },
+          { label: "MAP work unit doc", url: "https://docs.google.com/document/d/15IODVNnHhwd6rESQY8qt96TZ-0pb8-lf80LAW5_BRwc/edit" },
+        ],
       },
       {
         id: "tue-roadmap",
@@ -361,9 +380,13 @@ export const days: Day[] = [
         kind: "build",
         owner: "Level pairs",
         detail: [
-          "Both schedules, per level, built off the six work units and this session's workshops.",
+          "The daily schedule is standard across all levels and already published in the S1 Playbook — this block is confirming it against our building and our constraints, not designing it. Flag anything that genuinely can't work here.",
+          "The weekly workshop schedule is ours to build: which workshops run in which block, which week. That's one of only four things the Playbook treats as campus-specific.",
         ],
-        output: "S1 daily and weekly schedules per level. Org deliverables.",
+        output: "S1 daily schedule confirmed and weekly workshop schedule drafted per level. Org deliverables.",
+        links: [
+          { label: "S1 Playbook — the standard day", url: "https://s1-playbook-2627.netlify.app/" },
+        ],
       },
     ],
   },
@@ -1141,6 +1164,11 @@ export const resources = {
   note: "These live in Google Drive and are shared across Alpha campuses. Sign in with your Alpha account.",
   items: [
     {
+      title: "S1 Playbook · the default Session 1 manual",
+      description: "The single most useful link on this page. The standard day hour by hour, a runbook for every block you'll run, the default workshop slate with Guide's Guides, launch plans by level, the behavioral model, check charts, and printables. Most of what we assumed we'd build from scratch already exists here. Pick Kirkland in the campus bar to see anything we've posted; everything else shows the default. Where the two differ, your Lead Guide's word wins.",
+      url: "https://s1-playbook-2627.netlify.app/",
+    },
+    {
       title: "S1 Guide Deliverables · where everything gets submitted",
       description: "The org's tracking sheet. Every deliverable we build this week gets linked on Kirkland's row here — that's what submitted means. The 26-27 workshop roadmap goes in column J. Nothing counts until it's on this sheet.",
       url: "https://docs.google.com/spreadsheets/d/10J5Uwd6jmgzEEwI2fVeFigQBDXCixtA8ToC07ZUYVE8/edit",
@@ -1174,6 +1202,16 @@ export const resources = {
       title: "Alpha Behavior Response Tool",
       description: "Guide-facing. Look up a behaviour, get the response the model calls for — warning, yellow, red or strike — so enforcement is consistent whichever adult is standing there. Team password required; it's shared separately, not posted here.",
       url: "https://alphabehaviortool.netlify.app/",
+    },
+    {
+      title: "A Day at Alpha · the canon site",
+      description: "The org's day-in-the-life reference. The motivation page carries the Tier 1 campus jobs list — the starting point before your town hall votes on its own.",
+      url: "https://a-day-at-alpha.vercel.app/day/motivation/",
+    },
+    {
+      title: "Alphas · work unit doc",
+      description: "The rules on what pays out, what doesn't, and the 120 XP threshold. Read before building any motivational model.",
+      url: "https://docs.google.com/document/d/1XYd7BSR-5D2IqeDz2FDG6_Mq3OEjkvNn6yh3fbWt14I/edit",
     },
     {
       title: "Tree Skills · PDF breakdown",
@@ -1805,75 +1843,69 @@ export const prework = {
       {
         id: "MS",
         name: "MS · Middle School",
-        guides: "Aidan + Erin",
         channel: "#6-8-guides",
         groups: [
           {
-            heading: "Start here — the plan of record",
+            heading: "Read this first — bootcamp was rebuilt on August 17",
+            items: [
+              {
+                title: "One chart, 15 checks, all of 6–8",
+                note: "Drew Casebier rebuilt the middle school bootcamp over the weekend of Aug 16. Grade levels no longer matter — every Alpha middle schooler completes the same fifteen checks, organised by pillar. The reason given was consistent feedback from students and guides that the old bootcamp wasn't setting kids up to succeed. Anything you read about MS bootcamp from before Aug 17 is out of date.",
+                url: "https://docs.google.com/spreadsheets/d/1aJh3WL1BRULzUVlcHOD9fddWt6w_0nCy3OLHn3k-Ixc/edit",
+              },
+              {
+                title: "It lives on the Alpha Project Hub, not Guide Platform",
+                note: "Students and guides sign in with their school Google account. Guide Platform pulls progress automatically, so there's no need to touch it for MS bootcamp checks. Everything else — notes, behaviour, workshops — still runs through Guide Platform as normal. Sign in as a guide before Aug 31 and confirm your roster shows.",
+                url: "https://alpha-project-hub.vercel.app/",
+              },
+              {
+                title: "Recommended order to tackle the checks",
+                note: "Drew's suggested sequence for working through the fifteen most efficiently. Students see the whole chart from day one — every check with its name, its “I can” statement and a plain description — so they always know what's coming.",
+                url: "https://drive.google.com/file/d/1LSiTEifE_w5WjnnWimheFxlI85_DMxUU/view",
+              },
+              {
+                title: "The four checks students can start immediately",
+                note: "Mia Schaubhut posted these as editable Canva files while site access was being sorted: 168 Hours, Phone Away Powered Up, Know Your Crew, Mobile Squad Planner, and Lunch Biographer.",
+                url: "https://www.canva.com/design/DAHSgfDy44s/ZOq0f2XikwfWq1U0cKZ0Bg/edit",
+              },
+              {
+                title: "What the guide has to do outside the platform",
+                note: "Mia's list of the lift that isn't automated: randomise the lunch pairings and hang them in the space for Lunch Biographer; run a phone and laptop-charge tracker for Phone Away Powered Up — which also gives students without phones a route through; check bcc'd emails for The Pump Up Email; and for large levels, run a photo-name quiz for Know Your Crew.",
+                url: "https://drive.google.com/file/d/1UpGZsNXm6QcZ-Er4RoE_Coq1N4f68WJI/view",
+              },
+            ],
+          },
+          {
+            heading: "The plan of record",
             items: [
               {
                 title: "Alpha MS Playbook",
-                note: "Drew Casebier's full middle school plan of record, v4.0. Vision, socialization, MAX, the check chart and the schedule, all in one place. Drew is the source of truth for anything middle school — start here before any other MS link.",
+                note: "Drew Casebier's full middle school plan of record. Vision, socialization, MAX, the check chart and the schedule in one place. Drew is the source of truth for anything middle school — start here.",
                 url: "https://alpha-ms-playbook.vercel.app/",
               },
               {
                 title: "Life Skills — the accountability map",
-                note: "The page that answers what gets taught where. ME and WE run as workshops; KEY runs through MAX. Session 1 is the only session with three workshops, because bootcamp is Independence, Feedback and Uphold Community Standards — the same three life skills every level builds workshops for. Completing the bootcamp check chart is what unlocks MAX from Session 2 on.",
+                note: "What gets taught where. ME and WE run as workshops; KEY runs through MAX. Session 1 is the only session with three workshops, because bootcamp is Independence, Feedback and Uphold Community Standards — the same three every level builds workshops for.",
                 url: "https://alpha-ms-playbook.vercel.app/life-skills",
               },
               {
-                title: "The Check Chart — one chart per grade",
-                note: "How the MS check chart is structured by grade.",
-                url: "https://alpha-ms-playbook.vercel.app/check-chart",
-              },
-              {
-                title: "MAX",
-                note: "The four faces — Explore, Create, Connect, Deploy — and the 60-check Challenge Bank. Note the two universal minimums: every student's chart carries at least one money check and at least one stage check across 6th–8th.",
-                url: "https://alpha-ms-playbook.vercel.app/max",
+                title: "MAX — and when it actually starts",
+                note: "The four faces — Explore, Create, Connect, Deploy — and the Challenge Bank. MAX does not unlock until Session 2, and completing the bootcamp check chart is what unlocks it. Session 1 is bootcamp with MAX visible but locked. Show it, don't run it.",
+                url: "https://max-mvp.vercel.app/",
               },
             ],
           },
           {
-            heading: "The tooling",
+            heading: "Shared by other campuses",
             items: [
               {
-                title: "Alpha Project Hub",
-                note: "Drew Casebier's student-facing bootcamp check chart — one place for students to submit everything. Sign in as a student to look around. The guide-facing side is still coming.",
-                url: "https://alpha-project-hub.vercel.app/",
-              },
-              {
-                title: "Bootcamp check chart, tied to Guide Platform",
-                note: "Version one, posted Aug 10 by Drew with Alec Ngai. Feedback wanted.",
-                url: "https://bootcamp-checkchart-testing-ground-alecs-projects-fa314c7a.vercel.app/",
-              },
-              {
-                title: "MAX · MVP",
-                note: "Includes the updated MS check chart and what MAX looks like inside it.",
-                url: "https://max-mvp.vercel.app/",
-              },
-              {
-                title: "MS Bootcamp Check Chart · SY26-27",
-                note: "Santi Orozco's sheet.",
-                url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BLT556W4F/ms_bootcamp_check_chart____sy26-27",
-              },
-            ],
-          },
-          {
-            heading: "New",
-            items: [
-              {
-                title: "MAX doesn't unlock until Session 2",
-                note: "Drew Casebier, Aug 12: the MAX site is an MVP so students can see what's coming, but no work happens on MAX until Session 2 and the menu of checks isn't final. Session 1 is bootcamp — and completing the bootcamp check chart is what unlocks MAX.",
-                url: "https://max-mvp.vercel.app/",
-              },
-              {
-                title: "MS Office Hours with Drew Casebier",
-                note: "3pm EST. Drew is the source of truth for all things middle school — worth joining one before Sept 8.",
-                url: "https://meet.google.com/cfu-nxjd-drz",
+                title: "MS Launches · shared Canva folder",
+                note: "Mia Schaubhut's folder of launches already run with a middle school crew and validated by student feedback. Request access from her, and make a copy before editing anything.",
+                url: "https://canva.link/6wuynjio3eorui1",
               },
               {
                 title: "Green Jellybean challenge",
-                note: "Mia Schaubhut. A day-one independence workshop sprint from Dr. Dinin's Learning to Fail series at Duke. Groups of four, then a conversation about independence and operating in ambiguity.",
+                note: "Mia Schaubhut. A day-one independence sprint from Dr. Dinin's Learning to Fail series at Duke. Groups of four, then a conversation about independence and operating in ambiguity.",
                 url: "https://go-alpha.slack.com/archives/C098R4ETVLK",
               },
               {
@@ -1891,15 +1923,20 @@ export const prework = {
                 note: "Talking points and FAQs for conversations with families.",
                 url: "https://drive.google.com/file/d/1o4gfiXaR_qyN80M-pANeEHMa2vFBCzhG/view",
               },
-            ],
-          },
-          {
-            heading: "Posters",
-            items: [
               {
                 title: "MS behavior model posters",
                 note: "Caitlin deMello, four variants in the channel.",
                 url: "https://go-alpha.slack.com/files/U026B83SZS5/F0BNRV38MM3/chatgpt_image_aug_7__2026__01_44_28_pm__1_.png",
+              },
+            ],
+          },
+          {
+            heading: "Office hours",
+            items: [
+              {
+                title: "MS Office Hours with Drew Casebier",
+                note: "3pm EST. Drew is the source of truth for all things middle school, and the bootcamp chart has already changed once — worth joining one before Sept 8.",
+                url: "https://meet.google.com/cfu-nxjd-drz",
               },
             ],
           },

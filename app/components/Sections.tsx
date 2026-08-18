@@ -1,8 +1,6 @@
 import type { ReactNode } from "react";
 import {
-  builds,
-  buildsIntro,
-  compounds,
+  byFriday,
   evaluation,
   footer,
   prep,
@@ -445,63 +443,57 @@ export function StorySection() {
   );
 }
 
-// ── The Seven Builds ─────────────────────────────────────────────────────────
+// ── By Friday ────────────────────────────────────────────────────────────────
 
-export function BuildsSection() {
+export function ByFridaySection() {
   return (
-    <Section
-      id="builds"
-      eyebrow={buildsIntro.eyebrow}
-      heading={buildsIntro.heading}
-      wide
-    >
+    <Section id="byfriday" eyebrow={byFriday.eyebrow} heading={byFriday.heading} wide>
       <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
-        {buildsIntro.body}
+        {byFriday.intro}
       </p>
 
       <ol className="mt-14 space-y-px">
-        {builds.map((b) => (
+        {byFriday.items.map((item) => (
           <li
-            key={b.n}
+            key={item.n}
             className="grid gap-x-6 gap-y-4 border-t border-[#f7efe8]/10 py-8 sm:grid-cols-[3.5rem_1fr]"
           >
-            {/* The numbering is real: these compound in order. */}
             <div className="font-mono text-[1.6rem] font-light leading-none text-[#f3d7a3]/60">
-              {String(b.n).padStart(2, "0")}
+              {String(item.n).padStart(2, "0")}
             </div>
 
             <div>
               <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
                 <h3 className="text-[1.1rem] font-normal text-[#f8f2eb]">
-                  {b.title}
+                  {item.title}
                 </h3>
                 <p className="font-mono text-[0.7rem] text-[#8ba39d]">
-                  {b.when} · {b.duration} · {b.who}
+                  {item.when}
                 </p>
               </div>
 
               <p className="mt-4 max-w-2xl text-[0.9rem] font-light leading-relaxed text-[#f7efe8]/65">
-                {b.summary}
-              </p>
-
-              <p className="mt-4 max-w-2xl text-[0.88rem] font-light leading-relaxed text-[#f3d7a3]/80">
-                <span className="text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
-                  Output ·{" "}
-                </span>
-                {b.output}
+                {item.detail}
               </p>
             </div>
           </li>
         ))}
       </ol>
 
-      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
-        What compounds into what
-      </h3>
-      <Table
-        head={["Build", "Takes as input", "Feeds"]}
-        rows={compounds.map((c) => [c.build, c.input, c.feeds])}
-      />
+      <div className="mt-12 border-l-2 border-[#f3d7a3]/40 pl-6">
+        <p className="max-w-2xl text-[0.95rem] font-light leading-relaxed text-[#f7efe8]/75">
+          {byFriday.outro}
+        </p>
+      </div>
+
+      <a
+        href={byFriday.link.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-8 inline-block text-[0.9rem] font-light text-[#f3d7a3] hover:underline"
+      >
+        {byFriday.link.label}
+      </a>
     </Section>
   );
 }
@@ -511,65 +503,25 @@ export function BuildsSection() {
 export function SprintSection() {
   return (
     <Section id="sprint" eyebrow={sprint.eyebrow} heading={sprint.heading} wide>
-      <blockquote className="border-l-2 border-[#e0946a]/60 pl-6 text-[1.1rem] font-light italic leading-relaxed text-[#f8f2eb] sm:text-[1.25rem]">
-        {sprint.prompt}
-      </blockquote>
-
-      <p className="mt-10 max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
-        {sprint.independence}
-      </p>
-
-      <h3 className="mt-16 mb-3 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
-        It runs in one sitting
-      </h3>
-      <p className="mb-8 max-w-3xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/65">
-        {sprint.runsIn}
-      </p>
-      <Table
-        head={["Phase", "Time", "What happens"]}
-        rows={sprint.phases.map((p) => [p.phase, p.time, p.what])}
-      />
-
-      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
-        Why BrainLift is in here
-      </h3>
-      <div className="grid gap-10 sm:grid-cols-2">
-        {sprint.whyBrainlift.map((w) => (
-          <div key={w.heading}>
-            <h4 className="text-[1rem] font-normal leading-snug text-[#f8f2eb]">
-              {w.heading}
-            </h4>
-            <p className="mt-3 text-[0.9rem] font-light leading-relaxed text-[#f7efe8]/65">
-              {w.body}
-            </p>
-          </div>
+      <div className="max-w-3xl space-y-6 text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+        {sprint.body.map((p) => (
+          <p key={p}>{p}</p>
         ))}
       </div>
 
-      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
-        The 70-minute bar
-      </h3>
-      <Table
-        head={["Node", "Time", "Minimum", "AI rules"]}
-        rows={sprint.brainliftBar.map((n) => [n.node, n.time, n.minimum, n.ai])}
-      />
-
-      <div className="mt-12 border-l-2 border-[#e0946a]/60 pl-6">
-        <p className="text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
-          The ultimate test
-        </p>
-        <p className="mt-3 max-w-2xl text-[0.95rem] font-light leading-relaxed text-[#f7efe8]/75">
-          {sprint.ultimateTest}
+      <div className="mt-10 border-l-2 border-[#e0946a]/60 pl-6">
+        <p className="max-w-2xl text-[0.95rem] font-light leading-relaxed text-[#f7efe8]/75">
+          {sprint.bar}
         </p>
       </div>
 
-      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
-        How builds get judged
-      </h3>
-      <Table
-        head={["Question", "What a 5 looks like"]}
-        rows={sprint.judging.map((j) => [j.q, j.a])}
-      />
+      <p className="mt-8 max-w-3xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/65">
+        {sprint.howToStart}
+      </p>
+
+      <p className="mt-6 max-w-2xl text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
+        {sprint.note}
+      </p>
     </Section>
   );
 }

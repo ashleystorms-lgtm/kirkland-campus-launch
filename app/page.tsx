@@ -4,7 +4,7 @@ import SiteNav from "./components/SiteNav";
 import Hero from "./components/Hero";
 import DaySection from "./components/DaySection";
 import {
-  BuildsSection,
+  ByFridaySection,
   EvaluationSection,
   PrepSection,
   PreworkSection,
@@ -36,11 +36,11 @@ export default function Home() {
           <DaySection key={day.id} day={day} />
         ))}
 
-        <BuildsSection />
+        <ByFridaySection />
         <SprintSection />
-        <EvaluationSection />
         <PrepSection />
         <RulesSection />
+        <EvaluationSection />
         <ResourcesSection />
         <SiteFooter />
       </main>

@@ -50,16 +50,6 @@ export type Day = {
   blocks: Block[];
 };
 
-export type Build = {
-  n: number;
-  title: string;
-  when: string;
-  duration: string;
-  who: string;
-  summary: string;
-  output: string;
-};
-
 // ── Hero ─────────────────────────────────────────────────────────────────────
 
 export const hero = {
@@ -83,11 +73,11 @@ export const navItems = [
   { label: "Tue", href: "#tuesday" },
   { label: "Wed", href: "#wednesday" },
   { label: "Thu / Fri", href: "#thursday" },
-  { label: "The Five Builds", href: "#builds" },
-  { label: "Build Sprint", href: "#sprint" },
-  { label: "Evaluation", href: "#evaluation" },
+  { label: "By Friday", href: "#byfriday" },
   { label: "Prep", href: "#prep" },
   { label: "House Rules", href: "#rules" },
+  { label: "Evaluation", href: "#evaluation" },
+  { label: "Build Sprint", href: "#sprint" },
   { label: "Resources", href: "#resources" },
 ];
 
@@ -243,26 +233,13 @@ export const days: Day[] = [
       {
         id: "mon-order",
         start: "4:15p",
-        end: "4:30p",
+        end: "5:00p",
         title: "Room basics ordered",
         kind: "session",
         owner: "Ashley + level leads",
         detail: [
           "The non-workshop list goes out today, before anyone leaves. A list that becomes a to-do doesn't arrive.",
         ],
-      },
-      {
-        id: "mon-deck",
-        start: "4:30p",
-        end: "5:00p",
-        title: "Meet the Guides deck",
-        kind: "build",
-        owner: "Everyone",
-        detail: [
-          "Eight photos, eight short bios. Families at a brand-new campus don't know a single one of us yet.",
-          "Done is better than polished — this ships tomorrow.",
-        ],
-        output: "Deck ready to send to families.",
       },
     ],
   },
@@ -657,7 +634,7 @@ export const days: Day[] = [
         kind: "session",
         owner: "Ashley + level leads",
         detail: [
-          "Every org deliverable submitted: S1 daily and weekly schedules, bootcamp launches, motivational model, workshops committed in the builder, the 26-27 workshop roadmap linked on the deliverables tab, bootcamp Townhall plan, Meet the Guides deck.",
+          "Every org deliverable submitted: S1 daily and weekly schedules, bootcamp launches, motivational model, workshops committed in the builder, the 26-27 workshop roadmap linked on the deliverables tab, bootcamp Townhall plan.",
           "Submitted means linked on Kirkland's row of the S1 Guide Deliverables sheet. A finished artifact sitting in someone's Drive is not submitted.",
         ],
         output: "A gap list with owners and order-by dates for anything still outstanding.",
@@ -675,187 +652,22 @@ export const days: Day[] = [
   },
 ];
 
-// ── The Seven Builds ─────────────────────────────────────────────────────────
-
-export const buildsIntro = {
-  eyebrow: "The Five Builds",
-  heading: "What we make this week",
-  body: "Most of what runs this campus was built by the wider org over the summer — the behavioral model, the bootcamp, the check charts, the motivational model. We weren't in the room for that, so a lot of this week is transfer: learning instruments other people designed well, and adapting them to our four levels. But five things get genuinely built here, by us, and they're the five a kid actually walks into on day one. They compound in order.",
-};
-
-export const builds: Build[] = [
-  {
-    n: 1,
-    title: "Workshops",
-    when: "Mon 1:45 · Tue 1:00 · Wed 9:00",
-    duration: "Across three days",
-    who: "Level pairs, CeCe facilitating",
-    summary:
-      "Four minimum per level this session. Independence, Giving and Receiving Feedback, and Upholding Community Standards all covered, doubling up on whichever your level needs most to start the year. The one thing this week we build from scratch — which is why CeCe is on site and why it gets three separate blocks.",
-    output:
-      "The workshop bank closes Wednesday at noon. Four per level, all three life skills, vendored and costed — then lead-approved and committed in the Guide's Guide Builder. Drafted isn't committed, and only committed workshops reach Guide Platform. Nothing gets ordered until it closes.",
-  },
-  {
-    n: 2,
-    title: "The Motivational Model",
-    when: "Tue 3:00",
-    duration: "75 min",
-    who: "Ashley, then level pairs",
-    summary:
-      "The org's model, adapted to your level. XP, Alpha Bucks, badges, the economy, the ceremonies — what a kid earns, sees, spends and feels, and the ladder from standard-school mode to two-hour learner.",
-    output:
-      "A reward ladder per level. Build 3 wires every check chart unlock into a rung on this ladder.",
-  },
-  {
-    n: 3,
-    title: "Bootcamp Check Chart",
-    when: "Wed 3:00",
-    duration: "75 min",
-    who: "Ashley, then level pairs",
-    summary:
-      "The entry ramp a brand-new kid earns their way through in their first days, wired rung for rung to the reward ladder from Build 2. Plus the plan for the kid it takes three times as long.",
-    output:
-      "A bootcamp check chart per level, vertical handoffs checked between levels. It goes on the wall Friday.",
-  },
-  {
-    n: 4,
-    title: "The Best First Day of School",
-    when: "Wed 4:15",
-    duration: "45 min",
-    who: "Level pairs",
-    summary:
-      "Start from the sentence you want a kid to say in the car on the way home, and build backwards. The arrival window, the first Launch they ever see, the first Townhall, the shape of the whole day. Six of us have never run one — this is where we decide what it looks like rather than finding out on the morning.",
-    output:
-      "A first-day run-of-show per level, plus the bootcamp Launches and Townhall plan inside it. Friday's walkthrough tests it standing in the rooms.",
-  },
-  {
-    n: 5,
-    title: "Set the Space",
-    when: "Fri 9:00 and 1:00",
-    duration: "Most of Friday",
-    who: "Level pairs, in your rooms",
-    summary:
-      "Stop planning, go build the room. Labeling first — every space named before anything goes into it. Then check charts and reward ladders on the walls, materials out, standard-school mode set, unlocks visible from the starting desk.",
-    output:
-      "Finished, kid-ready rooms and a gap list per level with owners and order-by dates.",
-  },
-];
-
-export const compounds: { build: string; input: string; feeds: string }[] = [
-  {
-    build: "1 · Workshops",
-    input: "The life skills roadmap, the workshop builder, the knowledge tree, CeCe",
-    feeds:
-      "Wednesday's materials order — nothing can be bought until this closes. Then every afternoon of Session 1.",
-  },
-  {
-    build: "2 · Motivational Model",
-    input: "The org's published model, plus what your level actually responds to",
-    feeds: "Build 3 — every check chart unlock points at a rung on this ladder.",
-  },
-  {
-    build: "3 · Bootcamp Check Chart",
-    input: "Build 2's reward ladder, and Wednesday's bootcamp walkthrough",
-    feeds: "Build 4 — it's the instrument a kid's first days actually run on.",
-  },
-  {
-    build: "4 · Best First Day",
-    input: "Builds 2 and 3, the six work units, and Thursday's reps",
-    feeds:
-      "Build 5 — you walk this clock physically while setting the room, and it's the last check before a kid arrives.",
-  },
-  {
-    build: "5 · Set the Space",
-    input: "Builds 2, 3 and 4 — all of them become physical here",
-    feeds: "The first day of school.",
-  },
-];
-
 // ── The Sprint ───────────────────────────────────────────────────────────────
 
 export const sprint = {
   eyebrow: "The Alpha Build Sprint",
-  heading: "See a problem. Build something better. Ship it.",
-  prompt:
-    "Build something that makes Alpha Kirkland 10x better this year. What's a problem you feel like you can solve that you're excited about?",
-  independence:
-    "This isn't on the launch week schedule, and that's deliberate. In week one you don't yet know what this campus's problems are — ask a guide who's never run a school year to name the biggest thing to fix and you'll get a guess. Ask the same guide in October and you'll get something real. So this page is here from day one for a different reason: so that when you do hit something broken, you know there's a method, and you know you're allowed to use it.",
-  runsIn:
-    "Bring it up in a Townhall or to your Lead Guide and we'll find you the time. A Sprint needs about two and a half hours in one sitting — a session break, a Friday afternoon, a staff day. The point is that it's yours: one guide, one problem you actually care about, one thing you build and put your name on.",
-  phases: [
-    {
-      phase: "Pick it",
-      time: "15 min",
-      what: "Write your problem as one sentence. If you can't get it into a sentence, it's more than one problem.",
-    },
-    {
-      phase: "BrainLift",
-      time: "70 min",
-      what: "Four nodes: Purpose, Experts, Knowledge Tree, Spiky POVs.",
-    },
-    { phase: "Stretch", time: "10 min", what: "On your feet. Ten minutes. Back in." },
-    {
-      phase: "Build it",
-      time: "55 min",
-      what: "The artifact itself. Your Spiky POVs are the design brief — if the build doesn't reflect them, the research was decoration.",
-    },
+  heading: "When you find something broken, there's a method for taking it on.",
+  body: [
+    "This isn't on the launch week schedule, and that's deliberate. In week one nobody knows yet what this campus's real problems are — ask in October and you'll have several. So this is here from day one for a different reason: so that when you do hit something broken, you know there's a way to go after it, and you know you're allowed to.",
+    "A Sprint is one guide, one problem you actually care about, one thing you build and put your name on. About two and a half hours in one sitting: pick the problem, build a BrainLift on it, then build the thing. Everything else this week is team work — this is the part that's yours.",
+    "The BrainLift is what makes it work. Four nodes: your purpose in one sentence; ten experts worth following; six sources you actually read, with your own summaries and three insights connecting them; and two Spiky POVs — things that are true but surprising, or that people assume are true and aren't. AI is fine for finding sources and experts. It is not fine for the summaries, the insights or the POVs. If AI could have written it, it isn't your thinking.",
+    "The test for a real Spiky POV: ask AI the same question your POV answers. If it agrees with you, it isn't spiky enough. If it disagrees, you've made something new — and that's the one thing here that can't be faked.",
   ],
-  brainliftBar: [
-    {
-      node: "1 · Purpose",
-      time: "8 min",
-      minimum:
-        "One sentence. “This BrainLift is about ___. I want to understand ___ so I can ___.”",
-      ai: "AI OK — use it to sharpen the sentence",
-    },
-    {
-      node: "2 · Experts",
-      time: "15 min",
-      minimum:
-        "10 people, orgs or feeds. Who they are, what they focus on, why follow, where to find them.",
-      ai: "AI OK for finding them",
-    },
-    {
-      node: "3 · Knowledge Tree",
-      time: "30 min",
-      minimum:
-        "6 sources you actually read or watched. Summary of each in your own words. 3 insights connecting across sources.",
-      ai: "AI OK to find sources. NO AI for summaries or insights.",
-    },
-    {
-      node: "4 · Spiky POVs",
-      time: "17 min",
-      minimum:
-        "2 minimum. Truths that are true but surprising, or myths people assume are true and aren't.",
-      ai: "NO AI for writing them. AI OK for the disagreement test.",
-    },
-  ],
-  ultimateTest:
-    "Ask AI the same question your Spiky POV answers. If AI agrees with you, it isn't spiky enough — go back. If AI disagrees, you've created new knowledge. That's the one thing on this page that can't be faked.",
-  whyBrainlift: [
-    {
-      heading: "We use AI constantly. Most of us use it badly.",
-      body: "AI already knows all the facts, and it gives generic answers to everybody. A BrainLift is how you make it useful for you specifically — you feed it your research, your experts, your insights, and it starts answering like someone who knows your world.",
-    },
-    {
-      heading: "And the kids are going to build these.",
-      body: "BrainLifts are the backbone of self-driven learning. If a guide has never built one, they can't coach a kid through one — and they definitely can't push a kid past DOK 3 into original thinking. Doing one yourself, with your hands, is the prerequisite for asking a student to.",
-    },
-  ],
-  judging: [
-    {
-      q: "Does it raise the bar?",
-      a: "A parent touring the campus would notice this and ask about it.",
-    },
-    {
-      q: "Would kids feel it?",
-      a: "A student could describe it at dinner within a week of it landing.",
-    },
-    {
-      q: "Can we actually ship it?",
-      a: "Owner named, cost known, first step happens next Monday.",
-    },
-  ],
+  bar: "The bar: it raises the standard enough that a parent touring in October would notice and ask about it, kids feel it within a week of it landing, and it's actually shippable — owner named, cost known, first step next Monday.",
+  howToStart:
+    "Bring it up in a Townhall or to your Lead Guide and we'll find you the time. A session break, a Friday afternoon, a staff day.",
+  note:
+    "BrainLifts are also the backbone of self-driven learning here, and the kids build them. A guide who has never made one can't coach a student through one — which is the other reason this is up before anyone needs it.",
 };
 
 // ── Prep ─────────────────────────────────────────────────────────────────────
@@ -1984,6 +1796,63 @@ export const prework = {
     mins: 45,
     why: "Most of this team is starting their first school year at Alpha together. That only works if this is a room where you can say “I don't understand this” out loud on day two, in front of everyone, without it costing you anything. Edmondson's research is on exactly that — why teams that report more mistakes are usually the better teams, not the worse ones. Thursday's rehearsal day depends on it being true here.",
     note: "The link comes separately.",
+  },
+};
+
+export const byFriday = {
+  eyebrow: "By Friday",
+  heading: "Six things, submitted.",
+  intro:
+    "Submitted means linked on Kirkland's row of the S1 Guide Deliverables sheet. A finished artifact sitting in someone's Drive is not submitted. We check all six together at 3:30 on Friday.",
+  items: [
+    {
+      n: 1,
+      title: "Workshops",
+      when: "Committed Wednesday noon",
+      detail:
+        "Four minimum per level, all three life skills covered. Lead-approved and committed in the Guide's Guide Builder — drafted doesn't count, and only committed workshops reach Guide Platform.",
+    },
+    {
+      n: 2,
+      title: "26-27 Workshop Roadmap",
+      when: "Tuesday",
+      detail:
+        "Per level, linked in column J. Workshop names can be generic; the AlphaTest cell is the one that matters — one sentence naming the measurable bar a student clears.",
+    },
+    {
+      n: 3,
+      title: "Motivational Model",
+      when: "Tuesday",
+      detail:
+        "A reward ladder per level, built from the S1 Playbook default and this year's Alpha rules. Plus a fall MAP approach for grades 4–8, who are the only levels that get an achievement-based model this round.",
+    },
+    {
+      n: 4,
+      title: "S1 Daily + Weekly Schedule",
+      when: "Tuesday",
+      detail:
+        "The daily schedule is standard across the network — we confirm it rather than design it. The weekly workshop schedule is ours to build.",
+    },
+    {
+      n: 5,
+      title: "Bootcamp Check Chart",
+      when: "Wednesday",
+      detail:
+        "Adapted per level from the org's chart, wired to the reward ladder. Middle school is different: one chart, fifteen checks, all of 6–8, living on the Alpha Project Hub rather than Guide Platform.",
+    },
+    {
+      n: 6,
+      title: "Bootcamp Launches + Townhall Plan",
+      when: "Wednesday",
+      detail:
+        "The first Launches a new kid ever sees, and the plan for the first Townhall of the year.",
+    },
+  ],
+  outro:
+    "Campus jobs are the seventh thing and they aren't ours to submit. Jobs are a Townhall decision, so students vote on which ones exist once they arrive. Bring examples, not a finished list.",
+  link: {
+    label: "S1 Guide Deliverables sheet",
+    url: "https://docs.google.com/spreadsheets/d/10J5Uwd6jmgzEEwI2fVeFigQBDXCixtA8ToC07ZUYVE8/edit",
   },
 };
 

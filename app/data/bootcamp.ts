@@ -1013,8 +1013,8 @@ export const resources = {
     },
     {
       title: "Alpha Experiences · vendors and After School",
-      description: "Where external vendors and After School programming are managed. Vendors submit through the staff-join form, then wait on an Alpha-side approval — campuses have reported vendors stalling at that step with no clear point person, so build in time. Questions go to Xlearning@2hourlearning.com.",
-      url: "http://alpha-experiences.manus.space/staff-join",
+      description: "The portal for external vendors, experiences and After School programming. Vendors submit through the staff-join form, then wait on an Alpha-side approval — campuses have reported vendors stalling at that step with no clear point person, so build in time when you're booking anything. Questions go to Xlearning@2hourlearning.com.",
+      url: "https://alpha-experiences.manus.space/",
     },
     {
       title: "S1 Guide Deliverables · where everything gets submitted",

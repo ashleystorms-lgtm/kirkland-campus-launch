@@ -346,6 +346,7 @@ export const days: Day[] = [
           "MAP is separate and level-dependent. For the fall round, only grades 4–8 get an achievement-based model; every other level simply sets a baseline. Growth-based models for everyone start in winter. Our MAP runs Sept 15–18, so the model gets built here and used in week two.",
           "Every kid at this campus is new to Alpha. The network's own guidance is that Alpha earnings, the Emporium and comfy seating carry new students a long way on their own. The risk here isn't building too little — it's building something far more elaborate than our kids need in week one.",
           "Campus jobs are a town hall decision, not a menu we hand down. Students identify what the room needs and vote on which jobs exist. Roles that have worked elsewhere: town hall mayor, assistant to the mayor, assistant to the guide, time manager, equipment manager, board maintenance, Emporium manager. Bring examples, not a finished list.",
+          "Say what's settled and nothing more. The formula is fixed — 25 XP earns 1 Alpha, automated. What is not settled right now, network-wide, is how virtual Alpha bonuses calculate against closing rings, whether LL and L1 digital Alphas are live, whether MAP-day XP counts, and whether middle school MAP payouts land in Alphas or cash. Campuses opening this month are asking all four and none have clean answers. Build the ladder on the formula, tell students what you know, and don't promise the parts nobody has pinned down.",
         ],
         output: "A reward ladder per level, plus a fall MAP approach for the levels that need one. Org deliverable.",
         links: [
@@ -1009,6 +1010,11 @@ export const resources = {
       title: "Guide's Guide Builder",
       description: "Where workshops get built, reviewed and committed. The only route to Guide Platform — nothing is built on the platform directly. Committing unlocks a pre-filled Guide's Guide and locks the skill tracker, so commit once your lead has approved. It doubles as the workshop library: paste your Canva and lesson plan links into the pitch page.",
       url: "https://guides-guide-app.vercel.app/",
+    },
+    {
+      title: "Alpha Experiences · vendors and After School",
+      description: "Where external vendors and After School programming are managed. Vendors submit through the staff-join form, then wait on an Alpha-side approval — campuses have reported vendors stalling at that step with no clear point person, so build in time. Questions go to Xlearning@2hourlearning.com.",
+      url: "http://alpha-experiences.manus.space/staff-join",
     },
     {
       title: "S1 Guide Deliverables · where everything gets submitted",

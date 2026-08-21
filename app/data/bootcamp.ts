@@ -346,7 +346,8 @@ export const days: Day[] = [
           "MAP is separate and level-dependent. For the fall round, only grades 4–8 get an achievement-based model; every other level simply sets a baseline. Growth-based models for everyone start in winter. Our MAP runs Sept 15–18, so the model gets built here and used in week two.",
           "Every kid at this campus is new to Alpha. The network's own guidance is that Alpha earnings, the Emporium and comfy seating carry new students a long way on their own. The risk here isn't building too little — it's building something far more elaborate than our kids need in week one.",
           "Campus jobs are a town hall decision, not a menu we hand down. Students identify what the room needs and vote on which jobs exist. Roles that have worked elsewhere: town hall mayor, assistant to the mayor, assistant to the guide, time manager, equipment manager, board maintenance, Emporium manager. Bring examples, not a finished list.",
-          "Say what's settled and nothing more. The formula is fixed — 25 XP earns 1 Alpha, automated. What is not settled right now, network-wide, is how virtual Alpha bonuses calculate against closing rings, whether LL and L1 digital Alphas are live, whether MAP-day XP counts, and whether middle school MAP payouts land in Alphas or cash. Campuses opening this month are asking all four and none have clean answers. Build the ladder on the formula, tell students what you know, and don't promise the parts nobody has pinned down.",
+          "MAP payouts are now settled. L2 Alphas sync with MAP results and deposit automatically once testing finishes. For MS, the lead guide submits a form, the head guide approves, and the payout is deposited for the lead to withdraw and pay students in cash — processed as a reimbursement, so there are no tax implications. Academics is building a MAP dashboard view showing percentiles and payout per student.",
+          "Two things are still genuinely unsettled network-wide: whether closing rings affects the daily Alpha bonus, and whether the Learning Lab daily goal is 85, 100 or 120 XP. Campuses have asked repeatedly and neither has an answer. Build the ladder on the fixed formula — 25 XP earns 1 Alpha — tell students what you know, and don't promise the parts nobody has pinned down.",
         ],
         output: "A reward ladder per level, plus a fall MAP approach for the levels that need one. Org deliverable.",
         links: [
@@ -1017,6 +1018,11 @@ export const resources = {
       url: "https://alpha-experiences.manus.space/",
     },
     {
+      title: "Campus Security Portal",
+      description: "Alpha's security policies. Surfaced network-wide on Aug 19 with the note that most campuses didn't know it existed — worth reading before we open.",
+      url: "https://campus-security-portal-ochre.vercel.app/policies",
+    },
+    {
       title: "S1 Guide Deliverables · where everything gets submitted",
       description: "The org's tracking sheet. Every deliverable we build this week gets linked on Kirkland's row here — that's what submitted means. The 26-27 workshop roadmap goes in column J. Nothing counts until it's on this sheet.",
       url: "https://docs.google.com/spreadsheets/d/10J5Uwd6jmgzEEwI2fVeFigQBDXCixtA8ToC07ZUYVE8/edit",
@@ -1070,6 +1076,11 @@ export const resources = {
       title: "Work Unit Data Structures",
       description: "Session 4 (24-25). The bar your work units get quality-checked against.",
       url: "https://drive.google.com/drive/folders/1bcf5Fu0inQkTUMY-RBcFwPnArVNc7qtc",
+    },
+    {
+      title: "Launch Box · 189 Limitless Launch cards",
+      description: "A physical deck. One 15-minute group activity per card — pull it, read the front, run it. No planning and nothing to look up. Version 2 dropped Aug 20: same activities as last year's, with better reflection questions, clearer run steps and bigger cards. Physical decks are on the way; the PDF is linked here.",
+      url: "/docs/launch-box-v2.pdf",
     },
   ],
 };
@@ -1420,6 +1431,11 @@ export const prework = {
                 note: "Christie Ray. Works as a launch or during read-aloud; the plan is in the notes of the first slide.",
                 url: "https://canva.link/4nc83xh3hjxeuvk",
               },
+              {
+                title: "One activity, many feedback checks — built for small campuses",
+                note: "Scott Dangerfield's level-wide bootcamp activity clears a batch of the feedback checks in one go, and he explicitly notes it can be run combining LL and L1 at smaller expansion campuses. That's us.",
+                url: "https://canva.link/48jrxbatn1iiell",
+              },
             ],
           },
           {
@@ -1523,6 +1539,16 @@ export const prework = {
                 title: "Receiving Feedback",
                 note: "Scott Dangerfield.",
                 url: "https://www.canva.com/design/DAGv3vg7EbE/RYecLb_kq5hOpxJ0i96-Eg/edit",
+              },
+              {
+                title: "One activity, many feedback checks — built for small campuses",
+                note: "Scott Dangerfield. Can be run combining L1 and LL at smaller expansion campuses.",
+                url: "https://canva.link/48jrxbatn1iiell",
+              },
+              {
+                title: "The independence binder",
+                note: "Scott Dangerfield. A physical binder plus a Canva insert that carries a student through five 2nd-grade and two 3rd-grade independence checks: TimeBack steps five days running, solving a tech issue alone, moving between apps in under a minute, arriving fully charged, and tracking their own data.",
+                url: "https://canva.link/los4yz51cxb4mke",
               },
             ],
           },

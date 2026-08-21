@@ -395,9 +395,9 @@ export const days: Day[] = [
     date: "Wednesday, September 2, 2026",
     hours: "8:00a–5:00p",
     title: "Lock",
-    thesis: "Workshops finalized. Orders out. No loose ends after today.",
+    thesis: "Workshops close. Then we learn the systems that run the year.",
     point:
-      "The hard deadline. Workshops close at noon, which unlocks the materials order — and anything ordered after today may not arrive before kids do. The afternoon moves to bootcamp: what a brand-new kid's first days actually are, and the chart they earn their way through.",
+      "The hard deadline is noon — workshops close and the materials order goes out, and anything ordered after today may not arrive before kids do. The afternoon is the opposite kind of work. Bootcamp and the check charts are already built by the org, so we read them rather than write them. Then Guide Platform, properly, because every work unit you run this year lands there and none of us has used it through a school year.",
     theme: {
       name: "Puget Sound",
       accent: "#9fbccf",
@@ -427,10 +427,9 @@ export const days: Day[] = [
           "Committed, not drafted. Across the network there are hundreds of workshop pitches sitting saved in the Builder and only a fraction actually committed — and committing is what sends them to Guide Platform. A drafted workshop does not exist as far as the system is concerned.",
           "Commit requires lead approval first, so this morning runs as a loop rather than a build: draft, send for comments, resolve, commit. Sixteen workshops need reviewing before noon. Send them as they're ready rather than all at once at 11:30 — the queue is the thing most likely to make us miss the deadline.",
           "Before you send anything for review, check the AlphaTest measures the life skill and not the activity. If it measures whether a kid got better at climbing, it isn't finished.",
-          "Once committed, download the pre-filled Guide's Guide and paste your Canva and lesson plan links into the pitch page.",
         ],
         output:
-          "The workshop bank closes at noon. Four per level, all three life skills, vendored, costed, sequenced, lead-approved and committed in the Builder.",
+          "The workshop bank closes at noon. Four per level, all three life skills, vendored, costed, lead-approved and committed in the Builder.",
         links: [
           { label: "Guide's Guide Builder", url: "https://guides-guide-app.vercel.app/" },
           { label: "S1 Playbook — default workshops", url: "https://s1-playbook-2627.netlify.app/" },
@@ -445,45 +444,51 @@ export const days: Day[] = [
         kind: "session",
         owner: "Ashley + level leads",
         detail: [
-          "Workshop-specific materials, ordered live in this block.",
-          "Anything that can't arrive within four days gets a substitute decided here — not discovered on Friday.",
+          "Workshop-specific materials, ordered live in this block — not added to somebody's evening.",
+          "Anything that can't arrive within four days gets a substitute decided here, not discovered on Friday.",
         ],
       },
       {
-        id: "wed-bootcamp",
+        id: "wed-charts",
         start: "1:45p",
-        end: "3:00p",
-        title: "S1 Bootcamp",
+        end: "2:45p",
+        title: "Bootcamp and the check charts",
         kind: "session",
         owner: "Ashley",
         detail: [
-          "What the first days actually are, start to finish. Built by the wider org — this block is how it transfers to a campus that wasn't in the room for it.",
+          "All of this is already built. The org spent two weeks of staff days on it while we were running Alpha Summer, so this block is reading it together with the real charts open — not writing anything.",
+          "What bootcamp actually is: the entry ramp every brand-new kid earns their way through in their first session, and the thing that unlocks the Emporium, the year-long check chart and the signature life skills.",
+          "The bootcamp check chart versus the ongoing check chart. Two different instruments doing two different jobs — one is a ramp a kid clears once, the other is the daily engine for the rest of the year. Know which is which and where each lives.",
+          "Middle school is on a different system: one chart, fifteen checks, all of 6–8 with grade levels gone, living on the Alpha Project Hub rather than Guide Platform. Everything else about MS still runs through Guide Platform.",
+          "Two things to watch. The bootcamp time budget is roughly 15 hours per level, and campuses have come in at double without noticing. And several checks across the network are currently broken or missing their AI grader — know which before you promise a student they can complete one.",
+        ],
+        links: [
+          { label: "Bootcamp Check Chart · All Levels", url: "https://docs.google.com/spreadsheets/d/1Wj9mYrneOnVVtNbXXOpRdy6A9c6Rqpjgxawesd_f46Y/edit" },
+          { label: "Alpha Project Hub — MS bootcamp", url: "https://alpha-project-hub.vercel.app/" },
         ],
       },
       {
-        id: "wed-bootcamp-chart",
-        start: "3:00p",
-        end: "4:15p",
-        title: "Bootcamp check chart",
-        kind: "build",
-        owner: "Ashley, then level pairs",
-        detail: [
-          "The entry ramp a brand-new kid earns their way through, wired to the reward ladder from yesterday.",
-          "Plus the plan for the kid it takes three times as long.",
-        ],
-        output: "A bootcamp check chart per level, ready to go on the wall Friday.",
-      },
-      {
-        id: "wed-launches",
-        start: "4:15p",
+        id: "wed-platform",
+        start: "2:45p",
         end: "5:00p",
-        title: "Bootcamp Launches + Townhall plan",
-        kind: "build",
-        owner: "Level pairs",
+        title: "Guide Platform · the full run-through",
+        kind: "session",
+        owner: "Ashley · everyone together, laptops open",
         detail: [
-          "The first Launches a new kid ever sees, and the plan for the first Townhall of the year.",
+          "The longest block of the week, and it earns it. Guide Platform is the source of truth for every work unit this year. Everything you enter attaches to a kid and builds their profile, so any guide who picks them up later can motivate them from day one instead of playing knowledge telephone across a dozen spreadsheets.",
+          "Everyone together, including middle school. MS bootcamp checks live on the Project Hub, but every other work unit MS runs lands here like everyone else's.",
+          "We work through it properly: notes and shout-outs, the behavior ladder and what happens when a card is issued, voice memos — you can talk for up to 65 minutes and it sorts the notes to the right kids — student profiles, the bootcamp check chart view, workshops, and the 3Cs.",
+          "Star each kid's top three checks before they ever log in, so the first thing they see is their focus rather than a wall of everything.",
+          "PreK–2 is guide-run. Littles don't log in; you tick the steps and add photo or video proof on the kid's check.",
+          "Bring real problems. Anything that doesn't work goes to #guide-platform-support rather than a DM — Alec watches that channel and a fix there helps every campus.",
         ],
-        output: "Bootcamp Launches and Bootcamp Townhall plan, per level. Org deliverables.",
+        output:
+          "Every guide has signed in, found their roster, entered a note, and knows where each of the six work units lands.",
+        links: [
+          { label: "Guide Platform — guide sign-in", url: "https://alpha-guide-platform.vercel.app" },
+          { label: "Guide Platform — student sign-in", url: "https://alpha-guide-platform.vercel.app/student/login" },
+          { label: "Alec's 8-minute walkthrough — watch before this block", url: "https://www.loom.com/share/73cb8690df234d23a7e5ae6bd54eeb39" },
+        ],
       },
     ],
   },
@@ -1833,9 +1838,9 @@ export const prework = {
 
 export const byFriday = {
   eyebrow: "By Friday",
-  heading: "Six things, submitted.",
+  heading: "Five things, submitted.",
   intro:
-    "Submitted means linked on Kirkland's row of the S1 Guide Deliverables sheet. A finished artifact sitting in someone's Drive is not submitted. We check all six together at 3:30 on Friday.",
+    "Submitted means linked on Kirkland's row of the S1 Guide Deliverables sheet. A finished artifact sitting in someone's Drive is not submitted. We check all five together at 3:30 on Friday.",
   items: [
     {
       n: 1,
@@ -1867,21 +1872,14 @@ export const byFriday = {
     },
     {
       n: 5,
-      title: "Bootcamp Check Chart",
-      when: "Wednesday",
-      detail:
-        "Adapted per level from the org's chart, wired to the reward ladder. Middle school is different: one chart, fifteen checks, all of 6–8, living on the Alpha Project Hub rather than Guide Platform.",
-    },
-    {
-      n: 6,
       title: "Bootcamp Launches + Townhall Plan",
-      when: "Wednesday",
+      when: "Friday morning",
       detail:
-        "The first Launches a new kid ever sees, and the plan for the first Townhall of the year.",
+        "The org already built these. Adapted to our kids, not built from scratch — the first Launches a new kid ever sees, and the plan for the first Townhall of the year.",
     },
   ],
   outro:
-    "Campus jobs are the seventh thing and they aren't ours to submit. Jobs are a Townhall decision, so students vote on which ones exist once they arrive. Bring examples, not a finished list.",
+    "Campus jobs are the sixth thing and they aren't ours to submit. Jobs are a Townhall decision, so students vote on which ones exist once they arrive. Bring examples, not a finished list.",
   link: {
     label: "S1 Guide Deliverables sheet",
     url: "https://docs.google.com/spreadsheets/d/10J5Uwd6jmgzEEwI2fVeFigQBDXCixtA8ToC07ZUYVE8/edit",

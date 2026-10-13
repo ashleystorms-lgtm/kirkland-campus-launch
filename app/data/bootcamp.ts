@@ -68,6 +68,7 @@ export const hero = {
 // nav item the way the NYC site groups nothing — your week is longer.
 
 export const navItems = [
+  { label: "Oct 13", href: "#oct-13" },
   { label: "Before we start", href: "#prework" },
   { label: "Mon", href: "#monday" },
   { label: "Tue", href: "#tuesday" },
@@ -100,6 +101,91 @@ export const story = {
 // shape. Delete the placeholder blocks and add yours.
 
 export const days: Day[] = [
+  // ── Session 2 staff days (current). Cal B, so these run after school. ──────
+  {
+    id: "oct-13",
+    label: "Oct 13",
+    dayName: "Tuesday · Session 2 staff day",
+    date: "Tuesday, October 13, 2026",
+    hours: "4:00p–8:00p PT",
+    title: "Work unit updates and building Session 2",
+    thesis: "What changes in S2, what it means for our kids, and time to build it.",
+    point:
+      "A condensed after-school version. We watch the kickoff, walk through every work unit and playbook change for S2 with time to talk about our own kids, then use the evening to build S2. We leave with S2 underway and a plan for accountability report first drafts, due Oct 23.",
+    theme: {
+      name: "Douglas fir",
+      accent: "#a7c1a1",
+      soft: "rgba(167,193,161,0.28)",
+      glow: "rgba(167,193,161,0.10)",
+      image: "/images/days/tuesday.jpg",
+    },
+    blocks: [
+      {
+        id: "oct13-welcome",
+        start: "4:00p",
+        end: "4:10p",
+        title: "Welcome",
+        kind: "leadership",
+        detail: ["Quick look at the agenda and what we leave with tonight."],
+      },
+      {
+        id: "oct13-kickoff",
+        start: "4:10p",
+        end: "5:10p",
+        title: "Joe's kickoff at 2x",
+        kind: "session",
+        detail: [
+          "The kickoff is two hours long. At double speed it takes about an hour.",
+        ],
+      },
+      {
+        id: "oct13-work-units",
+        start: "5:10p",
+        end: "6:10p",
+        title: "Work unit and playbook updates for S2",
+        kind: "workUnit",
+        detail: [
+          "Discussion time is built in. Talk through what each change means for your kids.",
+          "Closing: one recorded Closing per group per week, not daily.",
+          "Tier 1 motivational model: the new game plan for creating closed loops.",
+          "Talking to parents.",
+          "Math note taking.",
+          "Love of Reading Initiative: baseline data and S2 book clubs.",
+          "Workshop checkpoints and check chart status must live in GuidePlatform. In S2 the Community App shows parents who is on track or behind.",
+        ],
+      },
+      { id: "oct13-break", start: "6:10p", end: "6:30p", title: "Break", kind: "meal" },
+      {
+        id: "oct13-build",
+        start: "6:30p",
+        end: "7:30p",
+        title: "Build S2",
+        kind: "build",
+      },
+      {
+        id: "oct13-accountability",
+        start: "7:30p",
+        end: "7:50p",
+        title: "Accountability reports talk-through",
+        kind: "session",
+        detail: [
+          "The BOY Accountability Report prototype.",
+          "Guide comment standards: what I learned about the kid, how I will motivate and inspire them, and our goal for them.",
+          "First drafts due Oct 23. Reports ship Oct 30.",
+        ],
+      },
+      {
+        id: "oct13-close",
+        start: "7:50p",
+        end: "8:00p",
+        title: "Close and homework",
+        kind: "session",
+        output: "Accountability report first drafts due Oct 23.",
+      },
+    ],
+  },
+
+  // ── Launch week, Aug 31 to Sep 4, 2026 (past, to be archived) ─────────────
   {
     id: "monday",
     label: "Monday",

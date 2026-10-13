@@ -67,7 +67,7 @@ export default function ArchivePage() {
   // Every collapsible block on the page, so "Expand all" and Print can reach them.
   const allBlockIds = archiveDays.flatMap((day) =>
     day.blocks
-      .filter((b) => b.detail?.length || b.output)
+      .filter((b) => b.detail?.length || b.output || b.links?.length)
       .map((b) => b.id),
   );
 

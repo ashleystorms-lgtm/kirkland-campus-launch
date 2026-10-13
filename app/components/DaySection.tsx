@@ -21,7 +21,7 @@ const marker: Record<BlockKind, { dot: string; label?: string }> = {
 
 function ScheduleRow({ block }: { block: Block }) {
   const { isOpen, toggle } = useSchedule();
-  const hasDetail = Boolean(block.detail?.length || block.output);
+  const hasDetail = Boolean(block.detail?.length || block.output || block.links?.length);
   const open = isOpen(block.id);
   const m = marker[block.kind];
   const dim = block.kind === "meal";

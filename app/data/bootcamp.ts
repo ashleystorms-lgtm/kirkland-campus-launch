@@ -96,21 +96,24 @@ export const days: Day[] = [
       {
         id: "oct13-welcome",
         start: "4:00p",
-        end: "4:10p",
+        end: "4:05p",
         title: "Welcome",
         kind: "leadership",
         detail: ["Quick look at the agenda and what we leave with tonight."],
+        links: [
+          { label: "Oct Staff Days agenda and hub (org sheet)", url: "https://docs.google.com/spreadsheets/d/17eXkBzihUx43P6J9WwW-S9Zrc7_ZFLSnFOMPu_FmKFs/edit?gid=2#gid=2" },
+        ],
       },
       {
         id: "oct13-kickoff",
-        start: "4:10p",
-        end: "5:10p",
+        start: "4:05p",
+        end: "4:45p",
         title: "Joe's kickoff at 2x",
         kind: "session",
         detail: [
           "We watch this together as a group, at 2x.",
-          "Joe's portion starts at 1:40:00 in the recording. Skip ahead to that point.",
-          "We watch from there to the end of the recording.",
+          "Joe's portion starts at 1:40:00 in the recording.",
+          "We watch from there to the end.",
         ],
         links: [
           { label: "Joe's kickoff recording (Zoom)", url: "https://alpha-school.zoom.us/rec/play/vyF8gJwHpoLZY5EAcmb5-q1dLruge2rpmCralo3bqUiKgbSAcfSgOpstSSlJhYV_u1OXChfnqDD91mHx.H-SyXq7aKImJZ_P5?accessLevel=meeting&canPlayFromShare=true&from=my_recording&continueMode=true&oldStyle=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Falpha-school.zoom.us%2Frec%2Fshare%2FcL98mJWQQkqEOvJgsfFW-bKWvF4S0bFljKvSSkvwtAnQt1KblLTiWuXVFtL2d8Fh.g0kk37iJet7I8_wa" },
@@ -118,8 +121,8 @@ export const days: Day[] = [
       },
       {
         id: "oct13-work-units",
-        start: "5:10p",
-        end: "6:10p",
+        start: "4:45p",
+        end: "5:45p",
         title: "Work unit and playbook updates for S2",
         kind: "workUnit",
         detail: [
@@ -131,25 +134,51 @@ export const days: Day[] = [
           "Love of Reading Initiative: baseline data and S2 book clubs.",
           "Workshop checkpoints and check chart status must live in GuidePlatform. In S2 the Community App shows parents who is on track or behind.",
         ],
+        links: [
+          { label: "Motivational Models", url: "https://docs.google.com/document/d/1bNOW5BC0wcouGb_dyR3WuO-SoN6TiHwp1aMMaxRVZ-s/edit?usp=sharing" },
+          { label: "Talking to Parents WUD", url: "https://docs.google.com/document/d/18untU1vi46LYP0gR0d380qzI-05cYtpVBrQqwfF9IHg/edit?usp=sharing" },
+          { label: "Guidelines for Math Journals", url: "https://docs.google.com/document/d/1rsYwrnuXBsM9CqoFM1henzrMS8fWGe9SSHKX_EyCji4/edit?usp=sharing" },
+          { label: "Baseline Data: Love of Reading October 2026", url: "https://docs.google.com/spreadsheets/d/1edhAwy-NkchTFEDBGbQSW5S9H2sZjMAn_-qbRMG70-Q/edit?usp=sharing" },
+          { label: "Technology Use and Screen Time WUD", url: "https://docs.google.com/document/d/1qC36AcrOhrRcdYXNibbGg6IH6dSOkOeKSP7l95ylaHA/edit?usp=sharing" },
+          { label: "Community App guide one-pager (PDF)", url: "https://drive.google.com/file/d/14NldR4ZaZ1ml-EHw2Oapj0nws2C7pGTj/view?usp=drive_link" },
+          { label: "Guide Platform", url: "https://alpha-guide-platform.vercel.app" },
+        ],
       },
-      { id: "oct13-break", start: "6:10p", end: "6:30p", title: "Break", kind: "meal" },
+      { id: "oct13-break", start: "5:45p", end: "6:00p", title: "Break", kind: "meal" },
       {
         id: "oct13-build",
-        start: "6:30p",
-        end: "7:30p",
+        start: "6:00p",
+        end: "7:00p",
         title: "Build S2",
         kind: "build",
+        links: [
+          { label: "Campus Admin (load your S2 campus page)", url: "https://alpha-campus-admin.vercel.app/" },
+          { label: "AlphaBoxd workshop library", url: "https://alphaboxd.pplx.app/" },
+        ],
       },
       {
         id: "oct13-accountability",
-        start: "7:30p",
-        end: "7:50p",
+        start: "7:00p",
+        end: "7:20p",
         title: "Accountability reports talk-through",
         kind: "session",
         detail: [
           "The BOY Accountability Report prototype.",
           "Guide comment standards: what I learned about the kid, how I will motivate and inspire them, and our goal for them.",
           "First drafts due Oct 23. Reports ship Oct 30.",
+        ],
+        links: [
+          { label: "BOY Accountability Report: Standards for Guide Comments", url: "https://docs.google.com/document/d/1J80ZHDhtyxINtWBEmSa0oV_7p9ccjnB7bpG6cNh9iRQ/edit" },
+        ],
+      },
+      {
+        id: "oct13-academics",
+        start: "7:20p",
+        end: "7:50p",
+        title: "Academics",
+        kind: "session",
+        links: [
+          { label: "S1 Academic Questions and Feedback", url: "https://docs.google.com/document/d/1CiAiqgzIk1zeTFtBlr05hms6XRRrbIESNE7Q01T5T_I/edit?usp=sharing" },
         ],
       },
       {
@@ -159,6 +188,9 @@ export const days: Day[] = [
         title: "Close and homework",
         kind: "session",
         output: "Accountability report first drafts due Oct 23.",
+        links: [
+          { label: "Limitless Game Film PD: Do This, Not That", url: "https://docs.google.com/document/d/1Aw8aeKt4XCUxDM7spYsbTma-IdL5GjZmVgIYbhgeQuM/edit?usp=sharing" },
+        ],
       },
     ],
   },

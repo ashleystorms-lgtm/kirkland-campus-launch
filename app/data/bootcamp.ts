@@ -142,6 +142,7 @@ export const days: Day[] = [
           { label: "Technology Use and Screen Time WUD", url: "https://docs.google.com/document/d/1qC36AcrOhrRcdYXNibbGg6IH6dSOkOeKSP7l95ylaHA/edit?usp=sharing" },
           { label: "Community App guide one-pager (PDF)", url: "https://drive.google.com/file/d/14NldR4ZaZ1ml-EHw2Oapj0nws2C7pGTj/view?usp=drive_link" },
           { label: "Guide Platform", url: "https://alpha-guide-platform.vercel.app" },
+          { label: "Book Clubs One-Pager", url: "https://claude.ai/artifact/UXq5WXR6vtVSLq8X63mX14" },
         ],
       },
       { id: "oct13-break", start: "5:45p", end: "6:00p", title: "Break", kind: "meal" },
@@ -169,6 +170,7 @@ export const days: Day[] = [
         ],
         links: [
           { label: "BOY Accountability Report: Standards for Guide Comments", url: "https://docs.google.com/document/d/1J80ZHDhtyxINtWBEmSa0oV_7p9ccjnB7bpG6cNh9iRQ/edit" },
+          { label: "BOY Accountability Report Prototype", url: "https://www.perplexity.ai/computer/a/d8f1513b-d273-4b86-8a0a-154787c287e7" },
         ],
       },
       {
@@ -191,6 +193,105 @@ export const days: Day[] = [
         links: [
           { label: "Limitless Game Film PD: Do This, Not That", url: "https://docs.google.com/document/d/1Aw8aeKt4XCUxDM7spYsbTma-IdL5GjZmVgIYbhgeQuM/edit?usp=sharing" },
         ],
+      },
+    ],
+  },
+
+  {
+    id: "oct-16",
+    status: "upcoming",
+    label: "Oct 16",
+    dayName: "Friday · Session 2 staff day",
+    date: "Friday, October 16, 2026",
+    hours: "12:00p–4:00p PT",
+    title: "Data, Feathers, and what's working",
+    thesis:
+      "We look at what Session 1 taught us, learn from Tom Bennett's behavior training, make sure every kid is covered, and share what's working.",
+    point:
+      "Session 1 is done. Before Session 2 starts on Monday, we read the S1 data honestly, train on behavior together, run Find Your Feathers for every kid, and trade what's working in Timeback.",
+    theme: {
+      name: "Alpenglow",
+      accent: "#e8a58f",
+      soft: "rgba(232,165,143,0.28)",
+      glow: "rgba(232,165,143,0.10)",
+      image: "/images/days/friday.jpg",
+      imagePosition: "50% 22%",
+      imageHeight: "72vh",
+    },
+    blocks: [
+      { id: "oct16-welcome", start: "12:00p", end: "12:05p", title: "Welcome", kind: "leadership" },
+      {
+        id: "oct16-data-walk",
+        start: "12:05p",
+        end: "12:30p",
+        title: "S1 data walk",
+        kind: "session",
+        detail: [
+          "Review the S1 student and parent survey results.",
+          "What went well? Where did we fall short? Learn from it, codify it, and fix it.",
+        ],
+        links: [
+          { label: "Guide Platform", url: "https://alpha-guide-platform.vercel.app" },
+        ],
+      },
+      {
+        id: "oct16-behavior-training",
+        start: "12:30p",
+        end: "1:30p",
+        title: "Tom Bennett's behavior training, together at 2x",
+        kind: "session",
+        detail: ["The full session is 2 hours."],
+      },
+      {
+        id: "oct16-slides",
+        start: "1:30p",
+        end: "1:50p",
+        title: "Slides review",
+        kind: "session",
+        links: [
+          { label: "Alpha Guide behaviour training (slides)", url: "https://docs.google.com/presentation/d/1U1ddZMtZZD-eUBLoNQBq7Hs6TkG1aWwfZ2le6ZWkOn0/edit?usp=sharing" },
+        ],
+      },
+      { id: "oct16-break", start: "1:50p", end: "2:00p", title: "Break", kind: "meal" },
+      {
+        id: "oct16-feathers",
+        start: "2:00p",
+        end: "3:10p",
+        title: "Find Your Feathers and fix, in GuidePlatform",
+        kind: "workUnit",
+        detail: [
+          "For each kid: Love of School, Learn 2x, Life Skills, 10x Guide, and Character/Culture.",
+          "Look at the S1 data first (kid survey, XP per day and by subject, workshop results, Bootcamp check chart, Peer 360, greens, yellows, strikes), then give a Y or N for each commitment.",
+          "Every N gets a root cause, a fix, and an owner. If you override a suggested Y or N, say why.",
+          "Finish the rest as homework.",
+        ],
+        links: [
+          { label: "Guide Platform", url: "https://alpha-guide-platform.vercel.app" },
+        ],
+      },
+      {
+        id: "oct16-xp-groups",
+        start: "3:10p",
+        end: "3:45p",
+        title: "XP Groups knowledge share",
+        kind: "session",
+        detail: [
+          "Pair top-XP outputs with lower-XP outputs, by level.",
+          "Prompt: what do you do during Timeback that the rest of us don't? Think coaching moves, motivational models, data review, and how you get kids locked in.",
+        ],
+        links: [
+          { label: "XP Exchange starts here", url: "https://www.perplexity.ai/computer/a/50944cbf-27ed-4f81-8dc3-f8303094f8ad" },
+          { label: "XP Exchange sheet, Oct Staff Days", url: "https://docs.google.com/spreadsheets/d/1amsdJbJDBySUBm2rdxF-_cDRaxjcWGHDJ5NQSjNrt0U/edit" },
+        ],
+      },
+      {
+        id: "oct16-close",
+        start: "3:45p",
+        end: "4:00p",
+        title: "Close and homework",
+        kind: "session",
+        detail: ["Finish Find Your Feathers for every kid."],
+        output: "Accountability report first drafts are due Oct 23.",
       },
     ],
   },

@@ -108,8 +108,9 @@ export const days: Day[] = [
         title: "Joe's kickoff at 2x",
         kind: "session",
         detail: [
-          "The kickoff is two hours long. At double speed it takes about an hour.",
-          "Joe's portion starts at 1:40:00 in the recording. Skip ahead to that point, then watch at 2x.",
+          "We watch this together as a group, at 2x.",
+          "Joe's portion starts at 1:40:00 in the recording. Skip ahead to that point.",
+          "We watch from there to the end of the recording.",
         ],
         links: [
           { label: "Joe's kickoff recording (Zoom)", url: "https://alpha-school.zoom.us/rec/play/vyF8gJwHpoLZY5EAcmb5-q1dLruge2rpmCralo3bqUiKgbSAcfSgOpstSSlJhYV_u1OXChfnqDD91mHx.H-SyXq7aKImJZ_P5?accessLevel=meeting&canPlayFromShare=true&from=my_recording&continueMode=true&oldStyle=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Falpha-school.zoom.us%2Frec%2Fshare%2FcL98mJWQQkqEOvJgsfFW-bKWvF4S0bFljKvSSkvwtAnQt1KblLTiWuXVFtL2d8Fh.g0kk37iJet7I8_wa" },

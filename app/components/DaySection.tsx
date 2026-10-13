@@ -137,7 +137,7 @@ function ScheduleRow({ block }: { block: Block }) {
   );
 }
 
-export default function DaySection({ day }: { day: Day }) {
+export default function DaySection({ day, note }: { day: Day; note?: string }) {
   const buildCount = day.blocks.filter(
     (b) => b.kind === "build" || b.kind === "sprint",
   ).length;
@@ -207,6 +207,10 @@ export default function DaySection({ day }: { day: Day }) {
             </p>
           )}
         </header>
+
+        {note && (
+          <p className="mb-8 font-mono text-[0.7rem] text-[#8ba39d]/70">{note}</p>
+        )}
 
         {/* The rail stops at the last block rather than dangling past it. */}
         <ol className="[&>li:last-child_.rail-line]:h-4">

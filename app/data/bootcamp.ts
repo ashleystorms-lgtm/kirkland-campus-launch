@@ -80,6 +80,7 @@ export const navItems = [
   { label: "Evaluation", href: "#evaluation" },
   { label: "Build Sprint", href: "#sprint" },
   { label: "Resources", href: "#resources" },
+  { label: "Archive", href: "/archive" }, // temporary, until the nav is rebuilt
 ];
 
 // ── Our Story ────────────────────────────────────────────────────────────────
@@ -1535,7 +1536,6 @@ export const prework = {
       {
         id: "LL",
         name: "LL · Learning Lab",
-        guides: "Esther + Olivia",
         channel: "#k-1-guides",
         groups: [
           {
@@ -1664,7 +1664,6 @@ export const prework = {
       {
         id: "L1",
         name: "L1",
-        guides: "Sanura + Tylor",
         channel: "#2-3-guides",
         groups: [
           {
@@ -1793,7 +1792,6 @@ export const prework = {
       {
         id: "L2",
         name: "L2",
-        guides: "Kris + Amy",
         channel: "#4-5-guides",
         groups: [
           {

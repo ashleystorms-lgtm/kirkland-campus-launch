@@ -4,14 +4,20 @@ import { useEffect, useState } from "react";
 import { navItems } from "../data/bootcamp";
 import { useSchedule } from "./schedule-state";
 
-export default function SiteNav() {
+export default function SiteNav({
+  items = navItems,
+}: {
+  items?: { label: string; href: string }[];
+}) {
   const [active, setActive] = useState<string>("");
   const [lifted, setLifted] = useState(false);
   const { expandAll, collapseAll, allExpanded } = useSchedule();
 
   // Highlight whichever section is currently crossing the top third of the screen.
   useEffect(() => {
-    const targets = navItems
+    // Only "#section" links can be highlighted. Links to other pages are skipped.
+    const targets = items
+      .filter((n) => n.href.startsWith("#"))
       .map((n) => document.querySelector(n.href))
       .filter((el): el is Element => Boolean(el));
 
@@ -27,7 +33,7 @@ export default function SiteNav() {
 
     targets.forEach((t) => observer.observe(t));
     return () => observer.disconnect();
-  }, []);
+  }, [items]);
 
   // The nav floats over the hero, then gains a background once you've scrolled past it.
   useEffect(() => {
@@ -50,7 +56,7 @@ export default function SiteNav() {
             : "border-white/20 bg-white/10 shadow-[0_18px_60px_rgba(0,0,0,0.18)]",
         ].join(" ")}
       >
-        {navItems.map((item) => {
+        {items.map((item) => {
           const isActive = active === item.href;
           return (
             <a

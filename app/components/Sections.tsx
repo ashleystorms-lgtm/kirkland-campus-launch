@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import type { ArchiveReading } from "../data/archive";
 import {
   byFriday,
   evaluation,
@@ -89,6 +90,73 @@ function Table({
   );
 }
 
+// The nine summer staff day summaries. Shared by "Before we start" and the Archive.
+function StaffDaysDocs({ docs }: { docs: typeof prework.docs }) {
+  return (
+    <ol className="mt-10 space-y-px">
+      {docs.map((doc) => (
+        <li key={doc.n} className="border-t border-[#f7efe8]/10">
+          <a
+            href={doc.file}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group grid gap-x-6 gap-y-2 py-8 sm:grid-cols-[3.5rem_1fr]"
+          >
+            <div className="font-mono text-[1.6rem] font-light leading-none text-[#f3d7a3]/60">
+              {String(doc.n).padStart(2, "0")}
+            </div>
+
+            <div>
+              <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
+                <h3 className="text-[1.1rem] font-normal text-[#f8f2eb] transition-colors duration-300 group-hover:text-[#f3d7a3]">
+                  {doc.title}
+                </h3>
+                <p className="font-mono text-[0.7rem] text-[#8ba39d]">
+                  {doc.day} · {doc.date}
+                </p>
+                <p className="font-mono text-[0.7rem] text-[#f3d7a3]">
+                  ~{doc.mins} min
+                </p>
+              </div>
+
+              <p className="mt-4 max-w-2xl text-[0.9rem] font-light leading-relaxed text-[#f7efe8]/65">
+                {doc.summary}
+              </p>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+function BookNote({ book }: { book: typeof prework.book }) {
+  return (
+    <div className="mt-12">
+      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
+        <h3 className="text-[1.1rem] font-normal text-[#f8f2eb]">
+          {book.title}
+          <span className="font-light text-[#f7efe8]/60">
+            {" "}
+            — {book.author}
+          </span>
+        </h3>
+        <p className="font-mono text-[0.7rem] text-[#8ba39d]">
+          {book.scope} · ~{book.mins} min
+        </p>
+      </div>
+
+      <p className="mt-4 max-w-2xl text-[0.9rem] font-light leading-relaxed text-[#f7efe8]/65">
+        {book.why}
+      </p>
+
+      <p className="mt-4 text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
+        {book.note}
+      </p>
+    </div>
+  );
+}
+
 // ── Before we start ──────────────────────────────────────────────────────────
 
 export function PreworkSection() {
@@ -141,40 +209,7 @@ export function PreworkSection() {
         {prework.totalNote}
       </p>
 
-      <ol className="mt-10 space-y-px">
-        {prework.docs.map((doc) => (
-          <li key={doc.n} className="border-t border-[#f7efe8]/10">
-            <a
-              href={doc.file}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group grid gap-x-6 gap-y-2 py-8 sm:grid-cols-[3.5rem_1fr]"
-            >
-              <div className="font-mono text-[1.6rem] font-light leading-none text-[#f3d7a3]/60">
-                {String(doc.n).padStart(2, "0")}
-              </div>
-
-              <div>
-                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
-                  <h3 className="text-[1.1rem] font-normal text-[#f8f2eb] transition-colors duration-300 group-hover:text-[#f3d7a3]">
-                    {doc.title}
-                  </h3>
-                  <p className="font-mono text-[0.7rem] text-[#8ba39d]">
-                    {doc.day} · {doc.date}
-                  </p>
-                  <p className="font-mono text-[0.7rem] text-[#f3d7a3]">
-                    ~{doc.mins} min
-                  </p>
-                </div>
-
-                <p className="mt-4 max-w-2xl text-[0.9rem] font-light leading-relaxed text-[#f7efe8]/65">
-                  {doc.summary}
-                </p>
-              </div>
-            </a>
-          </li>
-        ))}
-      </ol>
+      <StaffDaysDocs docs={prework.docs} />
 
       <h3 className="mt-20 mb-3 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
         {prework.levelWork.heading}
@@ -394,43 +429,49 @@ export function PreworkSection() {
 
       <div className="mt-20 border-t border-[#f7efe8]/10" />
 
-      <div className="mt-12">
-        <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
-          <h3 className="text-[1.1rem] font-normal text-[#f8f2eb]">
-            {prework.book.title}
-            <span className="font-light text-[#f7efe8]/60">
-              {" "}
-              — {prework.book.author}
-            </span>
-          </h3>
-          <p className="font-mono text-[0.7rem] text-[#8ba39d]">
-            {prework.book.scope} · ~{prework.book.mins} min
-          </p>
-        </div>
+      <BookNote book={prework.book} />
+    </Section>
+  );
+}
 
-        <p className="mt-4 max-w-2xl text-[0.9rem] font-light leading-relaxed text-[#f7efe8]/65">
-          {prework.book.why}
-        </p>
+// ── Archive: what we read before the week ───────────────────────────────────
 
-        <p className="mt-4 text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
-          {prework.book.note}
+export function ReadingSection({ data }: { data: ArchiveReading }) {
+  return (
+    <Section id="reading" eyebrow={data.eyebrow} heading={data.heading} wide>
+      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+        {data.intro}
+      </p>
+      <div className="mt-6 border-l-2 border-[#f3d7a3]/40 pl-5">
+        <p className="text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
+          {data.why}
         </p>
       </div>
+
+      <p className="mt-6 max-w-2xl text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
+        {data.totalNote}
+      </p>
+
+      <StaffDaysDocs docs={data.docs} />
+
+      <div className="mt-20 border-t border-[#f7efe8]/10" />
+
+      <BookNote book={data.book} />
     </Section>
   );
 }
 
 // ── Our Story ────────────────────────────────────────────────────────────────
 
-export function StorySection() {
+export function StorySection({ data = story }: { data?: typeof story }) {
   return (
-    <Section id="story" eyebrow={story.eyebrow} heading={story.heading}>
+    <Section id="story" eyebrow={data.eyebrow} heading={data.heading}>
       <div className="space-y-6 text-[1rem] font-light leading-[1.8] text-[#f7efe8]/70 sm:text-[1.08rem]">
-        {story.paragraphs.map((p, i) => (
+        {data.paragraphs.map((p, i) => (
           <p
             key={p}
             className={
-              i === story.paragraphs.length - 1
+              i === data.paragraphs.length - 1
                 ? "border-l-2 border-[#f3d7a3]/40 pl-5 text-[#f3d7a3]/90"
                 : undefined
             }
@@ -445,15 +486,15 @@ export function StorySection() {
 
 // ── By Friday ────────────────────────────────────────────────────────────────
 
-export function ByFridaySection() {
+export function ByFridaySection({ data = byFriday }: { data?: typeof byFriday }) {
   return (
-    <Section id="byfriday" eyebrow={byFriday.eyebrow} heading={byFriday.heading} wide>
+    <Section id="byfriday" eyebrow={data.eyebrow} heading={data.heading} wide>
       <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
-        {byFriday.intro}
+        {data.intro}
       </p>
 
       <ol className="mt-14 space-y-px">
-        {byFriday.items.map((item) => (
+        {data.items.map((item) => (
           <li
             key={item.n}
             className="grid gap-x-6 gap-y-4 border-t border-[#f7efe8]/10 py-8 sm:grid-cols-[3.5rem_1fr]"
@@ -482,17 +523,17 @@ export function ByFridaySection() {
 
       <div className="mt-12 border-l-2 border-[#f3d7a3]/40 pl-6">
         <p className="max-w-2xl text-[0.95rem] font-light leading-relaxed text-[#f7efe8]/75">
-          {byFriday.outro}
+          {data.outro}
         </p>
       </div>
 
       <a
-        href={byFriday.link.url}
+        href={data.link.url}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-8 inline-block text-[0.9rem] font-light text-[#f3d7a3] hover:underline"
       >
-        {byFriday.link.label}
+        {data.link.label}
       </a>
     </Section>
   );
@@ -685,29 +726,42 @@ export function EvaluationSection() {
 
 // ── Prep ─────────────────────────────────────────────────────────────────────
 
-export function PrepSection() {
+const prepLabels = {
+  floor: "Who’s on the floor",
+  open: "Still open",
+  stage: "Print and stage",
+  nameTags: "Name tags",
+};
+
+export function PrepSection({
+  data = prep,
+  labels = prepLabels,
+}: {
+  data?: typeof prep;
+  labels?: typeof prepLabels;
+}) {
   return (
-    <Section id="prep" eyebrow={prep.eyebrow} heading={prep.heading} wide>
+    <Section id="prep" eyebrow={data.eyebrow} heading={data.heading} wide>
       <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
-        {prep.distributionRule}
+        {data.distributionRule}
       </p>
 
       <h3 className="mt-16 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
-        Who&rsquo;s on the floor
+        {labels.floor}
       </h3>
       <Table
         head={["Block", "Who runs it", "Notes"]}
-        rows={prep.floor.map((f) => [f.block, f.who, f.notes])}
+        rows={data.floor.map((f) => [f.block, f.who, f.notes])}
       />
 
       <h3 className="mt-20 mb-3 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
-        {prep.commitments.heading}
+        {data.commitments.heading}
       </h3>
       <p className="mb-8 max-w-3xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/65">
-        {prep.commitments.intro}
+        {data.commitments.intro}
       </p>
       <div className="grid gap-x-10 gap-y-12 sm:grid-cols-3">
-        {prep.commitments.groups.map((group) => (
+        {data.commitments.groups.map((group) => (
           <div key={group.heading}>
             <h4 className="mb-4 text-[0.95rem] font-normal text-[#f3d7a3]/90">
               {group.heading}
@@ -731,10 +785,10 @@ export function PrepSection() {
       </div>
 
       <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
-        Still open
+        {labels.open}
       </h3>
       <ol className="space-y-px">
-        {prep.openItems.map((item, i) => (
+        {data.openItems.map((item, i) => (
           <li
             key={item.title}
             className="grid gap-x-6 gap-y-2 border-t border-[#f7efe8]/10 py-6 sm:grid-cols-[2.5rem_1fr]"
@@ -755,10 +809,10 @@ export function PrepSection() {
       </ol>
 
       <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
-        Print and stage
+        {labels.stage}
       </h3>
       <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2">
-        {prep.staging.map((group) => (
+        {data.staging.map((group) => (
           <div key={group.heading}>
             <h4 className="mb-4 text-[0.95rem] font-normal text-[#f3d7a3]/90">
               {group.heading}
@@ -783,10 +837,10 @@ export function PrepSection() {
 
       <div className="mt-16 border-l-2 border-[#f3d7a3]/40 pl-6">
         <p className="text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
-          Name tags
+          {labels.nameTags}
         </p>
         <p className="mt-3 max-w-2xl text-[0.95rem] font-light leading-relaxed text-[#f7efe8]/75">
-          {prep.nameTags}
+          {data.nameTags}
         </p>
       </div>
     </Section>
@@ -795,11 +849,17 @@ export function PrepSection() {
 
 // ── House Rules ──────────────────────────────────────────────────────────────
 
-export function RulesSection() {
+export function RulesSection({
+  data = rules,
+  notDoingLabel = "What we’re not doing",
+}: {
+  data?: typeof rules;
+  notDoingLabel?: string;
+}) {
   return (
-    <Section id="rules" eyebrow={rules.eyebrow} heading={rules.heading} wide>
+    <Section id="rules" eyebrow={data.eyebrow} heading={data.heading} wide>
       <div className="grid gap-x-10 gap-y-10 sm:grid-cols-2">
-        {rules.items.map((rule) => (
+        {data.items.map((rule) => (
           <div key={rule.title}>
             <h3 className="text-[0.98rem] font-normal text-[#f8f2eb]">
               {rule.title}
@@ -812,14 +872,14 @@ export function RulesSection() {
       </div>
 
       <p className="mx-auto mt-24 max-w-2xl text-center text-[1.15rem] font-light leading-relaxed text-[#f3d7a3] sm:text-[1.35rem]">
-        {rules.closingLine}
+        {data.closingLine}
       </p>
 
       <h3 className="mt-24 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
-        What we&rsquo;re not doing
+        {notDoingLabel}
       </h3>
       <ul className="grid gap-3 sm:grid-cols-2">
-        {rules.notDoing.map((item) => (
+        {data.notDoing.map((item) => (
           <li
             key={item}
             className="flex gap-3 text-[0.89rem] font-light leading-relaxed text-[#f7efe8]/55"
@@ -837,15 +897,21 @@ export function RulesSection() {
 
 // ── Resources ────────────────────────────────────────────────────────────────
 
-export function ResourcesSection() {
+export function ResourcesSection({
+  id = "resources",
+  data = resources,
+}: {
+  id?: string;
+  data?: typeof resources;
+}) {
   return (
-    <Section id="resources" eyebrow={resources.eyebrow} heading={resources.heading}>
+    <Section id={id} eyebrow={data.eyebrow} heading={data.heading}>
       <p className="max-w-2xl text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
-        {resources.note}
+        {data.note}
       </p>
 
       <div className="mt-10">
-        {resources.items.map((item) => (
+        {data.items.map((item) => (
           <a
             key={item.title}
             href={item.url}
@@ -876,11 +942,11 @@ export function ResourcesSection() {
 
 // ── Footer ───────────────────────────────────────────────────────────────────
 
-export function SiteFooter() {
+export function SiteFooter({ text = footer }: { text?: string }) {
   return (
     <footer className="border-t border-[#f7efe8]/10 px-6 py-16 text-center sm:px-10">
       <p className="mx-auto max-w-2xl text-[0.78rem] font-light leading-relaxed text-[#f7efe8]/40">
-        {footer}
+        {text}
       </p>
     </footer>
   );

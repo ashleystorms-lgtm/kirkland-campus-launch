@@ -37,13 +37,13 @@ function Section({
   return (
     <section
       id={id}
-      className="scroll-mt-24 border-t border-[#f7efe8]/10 px-6 py-20 sm:px-10 sm:py-28"
+      className="scroll-mt-24 border-t border-line px-6 py-20 sm:px-10 sm:py-28"
     >
       <div className={`mx-auto ${wide ? "max-w-5xl" : "max-w-3xl"}`}>
-        <p className="text-[9px] font-medium uppercase tracking-[0.35em] text-[#8ba39d]">
+        <p className="text-[9px] font-medium uppercase tracking-[0.35em] text-muted">
           {eyebrow}
         </p>
-        <h2 className="mt-4 max-w-2xl text-[1.6rem] font-light leading-tight tracking-[0.02em] text-[#f8f2eb] sm:text-[2.05rem]">
+        <h2 className="mt-4 max-w-2xl text-[1.6rem] font-light leading-tight tracking-[0.02em] text-fg sm:text-[2.05rem]">
           {heading}
         </h2>
         <div className="mt-12">{children}</div>
@@ -68,7 +68,7 @@ function Table({
               <th
                 key={h}
                 scope="col"
-                className="border-b border-[#f7efe8]/15 pb-3 pr-6 text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]"
+                className="border-b border-line pb-3 pr-6 text-[9px] font-medium uppercase tracking-[0.24em] text-muted"
               >
                 {h}
               </th>
@@ -77,13 +77,13 @@ function Table({
         </thead>
         <tbody>
           {rows.map((row, i) => (
-            <tr key={i} className="border-b border-[#f7efe8]/[0.07] align-top">
+            <tr key={i} className="border-b border-line/60 align-top">
               {row.map((cell, j) => (
                 <td
                   key={j}
                   className={[
                     "py-4 pr-6 text-[0.86rem] font-light leading-relaxed",
-                    j === 0 ? "text-[#f7efe8]" : "text-[#f7efe8]/60",
+                    j === 0 ? "text-fg" : "text-soft",
                   ].join(" ")}
                 >
                   {cell}
@@ -102,31 +102,31 @@ function StaffDaysDocs({ docs }: { docs: typeof archiveReading.docs }) {
   return (
     <ol className="mt-10 space-y-px">
       {docs.map((doc) => (
-        <li key={doc.n} className="border-t border-[#f7efe8]/10">
+        <li key={doc.n} className="border-t border-line">
           <a
             href={doc.file}
             target="_blank"
             rel="noopener noreferrer"
             className="group grid gap-x-6 gap-y-2 py-8 sm:grid-cols-[3.5rem_1fr]"
           >
-            <div className="font-mono text-[1.6rem] font-light leading-none text-[#f3d7a3]/60">
+            <div className="font-mono text-[1.6rem] font-light leading-none text-accent/80">
               {String(doc.n).padStart(2, "0")}
             </div>
 
             <div>
               <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
-                <h3 className="text-[1.1rem] font-normal text-[#f8f2eb] transition-colors duration-300 group-hover:text-[#f3d7a3]">
+                <h3 className="text-[1.1rem] font-normal text-fg transition-colors duration-300 group-hover:text-accent">
                   {doc.title}
                 </h3>
-                <p className="font-mono text-[0.7rem] text-[#8ba39d]">
+                <p className="font-mono text-[0.7rem] text-muted">
                   {doc.day} · {doc.date}
                 </p>
-                <p className="font-mono text-[0.7rem] text-[#f3d7a3]">
+                <p className="font-mono text-[0.7rem] text-accent">
                   ~{doc.mins} min
                 </p>
               </div>
 
-              <p className="mt-4 max-w-2xl text-[0.9rem] font-light leading-relaxed text-[#f7efe8]/65">
+              <p className="mt-4 max-w-2xl text-[0.9rem] font-light leading-relaxed text-body">
                 {doc.summary}
               </p>
             </div>
@@ -141,23 +141,23 @@ function BookNote({ book }: { book: typeof archiveReading.book }) {
   return (
     <div className="mt-12">
       <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
-        <h3 className="text-[1.1rem] font-normal text-[#f8f2eb]">
+        <h3 className="text-[1.1rem] font-normal text-fg">
           {book.title}
-          <span className="font-light text-[#f7efe8]/60">
+          <span className="font-light text-soft">
             {" "}
             — {book.author}
           </span>
         </h3>
-        <p className="font-mono text-[0.7rem] text-[#8ba39d]">
+        <p className="font-mono text-[0.7rem] text-muted">
           {book.scope} · ~{book.mins} min
         </p>
       </div>
 
-      <p className="mt-4 max-w-2xl text-[0.9rem] font-light leading-relaxed text-[#f7efe8]/65">
+      <p className="mt-4 max-w-2xl text-[0.9rem] font-light leading-relaxed text-body">
         {book.why}
       </p>
 
-      <p className="mt-4 text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
+      <p className="mt-4 text-[0.82rem] font-light leading-relaxed text-muted">
         {book.note}
       </p>
     </div>
@@ -169,22 +169,22 @@ function BookNote({ book }: { book: typeof archiveReading.book }) {
 export function ReadingSection({ data }: { data: typeof archiveReading }) {
   return (
     <Section id="reading" eyebrow={data.eyebrow} heading={data.heading} wide>
-      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-body">
         {data.intro}
       </p>
-      <div className="mt-6 border-l-2 border-[#f3d7a3]/40 pl-5">
-        <p className="text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
+      <div className="mt-6 border-l-2 border-accent/40 pl-5">
+        <p className="text-[0.92rem] font-light leading-relaxed text-body">
           {data.why}
         </p>
       </div>
 
-      <p className="mt-6 max-w-2xl text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
+      <p className="mt-6 max-w-2xl text-[0.82rem] font-light leading-relaxed text-muted">
         {data.totalNote}
       </p>
 
       <StaffDaysDocs docs={data.docs} />
 
-      <div className="mt-20 border-t border-[#f7efe8]/10" />
+      <div className="mt-20 border-t border-line" />
 
       <BookNote book={data.book} />
     </Section>
@@ -195,8 +195,8 @@ export function ReadingSection({ data }: { data: typeof archiveReading }) {
 
 function NoteBlock({ children }: { children: ReactNode }) {
   return (
-    <div className="mt-10 border-l-2 border-[#f3d7a3]/40 pl-5">
-      <p className="max-w-2xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
+    <div className="mt-10 border-l-2 border-accent/40 pl-5">
+      <p className="max-w-2xl text-[0.92rem] font-light leading-relaxed text-body">
         {children}
       </p>
     </div>
@@ -212,55 +212,55 @@ export function SummerNotesSection({
 }) {
   return (
     <Section id="summer-notes" eyebrow={data.eyebrow} heading={data.heading} wide>
-      <p className="font-mono text-[0.7rem] text-[#8ba39d]/70">{note}</p>
+      <p className="font-mono text-[0.7rem] text-muted">{note}</p>
 
-      <div className="mt-10 rounded-sm border border-[#e0946a]/30 border-l-4 border-l-[#e0946a] bg-[#f7efe8]/[0.03] px-6 py-6 sm:px-8">
-        <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-[#e0946a]">
+      <div className="mt-10 rounded-sm border border-warn/30 border-l-4 border-l-warn bg-surface px-6 py-6 sm:px-8">
+        <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-warn">
           {data.safety.label}
         </p>
-        <h3 className="mt-3 text-[1.05rem] font-normal text-[#f8f2eb]">
+        <h3 className="mt-3 text-[1.05rem] font-normal text-fg">
           {data.safety.heading}
         </h3>
-        <p className="mt-3 max-w-3xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
+        <p className="mt-3 max-w-3xl text-[0.92rem] font-light leading-relaxed text-body">
           {data.safety.body}
         </p>
       </div>
 
-      <h3 className="mt-14 mb-3 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+      <h3 className="mt-14 mb-3 text-[9px] font-medium uppercase tracking-[0.3em] text-muted">
         {data.levelWorkHeading}
       </h3>
-      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-body">
         {data.levelWorkIntro}
       </p>
 
-      <div className="mt-10 border-l-2 border-[#f3d7a3] pl-6">
-        <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-[#f3d7a3]">
+      <div className="mt-10 border-l-2 border-accent pl-6">
+        <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-accent">
           {data.whatsNew.date}
         </p>
-        <h3 className="mt-3 text-[1.05rem] font-normal text-[#f8f2eb]">
+        <h3 className="mt-3 text-[1.05rem] font-normal text-fg">
           {data.whatsNew.heading}
         </h3>
-        <p className="mt-3 max-w-2xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
+        <p className="mt-3 max-w-2xl text-[0.92rem] font-light leading-relaxed text-body">
           {data.whatsNew.body}
         </p>
 
-        <h4 className="mt-8 mb-4 text-[0.95rem] font-normal text-[#f3d7a3]/90">
+        <h4 className="mt-8 mb-4 text-[0.95rem] font-normal text-accent">
           {data.whatsNew.doFirst.heading}
         </h4>
         <div className="grid gap-x-8 gap-y-8 sm:grid-cols-3">
           <div>
-            <h5 className="mb-3 text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
+            <h5 className="mb-3 text-[9px] font-medium uppercase tracking-[0.24em] text-muted">
               Before Aug 31
             </h5>
             <ul className="space-y-2.5">
               {data.whatsNew.doFirst.before.map((item) => (
                 <li
                   key={item}
-                  className="flex gap-3 text-[0.85rem] font-light leading-relaxed text-[#f7efe8]/65"
+                  className="flex gap-3 text-[0.85rem] font-light leading-relaxed text-body"
                 >
                   <span
                     aria-hidden="true"
-                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted/50"
                   />
                   {item}
                 </li>
@@ -268,18 +268,18 @@ export function SummerNotesSection({
             </ul>
           </div>
           <div>
-            <h5 className="mb-3 text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
+            <h5 className="mb-3 text-[9px] font-medium uppercase tracking-[0.24em] text-muted">
               During the week
             </h5>
             <ul className="space-y-2.5">
               {data.whatsNew.doFirst.during.map((item) => (
                 <li
                   key={item}
-                  className="flex gap-3 text-[0.85rem] font-light leading-relaxed text-[#f7efe8]/65"
+                  className="flex gap-3 text-[0.85rem] font-light leading-relaxed text-body"
                 >
                   <span
                     aria-hidden="true"
-                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted/50"
                   />
                   {item}
                 </li>
@@ -287,18 +287,18 @@ export function SummerNotesSection({
             </ul>
           </div>
           <div>
-            <h5 className="mb-3 text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
+            <h5 className="mb-3 text-[9px] font-medium uppercase tracking-[0.24em] text-muted">
               Before Sept 8
             </h5>
             <ul className="space-y-2.5">
               {data.whatsNew.doFirst.after.map((item) => (
                 <li
                   key={item}
-                  className="flex gap-3 text-[0.85rem] font-light leading-relaxed text-[#f7efe8]/65"
+                  className="flex gap-3 text-[0.85rem] font-light leading-relaxed text-body"
                 >
                   <span
                     aria-hidden="true"
-                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted/50"
                   />
                   {item}
                 </li>
@@ -310,10 +310,10 @@ export function SummerNotesSection({
 
       <NoteBlock>{data.warning}</NoteBlock>
 
-      <h3 className="mt-14 mb-3 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+      <h3 className="mt-14 mb-3 text-[9px] font-medium uppercase tracking-[0.3em] text-muted">
         {data.channels.heading}
       </h3>
-      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-body">
         {data.channels.body}
       </p>
 
@@ -327,13 +327,13 @@ export function SummerNotesSection({
 export function StorySection({ data }: { data: typeof archiveStory }) {
   return (
     <Section id="story" eyebrow={data.eyebrow} heading={data.heading}>
-      <div className="space-y-6 text-[1rem] font-light leading-[1.8] text-[#f7efe8]/70 sm:text-[1.08rem]">
+      <div className="space-y-6 text-[1rem] font-light leading-[1.8] text-body sm:text-[1.08rem]">
         {data.paragraphs.map((p, i) => (
           <p
             key={p}
             className={
               i === data.paragraphs.length - 1
-                ? "border-l-2 border-[#f3d7a3]/40 pl-5 text-[#f3d7a3]/90"
+                ? "border-l-2 border-accent/40 pl-5 text-accent"
                 : undefined
             }
           >
@@ -350,7 +350,7 @@ export function StorySection({ data }: { data: typeof archiveStory }) {
 export function ByFridaySection({ data }: { data: typeof archiveByFriday }) {
   return (
     <Section id="byfriday" eyebrow={data.eyebrow} heading={data.heading} wide>
-      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-body">
         {data.intro}
       </p>
 
@@ -358,23 +358,23 @@ export function ByFridaySection({ data }: { data: typeof archiveByFriday }) {
         {data.items.map((item) => (
           <li
             key={item.n}
-            className="grid gap-x-6 gap-y-4 border-t border-[#f7efe8]/10 py-8 sm:grid-cols-[3.5rem_1fr]"
+            className="grid gap-x-6 gap-y-4 border-t border-line py-8 sm:grid-cols-[3.5rem_1fr]"
           >
-            <div className="font-mono text-[1.6rem] font-light leading-none text-[#f3d7a3]/60">
+            <div className="font-mono text-[1.6rem] font-light leading-none text-accent/80">
               {String(item.n).padStart(2, "0")}
             </div>
 
             <div>
               <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
-                <h3 className="text-[1.1rem] font-normal text-[#f8f2eb]">
+                <h3 className="text-[1.1rem] font-normal text-fg">
                   {item.title}
                 </h3>
-                <p className="font-mono text-[0.7rem] text-[#8ba39d]">
+                <p className="font-mono text-[0.7rem] text-muted">
                   {item.when}
                 </p>
               </div>
 
-              <p className="mt-4 max-w-2xl text-[0.9rem] font-light leading-relaxed text-[#f7efe8]/65">
+              <p className="mt-4 max-w-2xl text-[0.9rem] font-light leading-relaxed text-body">
                 {item.detail}
               </p>
             </div>
@@ -382,8 +382,8 @@ export function ByFridaySection({ data }: { data: typeof archiveByFriday }) {
         ))}
       </ol>
 
-      <div className="mt-12 border-l-2 border-[#f3d7a3]/40 pl-6">
-        <p className="max-w-2xl text-[0.95rem] font-light leading-relaxed text-[#f7efe8]/75">
+      <div className="mt-12 border-l-2 border-accent/40 pl-6">
+        <p className="max-w-2xl text-[0.95rem] font-light leading-relaxed text-body">
           {data.outro}
         </p>
       </div>
@@ -392,7 +392,7 @@ export function ByFridaySection({ data }: { data: typeof archiveByFriday }) {
         href={data.link.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-8 inline-block text-[0.9rem] font-light text-[#f3d7a3] hover:underline"
+        className="mt-8 inline-block text-[0.9rem] font-light text-accent hover:underline"
       >
         {data.link.label}
       </a>
@@ -405,23 +405,23 @@ export function ByFridaySection({ data }: { data: typeof archiveByFriday }) {
 export function SprintSection() {
   return (
     <Section id="sprint" eyebrow={sprint.eyebrow} heading={sprint.heading} wide>
-      <div className="max-w-3xl space-y-6 text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+      <div className="max-w-3xl space-y-6 text-[0.95rem] font-light leading-[1.8] text-body">
         {sprint.body.map((p) => (
           <p key={p}>{p}</p>
         ))}
       </div>
 
-      <div className="mt-10 border-l-2 border-[#e0946a]/60 pl-6">
-        <p className="max-w-2xl text-[0.95rem] font-light leading-relaxed text-[#f7efe8]/75">
+      <div className="mt-10 border-l-2 border-warn/60 pl-6">
+        <p className="max-w-2xl text-[0.95rem] font-light leading-relaxed text-body">
           {sprint.bar}
         </p>
       </div>
 
-      <p className="mt-8 max-w-3xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/65">
+      <p className="mt-8 max-w-3xl text-[0.92rem] font-light leading-relaxed text-body">
         {sprint.howToStart}
       </p>
 
-      <p className="mt-6 max-w-2xl text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
+      <p className="mt-6 max-w-2xl text-[0.82rem] font-light leading-relaxed text-muted">
         {sprint.note}
       </p>
     </Section>
@@ -438,45 +438,45 @@ export function EvaluationSection() {
       heading={evaluation.heading}
       wide
     >
-      <div className="mb-12 border-l-2 border-[#e0946a]/60 pl-6">
-        <p className="text-[9px] font-medium uppercase tracking-[0.24em] text-[#e0946a]">
+      <div className="mb-12 rounded-sm border border-warn/30 border-l-2 border-l-warn bg-surface px-6 py-5">
+        <p className="text-[9px] font-medium uppercase tracking-[0.24em] text-warn">
           Needs review
         </p>
-        <p className="mt-3 max-w-2xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/75">
+        <p className="mt-3 max-w-2xl text-[0.92rem] font-light leading-relaxed text-body">
           {evaluation.needsReview}
         </p>
       </div>
 
-      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-body">
         {evaluation.intro}
       </p>
 
-      <h3 className="mt-16 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+      <h3 className="mt-16 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-muted">
         Work units — the inputs
       </h3>
-      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-body">
         {evaluation.workUnit.what}
       </p>
       <ul className="mt-6 space-y-2.5">
         {evaluation.workUnit.points.map((point) => (
           <li
             key={point}
-            className="flex gap-3 text-[0.88rem] font-light leading-relaxed text-[#f7efe8]/65"
+            className="flex gap-3 text-[0.88rem] font-light leading-relaxed text-body"
           >
             <span
               aria-hidden="true"
-              className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
+              className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted/50"
             />
             {point}
           </li>
         ))}
       </ul>
-      <p className="mt-6 max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+      <p className="mt-6 max-w-3xl text-[0.95rem] font-light leading-[1.8] text-body">
         {evaluation.workUnit.checked}
       </p>
 
-      <div className="mt-8 border-l-2 border-[#f3d7a3]/40 pl-5">
-        <p className="text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
+      <div className="mt-8 border-l-2 border-accent/40 pl-5">
+        <p className="text-[0.92rem] font-light leading-relaxed text-body">
           {evaluation.workUnit.theory}
         </p>
       </div>
@@ -485,18 +485,18 @@ export function EvaluationSection() {
         href={evaluation.workUnit.linkUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-6 inline-block text-[0.9rem] font-light text-[#f3d7a3] hover:underline"
+        className="mt-6 inline-block text-[0.9rem] font-light text-accent hover:underline"
       >
         {evaluation.workUnit.linkLabel}
       </a>
 
-      <div className="mt-6 border-l-2 border-[#f3d7a3]/40 pl-5">
-        <p className="text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
+      <div className="mt-6 border-l-2 border-accent/40 pl-5">
+        <p className="text-[0.92rem] font-light leading-relaxed text-body">
           {evaluation.workUnit.tieIn}
         </p>
       </div>
 
-      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-muted">
         The formal evaluation — twice a year
       </h3>
       <Table
@@ -504,26 +504,26 @@ export function EvaluationSection() {
         rows={evaluation.formal.map((f) => [f.step, f.what])}
       />
 
-      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-muted">
         Ratings
       </h3>
       <div className="grid gap-x-10 gap-y-10 sm:grid-cols-2">
         {evaluation.ratings.map((r) => (
           <div key={r.name}>
-            <h3 className="text-[0.98rem] font-normal text-[#f8f2eb]">
+            <h3 className="text-[0.98rem] font-normal text-fg">
               {r.name}
             </h3>
-            <p className="mt-3 text-[0.89rem] font-light leading-relaxed text-[#f7efe8]/65">
+            <p className="mt-3 text-[0.89rem] font-light leading-relaxed text-body">
               {r.body}
             </p>
           </div>
         ))}
       </div>
 
-      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-muted">
         Promotion
       </h3>
-      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-body">
         {evaluation.promotionNote}
       </p>
       <div className="mt-8">
@@ -533,48 +533,48 @@ export function EvaluationSection() {
         />
       </div>
 
-      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-muted">
         Growth paths
       </h3>
       <div className="grid gap-x-10 gap-y-10 sm:grid-cols-2">
         {evaluation.paths.map((p) => (
           <div key={p.name}>
-            <h3 className="text-[0.98rem] font-normal text-[#f8f2eb]">
+            <h3 className="text-[0.98rem] font-normal text-fg">
               {p.name}
             </h3>
-            <p className="mt-3 text-[0.89rem] font-light leading-relaxed text-[#f7efe8]/65">
+            <p className="mt-3 text-[0.89rem] font-light leading-relaxed text-body">
               {p.body}
             </p>
           </div>
         ))}
       </div>
 
-      <div className="mt-20 border-l-2 border-[#f3d7a3]/40 pl-6">
-        <p className="text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
+      <div className="mt-20 border-l-2 border-accent/40 pl-6">
+        <p className="text-[9px] font-medium uppercase tracking-[0.24em] text-muted">
           {evaluation.compensation.heading}
         </p>
-        <p className="mt-3 max-w-2xl text-[0.95rem] font-light leading-relaxed text-[#f7efe8]/75">
+        <p className="mt-3 max-w-2xl text-[0.95rem] font-light leading-relaxed text-body">
           {evaluation.compensation.body}
         </p>
       </div>
 
-      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-muted">
         The no-surprises contract
       </h3>
       <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2">
         <div>
-          <h4 className="mb-4 text-[0.95rem] font-normal text-[#f3d7a3]/90">
+          <h4 className="mb-4 text-[0.95rem] font-normal text-accent">
             What you&rsquo;re owed
           </h4>
           <ul className="space-y-2.5">
             {evaluation.owed.map((item) => (
               <li
                 key={item}
-                className="flex gap-3 text-[0.88rem] font-light leading-relaxed text-[#f7efe8]/65"
+                className="flex gap-3 text-[0.88rem] font-light leading-relaxed text-body"
               >
                 <span
                   aria-hidden="true"
-                  className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
+                  className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted/50"
                 />
                 {item}
               </li>
@@ -582,10 +582,10 @@ export function EvaluationSection() {
           </ul>
         </div>
         <div>
-          <h4 className="mb-4 text-[0.95rem] font-normal text-[#f3d7a3]/90">
+          <h4 className="mb-4 text-[0.95rem] font-normal text-accent">
             The standard behind the rating
           </h4>
-          <p className="text-[0.89rem] font-light leading-relaxed text-[#f7efe8]/65">
+          <p className="text-[0.89rem] font-light leading-relaxed text-body">
             {evaluation.standard}
           </p>
         </div>
@@ -605,11 +605,11 @@ export function PrepSection({
 }) {
   return (
     <Section id="prep" eyebrow={data.eyebrow} heading={data.heading} wide>
-      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-body">
         {data.distributionRule}
       </p>
 
-      <h3 className="mt-16 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+      <h3 className="mt-16 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-muted">
         {labels.floor}
       </h3>
       <Table
@@ -617,27 +617,27 @@ export function PrepSection({
         rows={data.floor.map((f) => [f.block, f.who, f.notes])}
       />
 
-      <h3 className="mt-20 mb-3 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+      <h3 className="mt-20 mb-3 text-[9px] font-medium uppercase tracking-[0.3em] text-muted">
         {data.commitments.heading}
       </h3>
-      <p className="mb-8 max-w-3xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/65">
+      <p className="mb-8 max-w-3xl text-[0.92rem] font-light leading-relaxed text-body">
         {data.commitments.intro}
       </p>
       <div className="grid gap-x-10 gap-y-12 sm:grid-cols-3">
         {data.commitments.groups.map((group) => (
           <div key={group.heading}>
-            <h4 className="mb-4 text-[0.95rem] font-normal text-[#f3d7a3]/90">
+            <h4 className="mb-4 text-[0.95rem] font-normal text-accent">
               {group.heading}
             </h4>
             <ul className="space-y-2.5">
               {group.items.map((item) => (
                 <li
                   key={item}
-                  className="flex gap-3 text-[0.88rem] font-light leading-relaxed text-[#f7efe8]/65"
+                  className="flex gap-3 text-[0.88rem] font-light leading-relaxed text-body"
                 >
                   <span
                     aria-hidden="true"
-                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted/50"
                   />
                   {item}
                 </li>
@@ -647,23 +647,23 @@ export function PrepSection({
         ))}
       </div>
 
-      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-muted">
         {labels.open}
       </h3>
       <ol className="space-y-px">
         {data.openItems.map((item, i) => (
           <li
             key={item.title}
-            className="grid gap-x-6 gap-y-2 border-t border-[#f7efe8]/10 py-6 sm:grid-cols-[2.5rem_1fr]"
+            className="grid gap-x-6 gap-y-2 border-t border-line py-6 sm:grid-cols-[2.5rem_1fr]"
           >
-            <span className="font-mono text-[0.8rem] text-[#e0946a]/70">
+            <span className="font-mono text-[0.8rem] text-warn">
               {String(i + 1).padStart(2, "0")}
             </span>
             <div>
-              <h4 className="text-[0.98rem] font-normal text-[#f8f2eb]">
+              <h4 className="text-[0.98rem] font-normal text-fg">
                 {item.title}
               </h4>
-              <p className="mt-2 max-w-2xl text-[0.89rem] font-light leading-relaxed text-[#f7efe8]/65">
+              <p className="mt-2 max-w-2xl text-[0.89rem] font-light leading-relaxed text-body">
                 {item.body}
               </p>
             </div>
@@ -671,24 +671,24 @@ export function PrepSection({
         ))}
       </ol>
 
-      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+      <h3 className="mt-20 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-muted">
         {labels.stage}
       </h3>
       <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2">
         {data.staging.map((group) => (
           <div key={group.heading}>
-            <h4 className="mb-4 text-[0.95rem] font-normal text-[#f3d7a3]/90">
+            <h4 className="mb-4 text-[0.95rem] font-normal text-accent">
               {group.heading}
             </h4>
             <ul className="space-y-2.5">
               {group.items.map((item) => (
                 <li
                   key={item}
-                  className="flex gap-3 text-[0.88rem] font-light leading-relaxed text-[#f7efe8]/65"
+                  className="flex gap-3 text-[0.88rem] font-light leading-relaxed text-body"
                 >
                   <span
                     aria-hidden="true"
-                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted/50"
                   />
                   {item}
                 </li>
@@ -698,11 +698,11 @@ export function PrepSection({
         ))}
       </div>
 
-      <div className="mt-16 border-l-2 border-[#f3d7a3]/40 pl-6">
-        <p className="text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
+      <div className="mt-16 border-l-2 border-accent/40 pl-6">
+        <p className="text-[9px] font-medium uppercase tracking-[0.24em] text-muted">
           {labels.nameTags}
         </p>
-        <p className="mt-3 max-w-2xl text-[0.95rem] font-light leading-relaxed text-[#f7efe8]/75">
+        <p className="mt-3 max-w-2xl text-[0.95rem] font-light leading-relaxed text-body">
           {data.nameTags}
         </p>
       </div>
@@ -724,30 +724,30 @@ export function RulesSection({
       <div className="grid gap-x-10 gap-y-10 sm:grid-cols-2">
         {data.items.map((rule) => (
           <div key={rule.title}>
-            <h3 className="text-[0.98rem] font-normal text-[#f8f2eb]">
+            <h3 className="text-[0.98rem] font-normal text-fg">
               {rule.title}
             </h3>
-            <p className="mt-3 text-[0.89rem] font-light leading-relaxed text-[#f7efe8]/65">
+            <p className="mt-3 text-[0.89rem] font-light leading-relaxed text-body">
               {rule.body}
             </p>
           </div>
         ))}
       </div>
 
-      <p className="mx-auto mt-24 max-w-2xl text-center text-[1.15rem] font-light leading-relaxed text-[#f3d7a3] sm:text-[1.35rem]">
+      <p className="mx-auto mt-24 max-w-2xl text-center text-[1.15rem] font-light leading-relaxed text-accent sm:text-[1.35rem]">
         {data.closingLine}
       </p>
 
-      <h3 className="mt-24 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+      <h3 className="mt-24 mb-8 text-[9px] font-medium uppercase tracking-[0.3em] text-muted">
         {notDoingLabel}
       </h3>
       <ul className="grid gap-3 sm:grid-cols-2">
         {data.notDoing.map((item) => (
           <li
             key={item}
-            className="flex gap-3 text-[0.89rem] font-light leading-relaxed text-[#f7efe8]/55"
+            className="flex gap-3 text-[0.89rem] font-light leading-relaxed text-soft"
           >
-            <span aria-hidden="true" className="font-mono text-[#e0946a]/60">
+            <span aria-hidden="true" className="font-mono text-warn">
               ×
             </span>
             {item}
@@ -769,7 +769,7 @@ export function LinkListSection({
 }) {
   return (
     <Section id={id} eyebrow={data.eyebrow} heading={data.heading}>
-      <p className="max-w-2xl text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
+      <p className="max-w-2xl text-[0.82rem] font-light leading-relaxed text-muted">
         {data.note}
       </p>
 
@@ -780,19 +780,19 @@ export function LinkListSection({
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-between gap-6 border-t border-[#f7efe8]/10 py-6"
+            className="group flex items-center justify-between gap-6 border-t border-line py-6"
           >
             <div>
-              <h3 className="text-[0.98rem] font-normal text-[#f8f2eb] transition-colors duration-300 group-hover:text-[#f3d7a3]">
+              <h3 className="text-[0.98rem] font-normal text-fg transition-colors duration-300 group-hover:text-accent">
                 {item.title}
               </h3>
-              <p className="mt-2 max-w-xl text-[0.88rem] font-light leading-relaxed text-[#f7efe8]/60">
+              <p className="mt-2 max-w-xl text-[0.88rem] font-light leading-relaxed text-soft">
                 {item.description}
               </p>
             </div>
             <span
               aria-hidden="true"
-              className="shrink-0 font-mono text-[0.9rem] text-[#8ba39d] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:text-[#f3d7a3]"
+              className="shrink-0 font-mono text-[0.9rem] text-muted transition-transform duration-300 group-hover:translate-x-0.5 group-hover:text-accent"
             >
               ↗
             </span>
@@ -809,7 +809,7 @@ export function StaffDaysHeader({ isEmpty }: { isEmpty: boolean }) {
   return (
     <Section eyebrow={staffDaysIntro.eyebrow} heading={staffDaysIntro.heading}>
       {isEmpty && (
-        <p className="max-w-2xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+        <p className="max-w-2xl text-[0.95rem] font-light leading-[1.8] text-body">
           {staffDaysIntro.empty}
         </p>
       )}
@@ -819,8 +819,8 @@ export function StaffDaysHeader({ isEmpty }: { isEmpty: boolean }) {
 
 export function PastDaysLabel() {
   return (
-    <div className="border-t border-[#f7efe8]/10 px-6 pt-16 sm:px-10">
-      <p className="mx-auto max-w-3xl text-[9px] font-medium uppercase tracking-[0.35em] text-[#8ba39d]">
+    <div className="border-t border-line px-6 pt-16 sm:px-10">
+      <p className="mx-auto max-w-3xl text-[9px] font-medium uppercase tracking-[0.35em] text-muted">
         {staffDaysIntro.pastLabel}
       </p>
     </div>
@@ -832,7 +832,7 @@ export function PastDaysLabel() {
 export function LibrarySection() {
   return (
     <Section id="library" eyebrow={library.eyebrow} heading={library.heading} wide>
-      <p className="max-w-2xl text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
+      <p className="max-w-2xl text-[0.82rem] font-light leading-relaxed text-muted">
         {library.note}
       </p>
 
@@ -842,12 +842,12 @@ export function LibrarySection() {
           <li key={c.id}>
             <a
               href={`#res-${c.id}`}
-              className="group flex items-baseline justify-between gap-4 border-b border-[#f7efe8]/[0.07] py-2"
+              className="group flex items-baseline justify-between gap-4 border-b border-line/60 py-2"
             >
-              <span className="text-[0.9rem] font-light text-[#f7efe8]/80 transition-colors duration-300 group-hover:text-[#f3d7a3]">
+              <span className="text-[0.9rem] font-light text-body transition-colors duration-300 group-hover:text-accent">
                 {c.title}
               </span>
-              <span className="font-mono text-[0.7rem] text-[#8ba39d]">
+              <span className="font-mono text-[0.7rem] text-muted">
                 {c.items.length}
               </span>
             </a>
@@ -857,12 +857,12 @@ export function LibrarySection() {
           <li key={sec.id}>
             <a
               href={`#${sec.id}`}
-              className="group flex items-baseline justify-between gap-4 border-b border-[#f7efe8]/[0.07] py-2"
+              className="group flex items-baseline justify-between gap-4 border-b border-line/60 py-2"
             >
-              <span className="text-[0.9rem] font-light text-[#f7efe8]/80 transition-colors duration-300 group-hover:text-[#f3d7a3]">
+              <span className="text-[0.9rem] font-light text-body transition-colors duration-300 group-hover:text-accent">
                 {sec.title}
               </span>
-              <span className="font-mono text-[0.7rem] text-[#8ba39d]">read</span>
+              <span className="font-mono text-[0.7rem] text-muted">read</span>
             </a>
           </li>
         ))}
@@ -870,16 +870,20 @@ export function LibrarySection() {
 
       <div className="mt-16 space-y-16">
         {library.categories.map((c) => (
-          <div key={c.id} id={`res-${c.id}`} className="scroll-mt-24">
-            <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 border-t border-[#f7efe8]/10 pt-8">
-              <h3 className="text-[1.1rem] font-normal text-[#f8f2eb]">{c.title}</h3>
-              <p className="font-mono text-[0.7rem] text-[#8ba39d]">
+          <div
+            key={c.id}
+            id={`res-${c.id}`}
+            className="scroll-mt-24 rounded-sm border border-line bg-surface px-6 py-8 sm:px-8"
+          >
+            <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
+              <h3 className="text-[1.1rem] font-normal text-fg">{c.title}</h3>
+              <p className="font-mono text-[0.7rem] text-muted">
                 {c.items.length} link{c.items.length === 1 ? "" : "s"}
               </p>
             </div>
 
             {c.intro && (
-              <p className="mt-4 max-w-3xl text-[0.88rem] font-light leading-relaxed text-[#f7efe8]/60">
+              <p className="mt-4 max-w-3xl text-[0.88rem] font-light leading-relaxed text-soft">
                 {c.intro}
               </p>
             )}
@@ -893,16 +897,16 @@ export function LibrarySection() {
                     rel="noopener noreferrer"
                     className="group block"
                   >
-                    <span className="text-[0.88rem] font-normal text-[#f7efe8] transition-colors duration-300 group-hover:text-[#f3d7a3]">
+                    <span className="text-[0.88rem] font-normal text-fg transition-colors duration-300 group-hover:text-accent">
                       {item.title}
                     </span>
                     {item.level && (
-                      <span className="ml-2 font-mono text-[0.65rem] text-[#8ba39d]">
+                      <span className="ml-2 font-mono text-[0.65rem] text-muted">
                         {item.level}
                       </span>
                     )}
                     {item.note && (
-                      <p className="mt-1 text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/55">
+                      <p className="mt-1 text-[0.82rem] font-light leading-relaxed text-soft">
                         {item.note}
                       </p>
                     )}
@@ -922,12 +926,12 @@ export function LibrarySection() {
 export function ArchiveLinkSection() {
   return (
     <Section id="archive" eyebrow={archiveLink.eyebrow} heading={archiveLink.heading}>
-      <p className="max-w-2xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+      <p className="max-w-2xl text-[0.95rem] font-light leading-[1.8] text-body">
         {archiveLink.body}
       </p>
       <Link
         href={archiveLink.href}
-        className="mt-8 inline-block text-[0.9rem] font-light text-[#f3d7a3] hover:underline"
+        className="mt-8 inline-block text-[0.9rem] font-light text-accent hover:underline"
       >
         {archiveLink.label} →
       </Link>
@@ -939,8 +943,8 @@ export function ArchiveLinkSection() {
 
 export function SiteFooter({ text = footer }: { text?: string }) {
   return (
-    <footer className="border-t border-[#f7efe8]/10 px-6 py-16 text-center sm:px-10">
-      <p className="mx-auto max-w-2xl text-[0.78rem] font-light leading-relaxed text-[#f7efe8]/40">
+    <footer className="theme-dark border-t border-line bg-bg px-6 py-16 text-center sm:px-10">
+      <p className="mx-auto max-w-2xl text-[0.78rem] font-light leading-relaxed text-muted">
         {text}
       </p>
     </footer>

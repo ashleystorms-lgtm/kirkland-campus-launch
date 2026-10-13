@@ -3,6 +3,7 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import type { Block, BlockKind, Day } from "../data/bootcamp";
+import { deepAccent } from "./day-colors";
 import { useSchedule } from "./schedule-state";
 
 // The marker on the rail encodes what kind of block it is, so you can read the
@@ -13,10 +14,10 @@ const marker: Record<BlockKind, { dot: string; label?: string }> = {
     dot: "h-2.5 w-2.5 bg-[var(--day-accent)] ring-4 ring-[var(--day-soft)]",
     label: "Sprint",
   },
-  workUnit: { dot: "h-2 w-2 border border-[#f7efe8]/70", label: "Work unit" },
-  leadership: { dot: "h-2 w-2 border border-[#8ba39d]", label: "Leadership" },
-  session: { dot: "h-1.5 w-1.5 bg-[#8ba39d]" },
-  meal: { dot: "h-1 w-1 bg-[#8ba39d]/40" },
+  workUnit: { dot: "h-2 w-2 border border-fg/70", label: "Work unit" },
+  leadership: { dot: "h-2 w-2 border border-muted", label: "Leadership" },
+  session: { dot: "h-1.5 w-1.5 bg-muted" },
+  meal: { dot: "h-1 w-1 bg-muted/40" },
 };
 
 function ScheduleRow({ block }: { block: Block }) {
@@ -31,13 +32,13 @@ function ScheduleRow({ block }: { block: Block }) {
       <span
         className={[
           "text-[0.95rem] leading-snug sm:text-[1.02rem]",
-          dim ? "font-light text-[#f7efe8]/45" : "font-normal text-[#f7efe8]",
+          dim ? "font-light text-muted" : "font-normal text-fg",
         ].join(" ")}
       >
         {block.title}
       </span>
       {m.label && !dim && (
-        <span className="text-[8px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
+        <span className="text-[8px] font-medium uppercase tracking-[0.24em] text-muted">
           {m.label}
         </span>
       )}
@@ -47,10 +48,10 @@ function ScheduleRow({ block }: { block: Block }) {
   return (
     <li className="grid grid-cols-[3.5rem_1.25rem_1fr] sm:grid-cols-[4.25rem_1.5rem_1fr]">
       {/* Clock column — monospace so every time in the week aligns vertically */}
-      <div className="pt-[0.45rem] text-right font-mono text-[0.7rem] leading-none text-[#8ba39d] sm:text-[0.75rem]">
+      <div className="pt-[0.45rem] text-right font-mono text-[0.7rem] leading-none text-muted sm:text-[0.75rem]">
         {block.start}
         {block.end && (
-          <span className="mt-1 block text-[#8ba39d]/45">{block.end}</span>
+          <span className="mt-1 block text-muted">{block.end}</span>
         )}
       </div>
 
@@ -72,13 +73,13 @@ function ScheduleRow({ block }: { block: Block }) {
               onClick={() => toggle(block.id)}
               aria-expanded={open}
               aria-controls={`${block.id}-detail`}
-              className="group flex w-full items-start gap-2 rounded-sm text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f3d7a3]"
+              className="group flex w-full items-start gap-2 rounded-sm text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
             >
               <span className="flex-1">{heading}</span>
               <span
                 aria-hidden="true"
                 className={[
-                  "mt-1 shrink-0 font-mono text-[0.7rem] text-[#8ba39d] transition-transform duration-300",
+                  "mt-1 shrink-0 font-mono text-[0.7rem] text-muted transition-transform duration-300",
                   open ? "rotate-90" : "group-hover:translate-x-0.5",
                 ].join(" ")}
               >
@@ -89,10 +90,10 @@ function ScheduleRow({ block }: { block: Block }) {
             <div
               id={`${block.id}-detail`}
               hidden={!open}
-              className="mt-3 space-y-3 border-l border-[var(--day-soft)] pl-4 text-[0.88rem] font-light leading-relaxed text-[#f7efe8]/65"
+              className="mt-3 space-y-3 border-l border-[var(--day-soft)] pl-4 text-[0.88rem] font-light leading-relaxed text-body"
             >
               {block.owner && (
-                <p className="text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
+                <p className="text-[9px] font-medium uppercase tracking-[0.24em] text-muted">
                   {block.owner}
                 </p>
               )}
@@ -114,7 +115,7 @@ function ScheduleRow({ block }: { block: Block }) {
               )}
               {block.output && (
                 <p className="text-[var(--day-accent)]">
-                  <span className="text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
+                  <span className="text-[9px] font-medium uppercase tracking-[0.24em] text-muted">
                     On the wall ·{" "}
                   </span>
                   {block.output}
@@ -126,7 +127,7 @@ function ScheduleRow({ block }: { block: Block }) {
           <div>
             {heading}
             {block.owner && (
-              <p className="mt-1.5 text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
+              <p className="mt-1.5 text-[9px] font-medium uppercase tracking-[0.24em] text-muted">
                 {block.owner}
               </p>
             )}
@@ -150,45 +151,56 @@ export default function DaySection({
     (b) => b.kind === "build" || b.kind === "sprint",
   ).length;
 
-  const themeStyle = {
+  // On the light page the day's accent is deepened so it stays readable.
+  // The dark header band below switches back to the original bright accent.
+  const deep = deepAccent(day.theme);
+  const pageStyle = {
+    "--day-accent": deep,
+    "--day-soft": `color-mix(in oklab, ${deep} 28%, transparent)`,
+    "--day-accent-deep": deep,
+    "--day-soft-deep": `color-mix(in oklab, ${deep} 28%, transparent)`,
+    "--day-glow": day.theme.glow,
+  } as CSSProperties;
+  const bandStyle = {
     "--day-accent": day.theme.accent,
     "--day-soft": day.theme.soft,
-    "--day-glow": day.theme.glow,
   } as CSSProperties;
 
   return (
-    <section
-      id={day.id}
-      style={themeStyle}
-      className="relative overflow-hidden scroll-mt-24 border-t border-[var(--day-soft)] px-6 py-20 sm:px-10 sm:py-28"
-    >
+    <section id={day.id} style={pageStyle} className="relative scroll-mt-24">
+      {/* The dark moment: photo and header on deep forest */}
       <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[linear-gradient(180deg,var(--day-glow),transparent)]"
-      />
-      {day.theme.image && (
+        style={bandStyle}
+        className="theme-dark relative overflow-hidden bg-bg px-6 pb-14 pt-20 text-fg sm:px-10 sm:pb-16 sm:pt-28"
+      >
         <div
-          className="relative -mx-6 -mt-20 mb-8 min-h-[280px] sm:-mx-10 sm:-mt-28"
-          style={{ height: day.theme.imageHeight ?? "42vh" }}
-        >
-          <Image
-            src={day.theme.image}
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover"
-            style={{ objectPosition: day.theme.imagePosition ?? "center" }}
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,16,0.5)_0%,rgba(11,18,16,0.3)_45%,#0b1210_100%)]" />
-        </div>
-      )}
-      <div className="relative mx-auto max-w-3xl">
-        <header className="mb-14">
-          <p className="text-[9px] font-medium uppercase tracking-[0.35em] text-[#8ba39d]">
+          aria-hidden="true"
+          data-print-hide
+          className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[linear-gradient(180deg,var(--day-glow),transparent)]"
+        />
+        {day.theme.image && (
+          <div
+            data-print-hide
+            className="relative -mx-6 -mt-20 mb-8 min-h-[280px] sm:-mx-10 sm:-mt-28"
+            style={{ height: day.theme.imageHeight ?? "42vh" }}
+          >
+            <Image
+              src={day.theme.image}
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover"
+              style={{ objectPosition: day.theme.imagePosition ?? "center" }}
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,16,0.5)_0%,rgba(11,18,16,0.3)_45%,var(--c-bg)_100%)]" />
+          </div>
+        )}
+        <header className="relative mx-auto max-w-3xl">
+          <p className="text-[9px] font-medium uppercase tracking-[0.35em] text-muted">
             {eyebrow ?? day.dayName}
           </p>
 
-          <h2 className="mt-4 text-[1.9rem] font-light uppercase leading-tight tracking-[0.18em] text-[#f8f2eb] sm:text-[2.4rem]">
+          <h2 className="mt-4 text-[1.9rem] font-light uppercase leading-tight tracking-[0.18em] text-fg sm:text-[2.4rem]">
             {day.title}
           </h2>
 
@@ -196,13 +208,13 @@ export default function DaySection({
             {day.thesis}
           </p>
 
-          <p className="mt-6 font-mono text-[0.72rem] uppercase tracking-[0.12em] text-[#8ba39d]">
+          <p className="mt-6 font-mono text-[0.72rem] uppercase tracking-[0.12em] text-muted">
             {day.date} · {day.hours}
           </p>
 
           <div className="mt-8 border-l-2 border-[var(--day-accent)] pl-5">
-            <p className="text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
-              <span className="text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
+            <p className="text-[0.92rem] font-light leading-relaxed text-body">
+              <span className="text-[9px] font-medium uppercase tracking-[0.24em] text-muted">
                 The point of today ·{" "}
               </span>
               {day.point}
@@ -210,22 +222,27 @@ export default function DaySection({
           </div>
 
           {buildCount > 0 && (
-            <p className="mt-6 font-mono text-[0.7rem] text-[#8ba39d]/70">
+            <p className="mt-6 font-mono text-[0.7rem] text-muted">
               {buildCount} build{buildCount === 1 ? "" : "s"} today
             </p>
           )}
         </header>
+      </div>
 
-        {note && (
-          <p className="mb-8 font-mono text-[0.7rem] text-[#8ba39d]/70">{note}</p>
-        )}
+      {/* The time rail, on a slightly lighter surface */}
+      <div className="border-b border-line bg-surface px-6 pb-20 pt-14 sm:px-10 sm:pb-28 sm:pt-16">
+        <div className="mx-auto max-w-3xl">
+          {note && (
+            <p className="mb-8 font-mono text-[0.7rem] text-muted">{note}</p>
+          )}
 
-        {/* The rail stops at the last block rather than dangling past it. */}
-        <ol className="[&>li:last-child_.rail-line]:h-4">
-          {day.blocks.map((block) => (
-            <ScheduleRow key={block.id} block={block} />
-          ))}
-        </ol>
+          {/* The rail stops at the last block rather than dangling past it. */}
+          <ol className="[&>li:last-child_.rail-line]:h-4">
+            {day.blocks.map((block) => (
+              <ScheduleRow key={block.id} block={block} />
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   );

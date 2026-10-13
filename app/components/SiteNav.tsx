@@ -6,8 +6,10 @@ import { useSchedule } from "./schedule-state";
 
 export default function SiteNav({
   items = navItems,
+  overHero = true,
 }: {
   items?: { label: string; href: string }[];
+  overHero?: boolean; // false on pages with no dark hero photo at the top
 }) {
   const [active, setActive] = useState<string>("");
   const [lifted, setLifted] = useState(false);
@@ -43,6 +45,8 @@ export default function SiteNav({
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const onDark = overHero && !lifted;
+
   return (
     <header
       data-print-hide
@@ -51,9 +55,11 @@ export default function SiteNav({
       <nav
         className={[
           "flex max-w-full items-center gap-1 overflow-x-auto rounded-full border px-3 py-2 backdrop-blur-2xl transition-all duration-500 sm:gap-2 sm:px-5",
-          lifted
-            ? "border-white/15 bg-[#0b1210]/80 shadow-[0_18px_60px_rgba(0,0,0,0.45)]"
-            : "border-white/20 bg-white/10 shadow-[0_18px_60px_rgba(0,0,0,0.18)]",
+          // Over the dark hero photo: dark glass. Everywhere else: a light pill
+          // with ink text, which reads over both the light page and dark bands.
+          onDark
+            ? "theme-dark border-white/15 bg-[#0b1210]/45 shadow-[0_18px_60px_rgba(0,0,0,0.25)]"
+            : "border-line bg-surface/85 shadow-[0_18px_60px_rgba(11,18,16,0.14)]",
         ].join(" ")}
       >
         {items.map((item) => {
@@ -65,8 +71,8 @@ export default function SiteNav({
               className={[
                 "group relative whitespace-nowrap rounded-full px-2.5 py-1.5 font-medium uppercase tracking-[0.22em] transition duration-300 sm:px-3",
                 "text-[9px] sm:text-[10px]",
-                "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f3d7a3]",
-                isActive ? "text-[#f3d7a3]" : "text-white/70 hover:text-white",
+                "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent",
+                isActive ? "text-accent" : "text-body hover:text-fg",
               ].join(" ")}
             >
               {item.label}
@@ -80,12 +86,12 @@ export default function SiteNav({
           );
         })}
 
-        <span className="mx-1 hidden h-4 w-px bg-white/15 sm:block" />
+        <span className="mx-1 hidden h-4 w-px bg-line sm:block" />
 
         <button
           type="button"
           onClick={allExpanded ? collapseAll : expandAll}
-          className="hidden whitespace-nowrap rounded-full px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.22em] text-white/60 transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f3d7a3] sm:block"
+          className="hidden whitespace-nowrap rounded-full px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.22em] text-soft transition hover:text-fg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:block"
         >
           {allExpanded ? "Collapse all" : "Expand all"}
         </button>
@@ -93,7 +99,7 @@ export default function SiteNav({
         <button
           type="button"
           onClick={() => window.print()}
-          className="hidden whitespace-nowrap rounded-full px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.22em] text-white/60 transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f3d7a3] sm:block"
+          className="hidden whitespace-nowrap rounded-full px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.22em] text-soft transition hover:text-fg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:block"
         >
           Print
         </button>

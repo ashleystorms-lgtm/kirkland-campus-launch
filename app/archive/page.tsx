@@ -48,12 +48,12 @@ function Part({
 }) {
   return (
     <div id={id} className="scroll-mt-24">
-      <div className="border-t border-[#f7efe8]/10 px-6 pt-16 sm:px-10 sm:pt-20">
+      <div className="border-t border-line px-6 pb-6 pt-16 sm:px-10 sm:pt-20">
         <div className="mx-auto max-w-5xl">
-          <p className="font-mono text-[0.7rem] text-[#8ba39d]">
+          <p className="font-mono text-[0.7rem] text-muted">
             Part {part.n} of 5
           </p>
-          <p className="mt-2 text-[9px] font-medium uppercase tracking-[0.35em] text-[#f3d7a3]/80">
+          <p className="mt-2 text-[9px] font-medium uppercase tracking-[0.35em] text-accent">
             {part.title}
           </p>
         </div>
@@ -73,23 +73,23 @@ export default function ArchivePage() {
 
   return (
     <ScheduleProvider allIds={allBlockIds}>
-      <SiteNav items={archiveNav} />
+      <SiteNav items={archiveNav} overHero={false} />
 
-      <main className="bg-[#0b1210] text-[#f7efe8]">
+      <main className="bg-bg text-fg">
         <header className="px-6 pt-36 pb-16 sm:px-10 sm:pt-44 sm:pb-20">
           <div className="mx-auto max-w-5xl">
-            <p className="text-[9px] font-medium uppercase tracking-[0.35em] text-[#8ba39d]">
+            <p className="text-[9px] font-medium uppercase tracking-[0.35em] text-muted">
               {archiveHeader.eyebrow}
             </p>
-            <h1 className="mt-4 max-w-3xl text-[1.9rem] font-light leading-tight tracking-[0.02em] text-[#f8f2eb] sm:text-[2.6rem]">
+            <h1 className="mt-4 max-w-3xl text-[1.9rem] font-light leading-tight tracking-[0.02em] text-fg sm:text-[2.6rem]">
               {archiveHeader.title}
             </h1>
-            <p className="mt-6 max-w-2xl text-[1rem] font-light leading-[1.8] text-[#f7efe8]/65">
+            <p className="mt-6 max-w-2xl text-[1rem] font-light leading-[1.8] text-body">
               {archiveHeader.intro}
             </p>
             <Link
               href="/"
-              className="mt-8 inline-block text-[0.9rem] font-light text-[#f3d7a3] hover:underline"
+              className="mt-8 inline-block text-[0.9rem] font-light text-accent hover:underline"
               data-print-hide
             >
               ← {archiveHeader.backLabel}
@@ -105,7 +105,7 @@ export default function ArchivePage() {
 
         <Part id="days" part={archiveParts.days}>
           {/* Slightly dimmed, so the week reads as past at a glance. */}
-          <div className="brightness-90 saturate-60">
+          <div className="past-days">
             {archiveDays.map((day) => (
               <DaySection key={day.id} day={day} note={plannedNote} />
             ))}

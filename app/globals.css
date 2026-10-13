@@ -1,17 +1,107 @@
 @import "tailwindcss";
 
+/* ── Colors ───────────────────────────────────────────────────────────────────
+   The whole site is "light with dark moments." Every component uses these
+   tokens (text-fg, bg-bg, border-line, text-accent ...), never raw hex codes.
+   Inside anything marked .theme-dark (the hero, day header bands, footer) the
+   same tokens switch to the dark palette, so one class flips a whole band. */
+
+:root {
+  --c-bg: #f7efe8; /* bone: the page */
+  --c-surface: #fcf8f4; /* cards and panels, a touch lighter */
+  --c-fg: #0b1210; /* ink: headings and strong text */
+  --c-body: #2d3934; /* paragraphs */
+  --c-soft: #46544e; /* notes and descriptions */
+  --c-muted: #56685f; /* labels, times, small caps */
+  --c-line: rgba(11, 18, 16, 0.12); /* hairlines and borders */
+  --c-accent: #8a5a14; /* deep gold: links, numbers, highlights */
+  --c-warn: #a3441f; /* deep orange: safety and "needs review" */
+}
+
+.theme-dark {
+  --c-bg: #0b1210; /* deep forest */
+  --c-surface: #16221d;
+  --c-fg: #f8f2eb;
+  --c-body: rgba(247, 239, 232, 0.72);
+  --c-soft: rgba(247, 239, 232, 0.6);
+  --c-muted: #8ba39d;
+  --c-line: rgba(247, 239, 232, 0.12);
+  --c-accent: #f3d7a3;
+  --c-warn: #e0946a;
+}
+
+@theme inline {
+  --color-bg: var(--c-bg);
+  --color-surface: var(--c-surface);
+  --color-fg: var(--c-fg);
+  --color-body: var(--c-body);
+  --color-soft: var(--c-soft);
+  --color-muted: var(--c-muted);
+  --color-line: var(--c-line);
+  --color-accent: var(--c-accent);
+  --color-warn: var(--c-warn);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  background: #f8f7f5;
-  color: #111827;
+  background: var(--c-bg);
+  color: var(--c-fg);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Past staff days: quieter, still readable. Color drains out; text stays dark. */
+.past-days {
+  filter: saturate(0.4);
+}
+.past-days img {
+  opacity: 0.8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Print ────────────────────────────────────────────────────────────────────
+   Paper is white and printers skip background colors, so the dark bands print
+   as plain light sections with ink text. Every block is opened before printing
+   (see schedule-state.tsx). */
+@media print {
+  :root,
+  .theme-dark {
+    --c-bg: #ffffff;
+    --c-surface: #ffffff;
+    --c-fg: #0b1210;
+    --c-body: #2d3934;
+    --c-soft: #46544e;
+    --c-muted: #56685f;
+    --c-line: rgba(11, 18, 16, 0.2);
+    --c-accent: #8a5a14;
+    --c-warn: #a3441f;
+    /* !important beats the inline per-day colors on each header band */
+    --day-accent: var(--day-accent-deep) !important;
+    --day-soft: var(--day-soft-deep) !important;
+  }
+  [data-print-hide],
+  img {
+    display: none !important;
+  }
+  .past-days {
+    filter: none;
+  }
+  li {
+    break-inside: avoid;
+  }
 }

@@ -3,7 +3,7 @@ import { hero } from "../data/bootcamp";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col overflow-hidden">
+    <section data-print-hide className="relative flex min-h-screen flex-col overflow-hidden bg-[#0b1210]">
       <Image
         src="/images/rainier-hero.jpg"
         alt="Mount Rainier at sunrise"

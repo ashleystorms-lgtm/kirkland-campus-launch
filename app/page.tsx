@@ -30,7 +30,7 @@ export default function Home() {
     <ScheduleProvider allIds={allBlockIds}>
       <SiteNav />
 
-      <main className="bg-[#0b1210] text-[#f7efe8]">
+      <main className="bg-bg text-fg">
         <Hero />
 
         {/* Now: the current staff day, in full */}
@@ -47,7 +47,7 @@ export default function Home() {
           {past.length > 0 && (
             <>
               <PastDaysLabel />
-              <div className="brightness-90 saturate-60">
+              <div className="past-days">
                 {past.map((day) => (
                   <DaySection key={day.id} day={day} />
                 ))}

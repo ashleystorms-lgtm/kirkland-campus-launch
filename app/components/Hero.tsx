@@ -51,30 +51,6 @@ export default function Hero() {
           <p className="mt-10 animate-[fade-in_1.2s_ease-out_both] text-[1.7rem] font-extralight uppercase tracking-[0.2em] text-[#f3d7a3] sm:text-[2.3rem] lg:text-[2.7rem]">
             {hero.subtitle}
           </p>
-
-          <div className="mt-14 animate-[fade-in_1.4s_ease-out_both] space-y-2 text-[0.95rem] font-light leading-7 text-white/75 sm:text-[1.05rem]">
-            {hero.statement.map((line) => (
-              <p key={line}>{line}</p>
-            ))}
-          </div>
-
-          {/* Stat row — the NYC site's date and headcount chips */}
-          <dl className="mx-auto mt-12 flex max-w-2xl flex-wrap items-center justify-center gap-x-6 gap-y-3 animate-[fade-in_1.6s_ease-out_both]">
-            {hero.stats.map((stat) => (
-              <div key={stat.label} className="flex items-baseline gap-2">
-                <dt className="text-[9px] font-medium uppercase tracking-[0.28em] text-white/45">
-                  {stat.label}
-                </dt>
-                <dd className="font-mono text-[0.8rem] text-[#f3d7a3]/90">
-                  {stat.value}
-                </dd>
-              </div>
-            ))}
-          </dl>
-
-          <p className="mt-10 animate-[fade-in_1.8s_ease-out_both] text-[9px] font-medium uppercase tracking-[0.35em] text-white/40 sm:text-[10px]">
-            {hero.date}
-          </p>
         </div>
       </div>
 

@@ -1,15 +1,22 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
-import type { ArchiveReading } from "../data/archive";
+import type {
+  archiveByFriday,
+  archivePrep,
+  archivePrepLabels,
+  archiveReading,
+  archiveRules,
+  archiveS1Links,
+  archiveStory,
+  archiveSummerNotes,
+} from "../data/archive";
 import {
-  byFriday,
+  archiveLink,
   evaluation,
   footer,
-  prep,
-  prework,
-  resources,
-  rules,
+  library,
   sprint,
-  story,
+  staffDaysIntro,
 } from "../data/bootcamp";
 
 // ── Shared shell ─────────────────────────────────────────────────────────────
@@ -90,8 +97,8 @@ function Table({
   );
 }
 
-// The nine summer staff day summaries. Shared by "Before we start" and the Archive.
-function StaffDaysDocs({ docs }: { docs: typeof prework.docs }) {
+// The nine summer staff day summaries, used on the Archive page.
+function StaffDaysDocs({ docs }: { docs: typeof archiveReading.docs }) {
   return (
     <ol className="mt-10 space-y-px">
       {docs.map((doc) => (
@@ -130,7 +137,7 @@ function StaffDaysDocs({ docs }: { docs: typeof prework.docs }) {
   );
 }
 
-function BookNote({ book }: { book: typeof prework.book }) {
+function BookNote({ book }: { book: typeof archiveReading.book }) {
   return (
     <div className="mt-12">
       <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
@@ -157,286 +164,9 @@ function BookNote({ book }: { book: typeof prework.book }) {
   );
 }
 
-// ── Before we start ──────────────────────────────────────────────────────────
-
-export function PreworkSection() {
-  return (
-    <Section id="prework" eyebrow={prework.eyebrow} heading={prework.heading} wide>
-      <div className="rounded-sm border border-[#e0946a]/30 border-l-4 border-l-[#e0946a] bg-[#f7efe8]/[0.03] px-6 py-8 sm:px-8 sm:py-10">
-        <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-[#e0946a]">
-          {prework.safety.label}
-        </p>
-        <h3 className="mt-3 text-[1.15rem] font-normal text-[#f8f2eb] sm:text-[1.3rem]">
-          {prework.safety.heading}
-        </h3>
-        <p className="mt-4 max-w-3xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
-          {prework.safety.body}
-        </p>
-        <p className="mt-4 max-w-3xl text-[0.92rem] font-normal leading-relaxed text-[#f7efe8]/90">
-          {prework.safety.contact}
-        </p>
-        <ul className="mt-6 grid gap-x-8 gap-y-4 sm:grid-cols-2">
-          {prework.safety.items.map((item) => (
-            <li key={item.title}>
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block"
-              >
-                <span className="text-[0.92rem] font-normal text-[#f8f2eb] transition-colors duration-300 group-hover:text-[#e0946a]">
-                  {item.title}
-                </span>
-                <p className="mt-1 text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/55">
-                  {item.note}
-                </p>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <p className="mt-14 max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
-        {prework.intro}
-      </p>
-      <div className="mt-6 border-l-2 border-[#f3d7a3]/40 pl-5">
-        <p className="text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
-          {prework.why}
-        </p>
-      </div>
-
-      <p className="mt-6 max-w-2xl text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
-        {prework.totalNote}
-      </p>
-
-      <StaffDaysDocs docs={prework.docs} />
-
-      <h3 className="mt-20 mb-3 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
-        {prework.levelWork.heading}
-      </h3>
-      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
-        {prework.levelWork.intro}
-      </p>
-
-      <div className="mt-10 border-l-2 border-[#f3d7a3] pl-6">
-        <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-[#f3d7a3]">
-          {prework.levelWork.whatsNew.date}
-        </p>
-        <h3 className="mt-3 text-[1.05rem] font-normal text-[#f8f2eb]">
-          {prework.levelWork.whatsNew.heading}
-        </h3>
-        <p className="mt-3 max-w-2xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
-          {prework.levelWork.whatsNew.body}
-        </p>
-
-        <h4 className="mt-8 mb-4 text-[0.95rem] font-normal text-[#f3d7a3]/90">
-          {prework.levelWork.whatsNew.doFirst.heading}
-        </h4>
-        <div className="grid gap-x-8 gap-y-8 sm:grid-cols-3">
-          <div>
-            <h5 className="mb-3 text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
-              Before Aug 31
-            </h5>
-            <ul className="space-y-2.5">
-              {prework.levelWork.whatsNew.doFirst.before.map((item) => (
-                <li
-                  key={item}
-                  className="flex gap-3 text-[0.85rem] font-light leading-relaxed text-[#f7efe8]/65"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h5 className="mb-3 text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
-              During the week
-            </h5>
-            <ul className="space-y-2.5">
-              {prework.levelWork.whatsNew.doFirst.during.map((item) => (
-                <li
-                  key={item}
-                  className="flex gap-3 text-[0.85rem] font-light leading-relaxed text-[#f7efe8]/65"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h5 className="mb-3 text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
-              Between now and Sept 8
-            </h5>
-            <ul className="space-y-2.5">
-              {prework.levelWork.whatsNew.doFirst.after.map((item) => (
-                <li
-                  key={item}
-                  className="flex gap-3 text-[0.85rem] font-light leading-relaxed text-[#f7efe8]/65"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <ul className="mt-8 space-y-4">
-          {prework.levelWork.whatsNew.items.map((item) => (
-            <li key={item.title}>
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block"
-              >
-                <span className="text-[0.92rem] font-normal text-[#f8f2eb] transition-colors duration-300 group-hover:text-[#f3d7a3]">
-                  {item.title}
-                </span>
-                <p className="mt-1 max-w-2xl text-[0.85rem] font-light leading-relaxed text-[#f7efe8]/55">
-                  {item.note}
-                </p>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="mt-14 border-l-2 border-[#f3d7a3]/40 pl-5">
-        <p className="text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
-          {prework.levelWork.warning}
-        </p>
-      </div>
-
-      <h3 className="mt-14 mb-3 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
-        {prework.levelWork.channels.heading}
-      </h3>
-      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
-        {prework.levelWork.channels.body}
-      </p>
-      <ul className="mt-6 space-y-3">
-        {prework.levelWork.channels.items.map((item) => (
-          <li key={item.title}>
-            <a
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex flex-wrap items-baseline gap-x-3 gap-y-1"
-            >
-              <span className="font-mono text-[0.85rem] text-[#f7efe8] transition-colors duration-300 group-hover:text-[#f3d7a3]">
-                {item.title}
-              </span>
-              <span className="text-[0.82rem] font-light text-[#f7efe8]/55">
-                {item.note}
-              </span>
-            </a>
-          </li>
-        ))}
-      </ul>
-
-      <p className="mt-8 max-w-2xl text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
-        {prework.levelWork.slackNote}
-      </p>
-
-      <h4 className="mt-10 mb-4 text-[0.95rem] font-normal text-[#f3d7a3]/90">
-        {prework.levelWork.shared.heading}
-      </h4>
-      <ul className="space-y-2.5">
-        {prework.levelWork.shared.items.map((item) => (
-          <li key={item.title}>
-            <a
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex gap-3 text-[0.88rem] font-light leading-relaxed text-[#f7efe8]/65"
-            >
-              <span
-                aria-hidden="true"
-                className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
-              />
-              <span>
-                <span className="text-[#f7efe8] transition-colors duration-300 group-hover:text-[#f3d7a3]">
-                  {item.title}
-                </span>
-                {" — "}
-                <span className="text-[#f7efe8]/55">{item.note}</span>
-              </span>
-            </a>
-          </li>
-        ))}
-      </ul>
-
-      <div className="mt-16 space-y-16">
-        {prework.levelWork.levels.map((level) => (
-          <div key={level.id}>
-            <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 border-t border-[#f7efe8]/10 pt-8">
-              <h3 className="text-[1.1rem] font-normal text-[#f8f2eb]">
-                {level.name}
-              </h3>
-              <p className="font-mono text-[0.7rem] text-[#8ba39d]">
-                {level.channel}
-              </p>
-            </div>
-
-            <div className="mt-8 grid gap-x-10 gap-y-10 sm:grid-cols-2">
-              {level.groups.map((group) => (
-                <div key={group.heading}>
-                  <h4 className="mb-4 text-[0.9rem] font-normal text-[#f3d7a3]/90">
-                    {group.heading}
-                  </h4>
-                  <ul className="space-y-3">
-                    {group.items.map((item) => (
-                      <li key={item.title}>
-                        <a
-                          href={item.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group block"
-                        >
-                          <span className="text-[0.88rem] font-normal text-[#f7efe8] transition-colors duration-300 group-hover:text-[#f3d7a3]">
-                            {item.title}
-                          </span>
-                          <p className="mt-1 text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/55">
-                            {item.note}
-                          </p>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-16 border-l-2 border-[#f3d7a3]/40 pl-6">
-        <p className="max-w-2xl text-[0.95rem] font-light leading-relaxed text-[#f7efe8]/75">
-          {prework.levelWork.giveBack}
-        </p>
-      </div>
-
-      <div className="mt-20 border-t border-[#f7efe8]/10" />
-
-      <BookNote book={prework.book} />
-    </Section>
-  );
-}
-
 // ── Archive: what we read before the week ───────────────────────────────────
 
-export function ReadingSection({ data }: { data: ArchiveReading }) {
+export function ReadingSection({ data }: { data: typeof archiveReading }) {
   return (
     <Section id="reading" eyebrow={data.eyebrow} heading={data.heading} wide>
       <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
@@ -461,9 +191,140 @@ export function ReadingSection({ data }: { data: ArchiveReading }) {
   );
 }
 
+// ── Archive: the rest of what we flagged before the week ────────────────────
+
+function NoteBlock({ children }: { children: ReactNode }) {
+  return (
+    <div className="mt-10 border-l-2 border-[#f3d7a3]/40 pl-5">
+      <p className="max-w-2xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
+        {children}
+      </p>
+    </div>
+  );
+}
+
+export function SummerNotesSection({
+  data,
+  note,
+}: {
+  data: typeof archiveSummerNotes;
+  note: string;
+}) {
+  return (
+    <Section id="summer-notes" eyebrow={data.eyebrow} heading={data.heading} wide>
+      <p className="font-mono text-[0.7rem] text-[#8ba39d]/70">{note}</p>
+
+      <div className="mt-10 rounded-sm border border-[#e0946a]/30 border-l-4 border-l-[#e0946a] bg-[#f7efe8]/[0.03] px-6 py-6 sm:px-8">
+        <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-[#e0946a]">
+          {data.safety.label}
+        </p>
+        <h3 className="mt-3 text-[1.05rem] font-normal text-[#f8f2eb]">
+          {data.safety.heading}
+        </h3>
+        <p className="mt-3 max-w-3xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
+          {data.safety.body}
+        </p>
+      </div>
+
+      <h3 className="mt-14 mb-3 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+        {data.levelWorkHeading}
+      </h3>
+      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+        {data.levelWorkIntro}
+      </p>
+
+      <div className="mt-10 border-l-2 border-[#f3d7a3] pl-6">
+        <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-[#f3d7a3]">
+          {data.whatsNew.date}
+        </p>
+        <h3 className="mt-3 text-[1.05rem] font-normal text-[#f8f2eb]">
+          {data.whatsNew.heading}
+        </h3>
+        <p className="mt-3 max-w-2xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/70">
+          {data.whatsNew.body}
+        </p>
+
+        <h4 className="mt-8 mb-4 text-[0.95rem] font-normal text-[#f3d7a3]/90">
+          {data.whatsNew.doFirst.heading}
+        </h4>
+        <div className="grid gap-x-8 gap-y-8 sm:grid-cols-3">
+          <div>
+            <h5 className="mb-3 text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
+              Before Aug 31
+            </h5>
+            <ul className="space-y-2.5">
+              {data.whatsNew.doFirst.before.map((item) => (
+                <li
+                  key={item}
+                  className="flex gap-3 text-[0.85rem] font-light leading-relaxed text-[#f7efe8]/65"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h5 className="mb-3 text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
+              During the week
+            </h5>
+            <ul className="space-y-2.5">
+              {data.whatsNew.doFirst.during.map((item) => (
+                <li
+                  key={item}
+                  className="flex gap-3 text-[0.85rem] font-light leading-relaxed text-[#f7efe8]/65"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h5 className="mb-3 text-[9px] font-medium uppercase tracking-[0.24em] text-[#8ba39d]">
+              Before Sept 8
+            </h5>
+            <ul className="space-y-2.5">
+              {data.whatsNew.doFirst.after.map((item) => (
+                <li
+                  key={item}
+                  className="flex gap-3 text-[0.85rem] font-light leading-relaxed text-[#f7efe8]/65"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#8ba39d]/50"
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <NoteBlock>{data.warning}</NoteBlock>
+
+      <h3 className="mt-14 mb-3 text-[9px] font-medium uppercase tracking-[0.3em] text-[#8ba39d]">
+        {data.channels.heading}
+      </h3>
+      <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+        {data.channels.body}
+      </p>
+
+      <NoteBlock>{data.giveBack}</NoteBlock>
+    </Section>
+  );
+}
+
 // ── Our Story ────────────────────────────────────────────────────────────────
 
-export function StorySection({ data = story }: { data?: typeof story }) {
+export function StorySection({ data }: { data: typeof archiveStory }) {
   return (
     <Section id="story" eyebrow={data.eyebrow} heading={data.heading}>
       <div className="space-y-6 text-[1rem] font-light leading-[1.8] text-[#f7efe8]/70 sm:text-[1.08rem]">
@@ -486,7 +347,7 @@ export function StorySection({ data = story }: { data?: typeof story }) {
 
 // ── By Friday ────────────────────────────────────────────────────────────────
 
-export function ByFridaySection({ data = byFriday }: { data?: typeof byFriday }) {
+export function ByFridaySection({ data }: { data: typeof archiveByFriday }) {
   return (
     <Section id="byfriday" eyebrow={data.eyebrow} heading={data.heading} wide>
       <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
@@ -577,6 +438,15 @@ export function EvaluationSection() {
       heading={evaluation.heading}
       wide
     >
+      <div className="mb-12 border-l-2 border-[#e0946a]/60 pl-6">
+        <p className="text-[9px] font-medium uppercase tracking-[0.24em] text-[#e0946a]">
+          Needs review
+        </p>
+        <p className="mt-3 max-w-2xl text-[0.92rem] font-light leading-relaxed text-[#f7efe8]/75">
+          {evaluation.needsReview}
+        </p>
+      </div>
+
       <p className="max-w-3xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
         {evaluation.intro}
       </p>
@@ -726,19 +596,12 @@ export function EvaluationSection() {
 
 // ── Prep ─────────────────────────────────────────────────────────────────────
 
-const prepLabels = {
-  floor: "Who’s on the floor",
-  open: "Still open",
-  stage: "Print and stage",
-  nameTags: "Name tags",
-};
-
 export function PrepSection({
-  data = prep,
-  labels = prepLabels,
+  data,
+  labels,
 }: {
-  data?: typeof prep;
-  labels?: typeof prepLabels;
+  data: typeof archivePrep;
+  labels: typeof archivePrepLabels;
 }) {
   return (
     <Section id="prep" eyebrow={data.eyebrow} heading={data.heading} wide>
@@ -850,11 +713,11 @@ export function PrepSection({
 // ── House Rules ──────────────────────────────────────────────────────────────
 
 export function RulesSection({
-  data = rules,
-  notDoingLabel = "What we’re not doing",
+  data,
+  notDoingLabel,
 }: {
-  data?: typeof rules;
-  notDoingLabel?: string;
+  data: typeof archiveRules;
+  notDoingLabel: string;
 }) {
   return (
     <Section id="rules" eyebrow={data.eyebrow} heading={data.heading} wide>
@@ -895,14 +758,14 @@ export function RulesSection({
   );
 }
 
-// ── Resources ────────────────────────────────────────────────────────────────
+// ── A plain list of links (the Archive's S1-only links) ─────────────────────
 
-export function ResourcesSection({
-  id = "resources",
-  data = resources,
+export function LinkListSection({
+  id,
+  data,
 }: {
-  id?: string;
-  data?: typeof resources;
+  id: string;
+  data: typeof archiveS1Links;
 }) {
   return (
     <Section id={id} eyebrow={data.eyebrow} heading={data.heading}>
@@ -936,6 +799,136 @@ export function ResourcesSection({
           </a>
         ))}
       </div>
+    </Section>
+  );
+}
+
+// ── Home: Staff Days header ─────────────────────────────────────────────────
+
+export function StaffDaysHeader({ isEmpty }: { isEmpty: boolean }) {
+  return (
+    <Section eyebrow={staffDaysIntro.eyebrow} heading={staffDaysIntro.heading}>
+      {isEmpty && (
+        <p className="max-w-2xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+          {staffDaysIntro.empty}
+        </p>
+      )}
+    </Section>
+  );
+}
+
+export function PastDaysLabel() {
+  return (
+    <div className="border-t border-[#f7efe8]/10 px-6 pt-16 sm:px-10">
+      <p className="mx-auto max-w-3xl text-[9px] font-medium uppercase tracking-[0.35em] text-[#8ba39d]">
+        {staffDaysIntro.pastLabel}
+      </p>
+    </div>
+  );
+}
+
+// ── Home: the Resources library ─────────────────────────────────────────────
+
+export function LibrarySection() {
+  return (
+    <Section id="library" eyebrow={library.eyebrow} heading={library.heading} wide>
+      <p className="max-w-2xl text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/45">
+        {library.note}
+      </p>
+
+      {/* What's in the library, at a glance */}
+      <ul className="mt-10 grid gap-x-8 gap-y-2 sm:grid-cols-2">
+        {library.categories.map((c) => (
+          <li key={c.id}>
+            <a
+              href={`#res-${c.id}`}
+              className="group flex items-baseline justify-between gap-4 border-b border-[#f7efe8]/[0.07] py-2"
+            >
+              <span className="text-[0.9rem] font-light text-[#f7efe8]/80 transition-colors duration-300 group-hover:text-[#f3d7a3]">
+                {c.title}
+              </span>
+              <span className="font-mono text-[0.7rem] text-[#8ba39d]">
+                {c.items.length}
+              </span>
+            </a>
+          </li>
+        ))}
+        {library.sections.map((sec) => (
+          <li key={sec.id}>
+            <a
+              href={`#${sec.id}`}
+              className="group flex items-baseline justify-between gap-4 border-b border-[#f7efe8]/[0.07] py-2"
+            >
+              <span className="text-[0.9rem] font-light text-[#f7efe8]/80 transition-colors duration-300 group-hover:text-[#f3d7a3]">
+                {sec.title}
+              </span>
+              <span className="font-mono text-[0.7rem] text-[#8ba39d]">read</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div className="mt-16 space-y-16">
+        {library.categories.map((c) => (
+          <div key={c.id} id={`res-${c.id}`} className="scroll-mt-24">
+            <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 border-t border-[#f7efe8]/10 pt-8">
+              <h3 className="text-[1.1rem] font-normal text-[#f8f2eb]">{c.title}</h3>
+              <p className="font-mono text-[0.7rem] text-[#8ba39d]">
+                {c.items.length} link{c.items.length === 1 ? "" : "s"}
+              </p>
+            </div>
+
+            {c.intro && (
+              <p className="mt-4 max-w-3xl text-[0.88rem] font-light leading-relaxed text-[#f7efe8]/60">
+                {c.intro}
+              </p>
+            )}
+
+            <ul className="mt-8 grid gap-x-10 gap-y-6 sm:grid-cols-2">
+              {c.items.map((item) => (
+                <li key={`${item.level ?? ""}-${item.title}`}>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block"
+                  >
+                    <span className="text-[0.88rem] font-normal text-[#f7efe8] transition-colors duration-300 group-hover:text-[#f3d7a3]">
+                      {item.title}
+                    </span>
+                    {item.level && (
+                      <span className="ml-2 font-mono text-[0.65rem] text-[#8ba39d]">
+                        {item.level}
+                      </span>
+                    )}
+                    <p className="mt-1 text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/55">
+                      {item.note}
+                    </p>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+// ── Home: link to the Archive ───────────────────────────────────────────────
+
+export function ArchiveLinkSection() {
+  return (
+    <Section id="archive" eyebrow={archiveLink.eyebrow} heading={archiveLink.heading}>
+      <p className="max-w-2xl text-[0.95rem] font-light leading-[1.8] text-[#f7efe8]/65">
+        {archiveLink.body}
+      </p>
+      <Link
+        href={archiveLink.href}
+        className="mt-8 inline-block text-[0.9rem] font-light text-[#f3d7a3] hover:underline"
+      >
+        {archiveLink.label} →
+      </Link>
     </Section>
   );
 }

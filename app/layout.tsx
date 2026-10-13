@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alpha Kirkland - Campus Launch",
-  description: "Campus launch run-of-show, Aug 31 - Sep 4, 2026.",
+  title: "Alpha Kirkland - Staff Days",
+  description: "Staff days and resources for the Alpha Kirkland team.",
   robots: { index: false, follow: false },
 };
 

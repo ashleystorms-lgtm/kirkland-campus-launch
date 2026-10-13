@@ -4,18 +4,21 @@ import SiteNav from "./components/SiteNav";
 import Hero from "./components/Hero";
 import DaySection from "./components/DaySection";
 import {
-  ByFridaySection,
+  ArchiveLinkSection,
   EvaluationSection,
-  PrepSection,
-  PreworkSection,
-  ResourcesSection,
-  RulesSection,
+  LibrarySection,
+  PastDaysLabel,
   SiteFooter,
   SprintSection,
-  StorySection,
+  StaffDaysHeader,
 } from "./components/Sections";
 
 export default function Home() {
+  // Which day shows where is set by each day's status in bootcamp.ts.
+  const nowDay = days.find((d) => d.status === "now");
+  const upcoming = days.filter((d) => d.status === "upcoming");
+  const past = days.filter((d) => d.status === "past");
+
   // Every collapsible block on the page, so "Expand all" and Print can reach them.
   const allBlockIds = days.flatMap((day) =>
     day.blocks
@@ -29,19 +32,38 @@ export default function Home() {
 
       <main className="bg-[#0b1210] text-[#f7efe8]">
         <Hero />
-        <StorySection />
-        <PreworkSection />
 
-        {days.map((day) => (
-          <DaySection key={day.id} day={day} />
-        ))}
+        {/* Now: the current staff day, in full */}
+        <div id="now" className="scroll-mt-24">
+          {nowDay && <DaySection day={nowDay} eyebrow={`Now · ${nowDay.dayName}`} />}
+        </div>
 
-        <ByFridaySection />
-        <SprintSection />
-        <PrepSection />
-        <RulesSection />
-        <EvaluationSection />
-        <ResourcesSection />
+        {/* Staff Days: upcoming first, then past ones dimmed. The "now" day is shown above. */}
+        <div id="staff-days" className="scroll-mt-24">
+          <StaffDaysHeader isEmpty={upcoming.length + past.length === 0} />
+          {upcoming.map((day) => (
+            <DaySection key={day.id} day={day} />
+          ))}
+          {past.length > 0 && (
+            <>
+              <PastDaysLabel />
+              <div className="brightness-90 saturate-60">
+                {past.map((day) => (
+                  <DaySection key={day.id} day={day} />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+
+        {/* Resources: the link library, then the two reading sections */}
+        <div id="resources" className="scroll-mt-24">
+          <LibrarySection />
+          <EvaluationSection />
+          <SprintSection />
+        </div>
+
+        <ArchiveLinkSection />
         <SiteFooter />
       </main>
     </ScheduleProvider>

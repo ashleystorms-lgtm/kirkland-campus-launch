@@ -14,6 +14,7 @@ import {
   archiveRules,
   archiveS1Links,
   archiveStory,
+  archiveSummerNotes,
   plannedNote,
 } from "../data/archive";
 import { ScheduleProvider } from "../components/schedule-state";
@@ -22,11 +23,12 @@ import DaySection from "../components/DaySection";
 import {
   ByFridaySection,
   PrepSection,
+  LinkListSection,
   ReadingSection,
-  ResourcesSection,
   RulesSection,
   SiteFooter,
   StorySection,
+  SummerNotesSection,
 } from "../components/Sections";
 
 export const metadata: Metadata = {
@@ -98,6 +100,7 @@ export default function ArchivePage() {
         <Part id="before" part={archiveParts.before}>
           <StorySection data={archiveStory} />
           <ReadingSection data={archiveReading} />
+          <SummerNotesSection data={archiveSummerNotes} note={plannedNote} />
         </Part>
 
         <Part id="days" part={archiveParts.days}>
@@ -119,7 +122,7 @@ export default function ArchivePage() {
         </Part>
 
         <Part id="s1-links" part={archiveParts.s1Links}>
-          <ResourcesSection id="s1-resources" data={archiveS1Links} />
+          <LinkListSection id="s1-resources" data={archiveS1Links} />
         </Part>
 
         <SiteFooter text={archiveHeader.footer} />

@@ -137,7 +137,15 @@ function ScheduleRow({ block }: { block: Block }) {
   );
 }
 
-export default function DaySection({ day, note }: { day: Day; note?: string }) {
+export default function DaySection({
+  day,
+  note,
+  eyebrow,
+}: {
+  day: Day;
+  note?: string;
+  eyebrow?: string; // replaces the day name above the title, e.g. "Now · Tuesday"
+}) {
   const buildCount = day.blocks.filter(
     (b) => b.kind === "build" || b.kind === "sprint",
   ).length;
@@ -177,7 +185,7 @@ export default function DaySection({ day, note }: { day: Day; note?: string }) {
       <div className="relative mx-auto max-w-3xl">
         <header className="mb-14">
           <p className="text-[9px] font-medium uppercase tracking-[0.35em] text-[#8ba39d]">
-            {day.dayName}
+            {eyebrow ?? day.dayName}
           </p>
 
           <h2 className="mt-4 text-[1.9rem] font-light uppercase leading-tight tracking-[0.18em] text-[#f8f2eb] sm:text-[2.4rem]">

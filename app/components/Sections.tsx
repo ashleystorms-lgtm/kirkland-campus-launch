@@ -901,9 +901,11 @@ export function LibrarySection() {
                         {item.level}
                       </span>
                     )}
-                    <p className="mt-1 text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/55">
-                      {item.note}
-                    </p>
+                    {item.note && (
+                      <p className="mt-1 text-[0.82rem] font-light leading-relaxed text-[#f7efe8]/55">
+                        {item.note}
+                      </p>
+                    )}
                   </a>
                 </li>
               ))}

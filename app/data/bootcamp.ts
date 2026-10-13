@@ -155,6 +155,7 @@ export const days: Day[] = [
         links: [
           { label: "Campus Admin (load your S2 campus page)", url: "https://alpha-campus-admin.vercel.app/" },
           { label: "AlphaBoxd workshop library", url: "https://alphaboxd.pplx.app/" },
+          { label: "Life Skills Workshops playbook (Pitch, Facilitate, Coach, AlphaTest)", url: "/resources/Life_Skills_Workshop_Playbook.pdf" },
         ],
       },
       {
@@ -407,7 +408,7 @@ export const evaluation = {
 
 export type LibraryItem = {
   title: string;
-  note: string;
+  note?: string;
   url: string;
   level?: "LL" | "L1" | "L2" | "MS";
 };
@@ -1092,6 +1093,10 @@ export const library: {
           title: "Tree Skills · PDF breakdown",
           note: "Each branch of the tree broken down in detail. Requires your Alpha Google account.",
           url: "https://drive.google.com/drive/folders/1ZyUyUCF--wPTZw1fiYGMYYk0CZRZ7vgf",
+        },
+        {
+          title: "Life Skills Workshops playbook (Pitch, Facilitate, Coach, AlphaTest)",
+          url: "/resources/Life_Skills_Workshop_Playbook.pdf",
         },
       ],
     },

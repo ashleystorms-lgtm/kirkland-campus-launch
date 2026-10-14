@@ -76,7 +76,7 @@ export const navItems = [
 export const days: Day[] = [
   {
     id: "oct-13",
-    status: "now",
+    status: "past",
     label: "Oct 13",
     dayName: "Tuesday · Session 2 staff day",
     date: "Tuesday, October 13, 2026",
@@ -200,7 +200,7 @@ export const days: Day[] = [
 
   {
     id: "oct-16",
-    status: "upcoming",
+    status: "now",
     label: "Oct 16",
     dayName: "Friday · Session 2 staff day",
     date: "Friday, October 16, 2026",

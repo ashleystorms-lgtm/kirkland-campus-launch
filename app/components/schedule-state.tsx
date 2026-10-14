@@ -22,12 +22,14 @@ const ScheduleContext = createContext<ScheduleState | null>(null);
 
 export function ScheduleProvider({
   allIds,
+  initialOpen = [],
   children,
 }: {
   allIds: string[];
+  initialOpen?: string[]; // blocks that start open, e.g. the "now" day's
   children: ReactNode;
 }) {
-  const [open, setOpen] = useState<Set<string>>(new Set());
+  const [open, setOpen] = useState<Set<string>>(() => new Set(initialOpen));
 
   const toggle = useCallback((id: string) => {
     setOpen((prev) => {

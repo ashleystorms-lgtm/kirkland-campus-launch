@@ -24,6 +24,7 @@ function ScheduleRow({ block }: { block: Block }) {
   const { isOpen, toggle } = useSchedule();
   const hasDetail = Boolean(block.detail?.length || block.output || block.links?.length);
   const open = isOpen(block.id);
+  const linkCount = block.links?.length ?? 0;
   const m = marker[block.kind];
   const dim = block.kind === "meal";
 
@@ -73,17 +74,33 @@ function ScheduleRow({ block }: { block: Block }) {
               onClick={() => toggle(block.id)}
               aria-expanded={open}
               aria-controls={`${block.id}-detail`}
-              className="group flex w-full items-start gap-2 rounded-sm text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+              className="group flex w-full flex-wrap items-start gap-x-3 gap-y-2 rounded-sm text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--day-accent)]"
             >
-              <span className="flex-1">{heading}</span>
+              <span className="min-w-[12rem] flex-1">{heading}</span>
+              {/* A visible label, so it's obvious the row opens */}
               <span
-                aria-hidden="true"
+                data-print-hide
                 className={[
-                  "mt-1 shrink-0 font-mono text-[0.7rem] text-muted transition-transform duration-300",
-                  open ? "rotate-90" : "group-hover:translate-x-0.5",
+                  "inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border px-3 py-1 text-[0.74rem] font-medium text-[var(--day-accent)] transition-colors duration-300",
+                  open
+                    ? "border-line bg-bg"
+                    : "border-[color-mix(in_oklab,var(--day-accent)_45%,transparent)] bg-bg group-hover:bg-[color-mix(in_oklab,var(--day-accent)_10%,var(--c-bg))]",
                 ].join(" ")}
               >
-                ›
+                {open
+                  ? "Hide details"
+                  : linkCount > 0
+                    ? `Details and links (${linkCount})`
+                    : "Details and links"}
+                <span
+                  aria-hidden="true"
+                  className={[
+                    "inline-block font-mono transition-transform duration-300",
+                    open ? "-rotate-90" : "rotate-90",
+                  ].join(" ")}
+                >
+                  ›
+                </span>
               </span>
             </button>
 
@@ -99,16 +116,18 @@ function ScheduleRow({ block }: { block: Block }) {
               )}
               {block.detail?.map((p) => <p key={p}>{p}</p>)}
               {block.links && block.links.length > 0 && (
-                <div className="space-y-1">
+                <div className="flex flex-wrap gap-2 pt-1">
                   {block.links.map((link) => (
                     <a
                       key={link.url}
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block text-[var(--day-accent)] hover:underline"
+                      className="inline-flex items-center gap-2 rounded-full border border-[color-mix(in_oklab,var(--day-accent)_45%,transparent)] bg-bg px-3.5 py-1.5 text-[0.84rem] font-normal leading-snug text-[var(--day-accent)] transition-colors duration-300 hover:border-[var(--day-accent)] hover:bg-[color-mix(in_oklab,var(--day-accent)_10%,var(--c-bg))] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--day-accent)]"
                     >
-                      → {link.label}
+                      {link.label}
+                      <span aria-hidden="true" className="text-[0.8em]">↗</span>
+                      <span className="sr-only">(opens in a new tab)</span>
                     </a>
                   ))}
                 </div>

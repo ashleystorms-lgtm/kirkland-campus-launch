@@ -20,14 +20,16 @@ export default function Home() {
   const past = days.filter((d) => d.status === "past");
 
   // Every collapsible block on the page, so "Expand all" and Print can reach them.
-  const allBlockIds = days.flatMap((day) =>
+  const openable = (day: (typeof days)[number]) =>
     day.blocks
       .filter((b) => b.detail?.length || b.output || b.links?.length)
-      .map((b) => b.id),
-  );
+      .map((b) => b.id);
+  const allBlockIds = days.flatMap(openable);
+  // The "now" day starts fully open so nobody misses the details and links.
+  const nowBlockIds = nowDay ? openable(nowDay) : [];
 
   return (
-    <ScheduleProvider allIds={allBlockIds}>
+    <ScheduleProvider allIds={allBlockIds} initialOpen={nowBlockIds}>
       <SiteNav />
 
       <main className="bg-bg text-fg">

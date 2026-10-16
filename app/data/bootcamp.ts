@@ -242,6 +242,9 @@ export const days: Day[] = [
         title: "Tom Bennett's behavior training, together at 2x",
         kind: "session",
         detail: ["The full session is 2 hours."],
+        links: [
+          { label: "Tom Bennett's training recording (Zoom)", url: "https://alpha-school.zoom.us/rec/play/TpGT5k7VsiX1eBmGvOHngWQgb7VUIOukLgf2nwCzt1cfwMlOoJFmiAbpG2kIxnWGnqmCWKRnzweuHfCP.wXUPRHSwflJ6AJ_f?accessLevel=meeting&canPlayFromShare=true&from=my_recording&continueMode=true&oldStyle=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Falpha-school.zoom.us%2Frec%2Fshare%2FaufNVBPCZJ0P6Oh2FlTLS8_wg6rx0A6JGU4vQp6thsHbfi0_x3RLTPgZIJtpud_m.8tDbLEGzO394ssOm&autoplay=true&startTime=1791899948000" },
+        ],
       },
       {
         id: "oct16-slides",
